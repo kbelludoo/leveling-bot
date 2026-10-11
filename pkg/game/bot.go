@@ -95,9 +95,11 @@ func (b *Bot) Run(ctx context.Context) error {
 
 	disconnectChan := make(chan error, 1)
 
-	b.socket = network.NewSocketClient(
+	b.socket = network.NewSocketClientWithNetwork(
 		wsURL,
 		headers,
+		b.config.Proxy,
+		b.config.LocalIP,
 		func(data []byte) {
 			b.handleInboundPacket(data)
 		},

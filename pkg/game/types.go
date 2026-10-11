@@ -5,6 +5,8 @@ type AccountConfig struct {
 	ID          string          `json:"id"`
 	Name        string          `json:"name"`
 	Enabled     bool            `json:"enabled"`
+	Proxy       string          `json:"proxy,omitempty"`    // Suporte Multi-IP via Proxy HTTP/SOCKS5 (ex: http://user:pass@host:port)
+	LocalIP     string          `json:"localIp,omitempty"`  // Suporte Multi-IP via interface de rede local (ex: 192.168.3.205)
 	Credentials GameCredentials `json:"credentials"`
 	Settings    GameSettings    `json:"settings"`
 }

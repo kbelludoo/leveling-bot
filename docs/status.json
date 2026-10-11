@@ -3,48 +3,48 @@
                      {
                          "id":  "acc-1",
                          "name":  "kbelludoo",
-                         "level":  6,
+                         "level":  7,
                          "vocation":  "arqueiro",
-                         "hp":  350,
-                         "maxHp":  350,
-                         "mana":  190,
-                         "maxMana":  190,
-                         "gold":  19062,
-                         "kills":  285,
-                         "expPerHour":  2538,
+                         "hp":  375,
+                         "maxHp":  375,
+                         "mana":  205,
+                         "maxMana":  205,
+                         "gold":  22224,
+                         "kills":  92,
+                         "expPerHour":  2727,
                          "status":  "hunting",
                          "currentArea":  "floresta-sombria",
-                         "durationSec":  81,
+                         "durationSec":  27,
                          "logs":  [
                                       "ConexÃ£o WebSocket estabelecida. Enviando login...",
                                       "Login bem-sucedido! Bem-vindo, kbelludoo."
                                   ],
-                         "updatedAt":  1791750188321
+                         "updatedAt":  1791750395630
                      },
                      {
                          "id":  "acc-2",
                          "name":  "kbelludoo2",
-                         "level":  3,
+                         "level":  4,
                          "vocation":  "healer",
-                         "hp":  275,
-                         "maxHp":  275,
-                         "mana":  145,
-                         "maxMana":  145,
-                         "gold":  8196,
-                         "kills":  160,
-                         "expPerHour":  1846,
+                         "hp":  300,
+                         "maxHp":  300,
+                         "mana":  160,
+                         "maxMana":  160,
+                         "gold":  8732,
+                         "kills":  49,
+                         "expPerHour":  793,
                          "status":  "hunting",
                          "currentArea":  "floresta-sombria",
-                         "durationSec":  60,
+                         "durationSec":  15,
                          "logs":  [
                                       "ConexÃ£o WebSocket estabelecida. Enviando login...",
                                       "Login bem-sucedido! Bem-vindo, kbelludoo2."
                                   ],
-                         "updatedAt":  1791750188363
+                         "updatedAt":  1791750395630
                      }
                  ],
     "goroutines":  10,
-    "ramAllocMB":  3.2214813232421875,
-    "ramSysMB":  17.08984375,
-    "uptime":  "41s"
+    "ramAllocMB":  2.8541336059570312,
+    "ramSysMB":  12.33203125,
+    "uptime":  "14s"
 }

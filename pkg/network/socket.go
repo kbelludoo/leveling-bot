@@ -3,7 +3,9 @@ package network
 import (
 	"encoding/json"
 	"fmt"
+	"net"
 	"net/http"
+	"net/url"
 	"sync"
 	"time"
 
@@ -17,6 +19,8 @@ type DisconnectHandler func(err error)
 type SocketClient struct {
 	url           string
 	headers       http.Header
+	proxyURL      string
+	localAddr     string
 	conn          *websocket.Conn
 	writeMu       sync.Mutex
 	mu            sync.RWMutex
@@ -27,6 +31,10 @@ type SocketClient struct {
 }
 
 func NewSocketClient(url string, headers http.Header, onMsg MessageHandler, onDisc DisconnectHandler) *SocketClient {
+	return NewSocketClientWithNetwork(url, headers, "", "", onMsg, onDisc)
+}
+
+func NewSocketClientWithNetwork(url string, headers http.Header, proxyURL string, localAddr string, onMsg MessageHandler, onDisc DisconnectHandler) *SocketClient {
 	if headers == nil {
 		headers = make(http.Header)
 	}
@@ -38,6 +46,8 @@ func NewSocketClient(url string, headers http.Header, onMsg MessageHandler, onDi
 	return &SocketClient{
 		url:          url,
 		headers:      headers,
+		proxyURL:     proxyURL,
+		localAddr:    localAddr,
 		onMessage:    onMsg,
 		onDisconnect: onDisc,
 		closeChan:    make(chan struct{}),
@@ -47,6 +57,28 @@ func NewSocketClient(url string, headers http.Header, onMsg MessageHandler, onDi
 func (s *SocketClient) Connect() error {
 	dialer := websocket.Dialer{
 		HandshakeTimeout: 15 * time.Second,
+	}
+
+	// 1. Suporte a Proxy HTTP / SOCKS5
+	if s.proxyURL != "" {
+		parsedProxy, err := url.Parse(s.proxyURL)
+		if err != nil {
+			return fmt.Errorf("proxy URL inválida (%s): %w", s.proxyURL, err)
+		}
+		dialer.Proxy = http.ProxyURL(parsedProxy)
+	}
+
+	// 2. Suporte a bind de IP local dedicado (Multi-IP por placa de rede)
+	if s.localAddr != "" {
+		localTCPAddr, err := net.ResolveTCPAddr("tcp", s.localAddr+":0")
+		if err != nil {
+			return fmt.Errorf("endereço IP local inválido (%s): %w", s.localAddr, err)
+		}
+		netDialer := &net.Dialer{
+			LocalAddr: localTCPAddr,
+			Timeout:   15 * time.Second,
+		}
+		dialer.NetDialContext = netDialer.DialContext
 	}
 
 	conn, _, err := dialer.Dial(s.url, s.headers)

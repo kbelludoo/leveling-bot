@@ -1,16 +1,60 @@
 [
   {
     "id": "acc-1",
-    "name": "Conta Principal",
+    "name": "Conta Principal (IP Local Padrão)",
     "enabled": true,
+    "proxy": "",
+    "localIp": "",
     "credentials": {
+      "username": "seu_usuario",
       "email": "seu_email@exemplo.com",
       "password": "sua_senha",
-      "sessionCookie": "session_token_aqui_se_necessario",
       "token": ""
     },
     "settings": {
-      "huntTarget": "area_iniciante",
+      "huntTarget": "floresta-sombria",
+      "autoHunt": true,
+      "autoSell": true,
+      "autoHeal": true,
+      "autoDaily": true,
+      "lure": 2
+    }
+  },
+  {
+    "id": "acc-2",
+    "name": "Conta Secundária (Via Proxy Dedicado)",
+    "enabled": true,
+    "proxy": "http://usuario:senha@123.45.67.89:8080",
+    "localIp": "",
+    "credentials": {
+      "username": "seu_usuario_2",
+      "email": "seu_email_2@exemplo.com",
+      "password": "sua_senha",
+      "token": ""
+    },
+    "settings": {
+      "huntTarget": "floresta-sombria",
+      "autoHunt": true,
+      "autoSell": true,
+      "autoHeal": true,
+      "autoDaily": true,
+      "lure": 2
+    }
+  },
+  {
+    "id": "acc-3",
+    "name": "Conta 3 (Via Interface de Rede / VPN Local)",
+    "enabled": false,
+    "proxy": "",
+    "localIp": "10.8.0.2",
+    "credentials": {
+      "username": "seu_usuario_3",
+      "email": "seu_email_3@exemplo.com",
+      "password": "sua_senha",
+      "token": ""
+    },
+    "settings": {
+      "huntTarget": "floresta-sombria",
       "autoHunt": true,
       "autoSell": true,
       "autoHeal": true,
