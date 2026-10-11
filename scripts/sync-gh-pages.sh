@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
-# Script para sincronizar telemetria com GitHub Pages a cada X minutos (via cron)
+# Sincroniza a telemetria do Leveling Bot da VPS para o GitHub Pages (docs/status.json)
 set -e
 
-PORT=${1:-3001}
-DOCS_DIR="$(dirname "$0")/../docs"
-
-mkdir -p "$DOCS_DIR"
-curl -s "http://127.0.0.1:${PORT}/api/status" > "$DOCS_DIR/status.json"
-
-if [ -d ".git" ]; then
-    git add "$DOCS_DIR/status.json"
-    git commit -m "chore: sync telemetry $(date +'%Y-%m-%d %H:%M:%S')" || true
-    git push origin main || true
+STATUS=$(curl -s http://127.0.0.1:3003/api/status)
+if [ -z "$STATUS" ] || [ "$STATUS" = "null" ]; then
+  exit 0
 fi
+
+B64=$(echo "$STATUS" | base64 -w 0)
+SHA=$(gh api repos/kbelludoo/leveling-bot/contents/docs/status.json --jq .sha 2>/dev/null || true)
+
+if [ -n "$SHA" ]; then
+  gh api -X PUT repos/kbelludoo/leveling-bot/contents/docs/status.json \
+    -f message="telemetry: live bot status update" \
+    -f content="$B64" \
+    -f sha="$SHA" > /dev/null 2>&1
+else
+  gh api -X PUT repos/kbelludoo/leveling-bot/contents/docs/status.json \
+    -f message="telemetry: live bot status update" \
+    -f content="$B64" > /dev/null 2>&1
+fi
+echo "✓ Telemetria Leveling Bot sincronizada com o GitHub Pages!"

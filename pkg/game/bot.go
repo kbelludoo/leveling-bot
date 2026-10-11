@@ -287,8 +287,14 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 			switch num {
 			case 2: // Error
 				errMsg := parseStringField(bytesVal, 1)
-				b.status.Status = fmt.Sprintf("Erro: %s", errMsg)
-				b.status.Logs = append(b.status.Logs, fmt.Sprintf("Servidor erro: %s", errMsg))
+				if errMsg == "party.invite.in_party" {
+					b.addLogLocked("Membro já está na Party.")
+				} else if errMsg == "ratelimit.party" {
+					b.addLogLocked("Party rate limit.")
+				} else {
+					b.status.Status = fmt.Sprintf("Erro: %s", errMsg)
+					b.addLogLocked(fmt.Sprintf("Servidor erro: %s", errMsg))
+				}
 
 			case 4: // AuthOk
 				token := parseStringField(bytesVal, 1)
@@ -297,7 +303,7 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				b.inGame = true
 				b.status.Status = "Conectado e Autenticado"
 				b.status.Name = username
-				b.status.Logs = append(b.status.Logs, fmt.Sprintf("Login bem-sucedido! Bem-vindo, %s.", username))
+				b.addLogLocked(fmt.Sprintf("Login bem-sucedido! Bem-vindo, %s.", username))
 
 			case 8: // CharacterState
 				b.parseCharacterState(bytesVal)
@@ -394,7 +400,7 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 
 func (b *Bot) handlePartyResponse(bytesVal []byte) {
 	// PartyResponse { 1: state (PartyState) }
-	b.addLog("Atualização de Party recebida.")
+	b.addLogLocked("Atualização de Party recebida.")
 }
 
 func (b *Bot) handlePartyPush(bytesVal []byte) {
@@ -415,15 +421,15 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 
 			switch num {
 			case 1: // state (PartyState)
-				b.addLog("Party sincronizada.")
+				b.addLogLocked("Party sincronizada.")
 			case 2: // invite (PartyInvite)
 				// PartyInvite { 1: from_account, 2: from_name }
 				fromAcc := parseVarintField(sub, 1)
 				fromName := parseStringField(sub, 2)
-				b.addLog(fmt.Sprintf("Convite de Party recebido de %s (#%d)", fromName, fromAcc))
+				b.addLogLocked(fmt.Sprintf("Convite de Party recebido de %s (#%d)", fromName, fromAcc))
 				if b.config.Settings.AutoParty {
 					_ = b.sendPartyAnswer(int64(fromAcc), true)
-					b.addLog(fmt.Sprintf("Aceitou convite de Party de %s automaticamente!", fromName))
+					b.addLogLocked(fmt.Sprintf("Aceitou convite de Party de %s automaticamente!", fromName))
 				}
 			}
 		} else {
@@ -448,8 +454,8 @@ func (b *Bot) performTick() {
 
 	// Se for o Líder da Party, enviar convites periodicamente aos membros configurados
 	if b.config.Settings.PartyLeader && len(b.config.Settings.PartyMembers) > 0 {
-		// Enviar convite a cada ~15 segundos
-		if b.status.DurationSec%15 == 0 {
+		// Enviar convite no início ou a cada ~120 segundos
+		if b.status.DurationSec <= 15 || b.status.DurationSec%120 == 0 {
 			for _, member := range b.config.Settings.PartyMembers {
 				if member != "" && member != b.config.Credentials.Username {
 					_ = b.sendPartyInvite(member)
@@ -552,11 +558,15 @@ func (b *Bot) updateStatus(fn func(s *engine.AccountStatus)) {
 	b.status.UpdatedAt = time.Now().UnixMilli()
 }
 
-func (b *Bot) addLog(msg string) {
-	b.mu.Lock()
-	defer b.mu.Unlock()
+func (b *Bot) addLogLocked(msg string) {
 	b.status.Logs = append(b.status.Logs, msg)
 	if len(b.status.Logs) > 15 {
 		b.status.Logs = b.status.Logs[1:]
 	}
+}
+
+func (b *Bot) addLog(msg string) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	b.addLogLocked(msg)
 }
