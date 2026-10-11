@@ -1,0 +1,20 @@
+[Unit]
+Description=Native Go Game Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/meu-bot
+ExecStart=/home/ubuntu/meu-bot/bot-app-linux
+Restart=always
+RestartSec=5s
+LimitNOFILE=65535
+StandardOutput=journal
+StandardError=journal
+
+# Otimizacoes de Memoria Go
+Environment=GOGC=50
+
+[Install]
+WantedBy=multi-user.target

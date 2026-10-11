@@ -1,0 +1,24 @@
+# Binários gerados
+bot-app
+bot-app-linux
+bot-leveling*
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Credenciais e Dados Sensíveis (NUNCA SUBIR NO GIT)
+accounts.json
+session.json
+*.key
+*.pem
+data/
+
+# Logs e arquivos temporários
+*.log
+tmp/
+temp/
+
+# OS artifacts
+.DS_Store
+Thumbs.db

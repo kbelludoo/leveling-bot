@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Bot Hub — VPS Command Center & Game Bot Starter Kit</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.12);
+      --accent: #00f0ff;
+      --accent-glow: rgba(0, 240, 255, 0.25);
+      --green: #10b981;
+      --green-glow: rgba(16, 185, 129, 0.25);
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --purple: #8b5cf6;
+      --cyan: #06b6d4;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(139, 92, 246, 0.05) 0%, transparent 45%),
+        linear-gradient(to bottom, #07090e, #0a0e17);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.3));
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .header-title h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-title p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--green);
+      color: var(--green);
+      box-shadow: 0 0 12px var(--green-glow);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.1); opacity: 0.8; box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.9); opacity: 1; }
+    }
+
+    .btn-refresh {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-refresh:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* VPS HERO STATS */
+    .vps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .metric-card:hover {
+      border-color: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .metric-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .metric-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .metric-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .progress-bar-wrap {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* BOTS SECTION */
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .bots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .bot-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .bot-card:hover {
+      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 12px 36px -12px rgba(0, 240, 255, 0.15);
+    }
+
+    .bot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .bot-name-group h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bot-port {
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      background: rgba(0, 240, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+      display: inline-block;
+    }
+
+    .badge-status {
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .badge-online { background: rgba(16, 185, 129, 0.15); color: var(--green); border: 1px solid var(--green); }
+    .badge-idle { background: rgba(245, 158, 11, 0.15); color: var(--yellow); border: 1px solid var(--yellow); }
+    .badge-offline { background: rgba(239, 68, 68, 0.15); color: var(--red); border: 1px solid var(--red); }
+
+    /* CHARACTERS LIST */
+    .acc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .acc-item {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    .acc-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .acc-name { color: #fff; display: flex; align-items: center; gap: 6px; }
+    .acc-level { color: var(--yellow); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .bar-slim {
+      height: 5px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .fill-hp { background: linear-gradient(90deg, #ef4444, #f87171); }
+    .fill-mana { background: linear-gradient(90deg, #06b6d4, #38bdf8); }
+    .fill-xp { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+    .bot-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 8px;
+    }
+
+    .btn-link {
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      color: var(--accent);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-link:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    /* TEMPLATE DOCS / STARTER KIT SECTION */
+    .starter-kit {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .starter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .starter-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .starter-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .starter-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .code-box {
+      background: #05070a;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #a5b4fc;
+      overflow-x: auto;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-badge">⚡</div>
+        <div class="header-title">
+          <h1>VPS BOT COMMAND CENTER</h1>
+          <p>
+            <span>Oracle Cloud (sa-saopaulo-1)</span>
+            <span>•</span>
+            <span id="vpsIp">SEU_IP_DA_VPS</span>
+          </p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="live-badge">
+          <span class="pulse-dot"></span>
+          <span id="liveStatusText">TELEMETRIA ATIVA</span>
+        </div>
+        <button class="btn-refresh" onclick="fetchStatus()">
+          <span>🔄</span> Atualizar
+        </button>
+      </div>
+    </header>
+
+    <!-- VPS HERO METRICS -->
+    <section class="vps-grid">
+      <div class="metric-card">
+        <div class="metric-label">
+          <span>Uptime da VPS</span>
+          <span>⏱️</span>
+        </div>
+        <div class="metric-value" id="uptimeVal">—</div>
+        <div class="metric-sub" id="uptimeSub">Sem interrupções</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">
+          <span>Memória RAM (VPS)</span>
+          <span>🧠</span>
+        </div>
+        <div class="metric-value" id="ramVal">—</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-fill" id="ramProgress" style="width: 0%; background: var(--cyan);"></div>
+        </div>
+        <div class="metric-sub" id="ramSub">Disponível: —</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">
+          <span>Carga de CPU (Load)</span>
+          <span>⚡</span>
+        </div>
+        <div class="metric-value" id="loadVal">—</div>
+        <div class="metric-sub">Médias 1m, 5m, 15m</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">
+          <span>Bots Ativos na VPS</span>
+          <span>🤖</span>
+        </div>
+        <div class="metric-value" id="botsCountVal" style="color: var(--green);">3 / 3</div>
+        <div class="metric-sub" id="lastUpdatedSub">Atualizado agora</div>
+      </div>
+    </section>
+
+    <!-- ACTIVE BOTS SECTION -->
+    <div class="section-title">
+      <span>🎮</span> Bots em Execução 24/7 na VPS
+    </div>
+
+    <div class="bots-grid" id="botsGrid">
+      <!-- Huntera Card -->
+      <div class="bot-card" id="cardHuntera">
+        <div>
+          <div class="bot-header">
+            <div class="bot-name-group">
+              <h3>⚔️ Huntera Idle</h3>
+              <span class="bot-port">PORTA 3000 • GO NATIVE</span>
+            </div>
+            <span class="badge-status badge-online" id="hunteraBadge">4 CONTAS ONLINE</span>
+          </div>
+
+          <div class="acc-list" id="hunteraAccList">
+            <div style="color: var(--text-muted); font-size: 0.8rem;">Carregando contas...</div>
+          </div>
+        </div>
+
+        <div class="bot-footer">
+          <span style="font-size: 0.72rem; color: var(--text-dim);" id="hunteraSummary">💰 Farm contínuo</span>
+          <a href="https://kbelludoo.github.io/huntera-bot/" target="_blank" class="btn-link">
+            Abrir Dashboard Huntera ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Tibidle Card -->
+      <div class="bot-card" id="cardTibidle">
+        <div>
+          <div class="bot-header">
+            <div class="bot-name-group">
+              <h3>🛡️ Tibidle Multi-Bot</h3>
+              <span class="bot-port">PORTA 3001 • GO NATIVE</span>
+            </div>
+            <span class="badge-status badge-online" id="tibidleBadge">ONLINE</span>
+          </div>
+
+          <div class="acc-list" id="tibidleAccList">
+            <div style="color: var(--text-muted); font-size: 0.8rem;">Carregando contas...</div>
+          </div>
+        </div>
+
+        <div class="bot-footer">
+          <span style="font-size: 0.72rem; color: var(--text-dim);" id="tibidleSummary">Consumo: ~1 MB RAM</span>
+          <a href="https://kbelludoo.github.io/tibidle-bot/" target="_blank" class="btn-link">
+            Abrir Dashboard Tibidle ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Sigma Card -->
+      <div class="bot-card" id="cardSigma">
+        <div>
+          <div class="bot-header">
+            <div class="bot-name-group">
+              <h3>⚡ Pokemon Sigma</h3>
+              <span class="bot-port">PORTA 3002 • GO NATIVE</span>
+            </div>
+            <span class="badge-status badge-online" id="sigmaBadge">2 CONTAS ONLINE</span>
+          </div>
+
+          <div class="acc-list" id="sigmaAccList">
+            <div style="color: var(--text-muted); font-size: 0.8rem;">Carregando contas...</div>
+          </div>
+        </div>
+
+        <div class="bot-footer">
+          <span style="font-size: 0.72rem; color: var(--text-dim);" id="sigmaSummary">Multi-IP Isolado</span>
+          <a href="https://kbelludoo.github.io/sigma-bot/" target="_blank" class="btn-link">
+            Abrir Dashboard Sigma ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Leveling Idle 2D Card -->
+      <div class="bot-card" id="cardLeveling">
+        <div>
+          <div class="bot-header">
+            <div class="bot-name-group">
+              <h3>🏹 Leveling Idle 2D</h3>
+              <span class="bot-port">PORTA 3003 • PROTOBUF GO</span>
+            </div>
+            <span class="badge-status badge-online" id="levelingBadge">ONLINE</span>
+          </div>
+
+          <div class="acc-list" id="levelingAccList">
+            <div style="color: var(--text-muted); font-size: 0.8rem;">Carregando contas...</div>
+          </div>
+        </div>
+
+        <div class="bot-footer">
+          <span style="font-size: 0.72rem; color: var(--text-dim);" id="levelingSummary">🏹 Rank S+ Arqueiro</span>
+          <a href="https://levelingidle2d.com.br/" target="_blank" class="btn-link">
+            Abrir Jogo ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STARTER KIT DOCUMENTATION SECTION -->
+    <section class="starter-kit">
+      <div class="section-title" style="margin-bottom: 8px;">
+        <span>📦</span> Game Bot Starter Kit (Go Native Engine)
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.85rem;">
+        Template arquitetural padronizado para criar novos bots ultraleves (2-5 MB de RAM) para qualquer jogo idle / browser e rodar 24/7 na VPS.
+      </p>
+
+      <div class="starter-grid">
+        <div class="starter-card">
+          <h4>🚀 1. Criar para Novo Jogo</h4>
+          <p>Duplique a pasta deste template e peça à IA para ler <code>AI_INSTRUCTIONS.md</code>:</p>
+          <div class="code-box">cp -r bot-template-go meu-novo-bot</div>
+        </div>
+
+        <div class="starter-card">
+          <h4>🔨 2. Compilar para VPS Linux</h4>
+          <p>Gere o binário estático para Linux com 1 clique usando o script batch:</p>
+          <div class="code-box">scripts\build-linux.bat</div>
+        </div>
+
+        <div class="starter-card">
+          <h4>🛡️ 3. Deploy na VPS Ubuntu</h4>
+          <p>Envie via SCP e configure como serviço permanente do systemd:</p>
+          <div class="code-box">scp bot-app-linux ubuntu@SEU_IP_DA_VPS:~/</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        ⚡ <strong>Bot Hub</strong> • Gerenciado por <a href="https://github.com/kbelludoo" target="_blank">kbelludoo</a> • VPS Oracle Cloud Infrastructure
+      </p>
+      <p style="margin-top: 6px; color: var(--text-dim);">
+        Template open-source sob licença MIT • <a href="https://github.com/kbelludoo/bot-template-go" target="_blank">Repositório GitHub</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    let lastTimestamp = 0;
+
+    function formatTimeAgo(isoString) {
+      if (!isoString) return 'Desconhecido';
+      const sec = Math.floor((Date.now() - new Date(isoString).getTime()) / 1000);
+      if (sec < 5) return 'Atualizado agora mesmo';
+      if (sec < 60) return `Atualizado há ${sec}s`;
+      const min = Math.floor(sec / 60);
+      return `Atualizado há ${min}m`;
+    }
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch('./status.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        renderDashboard(data);
+      } catch (err) {
+        console.warn('Erro ao carregar status.json:', err);
+        document.getElementById('liveStatusText').textContent = 'OFFLINE / RECONECTANDO';
+      }
+    }
+
+    function renderDashboard(data) {
+      if (!data) return;
+
+      // 1. VPS Hero
+      const vps = data.vps || {};
+      document.getElementById('uptimeVal').textContent = (vps.uptime || '—').replace('up ', '');
+      document.getElementById('loadVal').textContent = vps.load || '—';
+      
+      if (vps.ramTotalMb) {
+        document.getElementById('ramVal').textContent = `${vps.ramUsedMb} / ${vps.ramTotalMb} MB`;
+        document.getElementById('ramProgress').style.width = `${vps.ramPercent}%`;
+        document.getElementById('ramSub').textContent = `Livre: ${vps.ramAvailableMb} MB (${100 - vps.ramPercent}%)`;
+      }
+
+      document.getElementById('lastUpdatedSub').textContent = formatTimeAgo(data.timestamp);
+
+      const bots = data.bots || {};
+
+      // 2. Huntera
+      const huntera = bots.huntera || {};
+      const hStatus = huntera.status || {};
+      const hAccounts = hStatus.accounts || [];
+      const cardHuntera = document.getElementById('cardHuntera');
+      const hunteraAccList = document.getElementById('hunteraAccList');
+      
+      if (hAccounts.length > 0) {
+        let totalGold = 0;
+        hunteraAccList.innerHTML = hAccounts.map(acc => {
+          totalGold += (acc.gold || 0);
+          const hpPct = acc.maxHp ? Math.round((acc.hp / acc.maxHp) * 100) : 100;
+          const manaPct = acc.maxMana ? Math.round((acc.mana / acc.maxMana) * 100) : 100;
+          return `
+            <div class="acc-item">
+              <div class="acc-item-header">
+                <span class="acc-name">👤 ${acc.charName || acc.id}</span>
+                <span class="acc-level">Nível ${acc.level || 1}</span>
+              </div>
+              <div class="stat-row">
+                <span>HP (${hpPct}%)</span>
+                <span>${acc.hp || 0} / ${acc.maxHp || 0}</span>
+              </div>
+              <div class="bar-slim"><div class="progress-fill fill-hp" style="width: ${hpPct}%"></div></div>
+              <div class="stat-row">
+                <span>Mana (${manaPct}%)</span>
+                <span>${acc.mana || 0} / ${acc.maxMana || 0}</span>
+              </div>
+              <div class="bar-slim"><div class="progress-fill fill-mana" style="width: ${manaPct}%"></div></div>
+              <div class="stat-row" style="margin-top: 4px;">
+                <span>💰 ${(acc.gold || 0).toLocaleString('pt-BR')} gp</span>
+                <span>🎯 Bestiário: ${acc.bestiary?.currentMonster || 'N/A'}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+        document.getElementById('hunteraSummary').textContent = `💰 ${totalGold.toLocaleString('pt-BR')} gp somados`;
+        document.getElementById('hunteraBadge').textContent = `${hAccounts.length} CONTAS EM JOGO`;
+      } else {
+        hunteraAccList.innerHTML = `<div style="color: var(--yellow); font-size: 0.8rem;">Bot pausado ou sem contas conectadas.</div>`;
+      }
+
+      // 3. Tibidle
+      const tibidle = bots.tibidle || {};
+      const tStatus = tibidle.status || {};
+      const tAccounts = tStatus.accounts || [];
+      const tibidleAccList = document.getElementById('tibidleAccList');
+      
+      if (tAccounts.length > 0) {
+        tibidleAccList.innerHTML = tAccounts.map(acc => `
+          <div class="acc-item">
+            <div class="acc-item-header">
+              <span class="acc-name">👤 ${acc.name || acc.id}</span>
+              <span class="acc-level" style="color: var(--cyan);">${acc.status || 'Conectado'}</span>
+            </div>
+            <div class="stat-row" style="margin-top: 6px;">
+              <span>Vocao: ${acc.vocation || 'Guerreiro'}</span>
+              <span>Uptime: ${tStatus.uptime || '41h'}</span>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('tibidleSummary').textContent = `RAM: ${Math.round(tStatus.ramAllocMB || 1)} MB • 8 Goroutines`;
+      } else {
+        tibidleAccList.innerHTML = `<div style="color: var(--yellow); font-size: 0.8rem;">Aguardando dados...</div>`;
+      }
+
+      // 4. Sigma
+      const sigma = bots.sigma || {};
+      const sStatus = sigma.status || {};
+      const sAccounts = sStatus.accounts || [];
+      const sigmaAccList = document.getElementById('sigmaAccList');
+
+      if (sAccounts.length > 0) {
+        sigmaAccList.innerHTML = sAccounts.map(acc => {
+          return `
+            <div class="acc-item">
+              <div class="acc-item-header">
+                <span class="acc-name">⚡ ${acc.trainerName || acc.alias}</span>
+                <span class="acc-level">Lv ${acc.level || 1} • ${acc.leaderName || 'Pokemon'}</span>
+              </div>
+              <div class="stat-row">
+                <span>XP Treinador</span>
+                <span>${(acc.xp || 0).toLocaleString('pt-BR')} XP</span>
+              </div>
+              <div class="bar-slim"><div class="progress-fill fill-xp" style="width: 80%"></div></div>
+              <div class="stat-row" style="margin-top: 4px;">
+                <span>🎯 Mapa: ${acc.mapName || 'Staryu'}</span>
+                <span>⚔️ Kills: ${acc.kills || 0}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+        document.getElementById('sigmaSummary').textContent = `Multi-IP: 2 Contas Ativas`;
+        document.getElementById('sigmaBadge').textContent = `${sAccounts.length} CONTAS EM JOGO`;
+      } else {
+        sigmaAccList.innerHTML = `<div style="color: var(--yellow); font-size: 0.8rem;">Sem dados.</div>`;
+      }
+
+      // 5. Leveling Idle 2D
+      const leveling = bots.leveling || {};
+      const lStatus = leveling.status || {};
+      const lAccounts = lStatus.accounts || [];
+      const levelingAccList = document.getElementById('levelingAccList');
+
+      if (lAccounts.length > 0) {
+        levelingAccList.innerHTML = lAccounts.map(acc => {
+          const hpPct = acc.maxHp ? Math.round((acc.hp / acc.maxHp) * 100) : 100;
+          const manaPct = acc.maxMana ? Math.round((acc.mana / acc.maxMana) * 100) : 100;
+          return `
+            <div class="acc-item">
+              <div class="acc-item-header">
+                <span class="acc-name">🏹 ${acc.name || acc.id}</span>
+                <span class="acc-level">Nv. ${acc.level || 1} • ${acc.vocation || 'Arqueiro'}</span>
+              </div>
+              <div class="stat-row">
+                <span>HP (${hpPct}%)</span>
+                <span>${acc.hp || 0} / ${acc.maxHp || 0}</span>
+              </div>
+              <div class="bar-slim"><div class="progress-fill fill-hp" style="width: ${hpPct}%"></div></div>
+              <div class="stat-row">
+                <span>Mana (${manaPct}%)</span>
+                <span>${acc.mana || 0} / ${acc.maxMana || 0}</span>
+              </div>
+              <div class="bar-slim"><div class="progress-fill fill-mana" style="width: ${manaPct}%"></div></div>
+              <div class="stat-row" style="margin-top: 4px;">
+                <span>💰 ${(acc.gold || 0).toLocaleString('pt-BR')} gp</span>
+                <span>⚔️ Kills: ${acc.kills || 0}</span>
+              </div>
+              <div class="stat-row">
+                <span>🗺️ Área: ${acc.currentArea || 'floresta-sombria'}</span>
+                <span>⚡ EXP/h: ${acc.expPerHour || 0}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+        document.getElementById('levelingSummary').textContent = `🏹 Arqueiro Rank S+ • RAM: ${lStatus.ramMB || 2.1} MB`;
+        document.getElementById('levelingBadge').textContent = `${lAccounts.length} CONTA ONLINE`;
+      } else {
+        levelingAccList.innerHTML = `<div style="color: var(--yellow); font-size: 0.8rem;">Aguardando dados...</div>`;
+      }
+    }
+
+    // Inicialização e auto polling
+    fetchStatus();
+    setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        fetchStatus();
+      }
+    }, 20000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') fetchStatus();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "acc-1",
+    "name": "Conta Principal",
+    "enabled": true,
+    "credentials": {
+      "email": "seu_email@exemplo.com",
+      "password": "sua_senha",
+      "sessionCookie": "session_token_aqui_se_necessario",
+      "token": ""
+    },
+    "settings": {
+      "huntTarget": "area_iniciante",
+      "autoHunt": true,
+      "autoSell": true,
+      "autoHeal": true,
+      "autoDaily": true,
+      "lure": 2
+    }
+  }
+]
