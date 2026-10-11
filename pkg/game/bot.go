@@ -201,6 +201,62 @@ func (b *Bot) sendPingPacket() error {
 	return b.socket.SendBinary(clientMsg)
 }
 
+// sendPartyInvite envia convite de party para um jogador pelo nome
+func (b *Bot) sendPartyInvite(targetName string) error {
+	reqID := b.nextReqID()
+
+	// PartyInviteByName { 1: name }
+	var inviteByName []byte
+	inviteByName = protowire.AppendTag(inviteByName, 1, protowire.BytesType)
+	inviteByName = protowire.AppendString(inviteByName, targetName)
+
+	// PartyRequest { 2: invite (PartyInviteByName) }
+	var partyReq []byte
+	partyReq = protowire.AppendTag(partyReq, 2, protowire.BytesType)
+	partyReq = protowire.AppendBytes(partyReq, inviteByName)
+
+	// ClientMessage { 1: req_id, 290: party_request }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 290, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, partyReq)
+
+	log.Printf("[%s] Enviando convite de Party para: %s", b.ID(), targetName)
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendPartyAnswer responde a um convite de party recebido
+func (b *Bot) sendPartyAnswer(fromAccount int64, accept bool) error {
+	reqID := b.nextReqID()
+
+	// PartyAnswer { 1: from_account, 2: accept }
+	var partyAnswer []byte
+	partyAnswer = protowire.AppendTag(partyAnswer, 1, protowire.VarintType)
+	partyAnswer = protowire.AppendVarint(partyAnswer, uint64(fromAccount))
+	partyAnswer = protowire.AppendTag(partyAnswer, 2, protowire.VarintType)
+	if accept {
+		partyAnswer = protowire.AppendVarint(partyAnswer, 1)
+	} else {
+		partyAnswer = protowire.AppendVarint(partyAnswer, 0)
+	}
+
+	// PartyRequest { 3: answer (PartyAnswer) }
+	var partyReq []byte
+	partyReq = protowire.AppendTag(partyReq, 3, protowire.BytesType)
+	partyReq = protowire.AppendBytes(partyReq, partyAnswer)
+
+	// ClientMessage { 1: req_id, 290: party_request }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 290, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, partyReq)
+
+	log.Printf("[%s] Respondendo convite de Party de %d (Aceitar=%v)", b.ID(), fromAccount, accept)
+	return b.socket.SendBinary(clientMsg)
+}
+
 func (b *Bot) handleInboundPacket(bData []byte) {
 	b.mu.Lock()
 	defer b.mu.Unlock()
@@ -253,6 +309,12 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				b.status.Kills++
 				b.status.Gold += 25
 				b.status.UpdatedAt = time.Now().UnixMilli()
+
+			case 290: // PartyResponse
+				b.handlePartyResponse(bytesVal)
+
+			case 291: // PartyPush
+				b.handlePartyPush(bytesVal)
 			}
 		default:
 			return
@@ -330,6 +392,47 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 	b.status.UpdatedAt = time.Now().UnixMilli()
 }
 
+func (b *Bot) handlePartyResponse(bytesVal []byte) {
+	// PartyResponse { 1: state (PartyState) }
+	b.addLog("Atualização de Party recebida.")
+}
+
+func (b *Bot) handlePartyPush(bytesVal []byte) {
+	data := bytesVal
+	for len(data) > 0 {
+		num, wtype, n := protowire.ConsumeTag(data)
+		if n < 0 {
+			break
+		}
+		data = data[n:]
+
+		if wtype == protowire.BytesType {
+			sub, n := protowire.ConsumeBytes(data)
+			if n < 0 {
+				return
+			}
+			data = data[n:]
+
+			switch num {
+			case 1: // state (PartyState)
+				b.addLog("Party sincronizada.")
+			case 2: // invite (PartyInvite)
+				// PartyInvite { 1: from_account, 2: from_name }
+				fromAcc := parseVarintField(sub, 1)
+				fromName := parseStringField(sub, 2)
+				b.addLog(fmt.Sprintf("Convite de Party recebido de %s (#%d)", fromName, fromAcc))
+				if b.config.Settings.AutoParty {
+					_ = b.sendPartyAnswer(int64(fromAcc), true)
+					b.addLog(fmt.Sprintf("Aceitou convite de Party de %s automaticamente!", fromName))
+				}
+			}
+		} else {
+			_, n := protowire.ConsumeVarint(data)
+			data = data[n:]
+		}
+	}
+}
+
 func (b *Bot) performTick() {
 	b.mu.Lock()
 	defer b.mu.Unlock()
@@ -341,6 +444,18 @@ func (b *Bot) performTick() {
 	b.status.DurationSec += 3
 	if b.status.Status == "" {
 		b.status.Status = "hunting"
+	}
+
+	// Se for o Líder da Party, enviar convites periodicamente aos membros configurados
+	if b.config.Settings.PartyLeader && len(b.config.Settings.PartyMembers) > 0 {
+		// Enviar convite a cada ~15 segundos
+		if b.status.DurationSec%15 == 0 {
+			for _, member := range b.config.Settings.PartyMembers {
+				if member != "" && member != b.config.Credentials.Username {
+					_ = b.sendPartyInvite(member)
+				}
+			}
+		}
 	}
 }
 

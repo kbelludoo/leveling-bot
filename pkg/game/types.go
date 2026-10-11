@@ -21,12 +21,15 @@ type GameCredentials struct {
 }
 
 type GameSettings struct {
-	HuntTarget string `json:"huntTarget"`
-	AutoHunt   bool   `json:"autoHunt"`
-	AutoSell   bool   `json:"autoSell"`
-	AutoHeal   bool   `json:"autoHeal"`
-	AutoDaily  bool   `json:"autoDaily"`
-	Lure       int    `json:"lure"`
+	HuntTarget   string   `json:"huntTarget"`
+	AutoHunt     bool     `json:"autoHunt"`
+	AutoSell     bool     `json:"autoSell"`
+	AutoHeal     bool     `json:"autoHeal"`
+	AutoDaily    bool     `json:"autoDaily"`
+	Lure         int      `json:"lure"`
+	PartyLeader  bool     `json:"partyLeader,omitempty"`  // Se true, este bot cria a party e convida os membros
+	PartyMembers []string `json:"partyMembers,omitempty"` // Lista de usuários para convidar (usado pelo líder)
+	AutoParty    bool     `json:"autoParty,omitempty"`    // Se true, aceita convites de party automaticamente
 }
 
 // Mensagens básicas de controle de caçada e status
