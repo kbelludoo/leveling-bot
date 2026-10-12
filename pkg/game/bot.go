@@ -392,7 +392,56 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 }
 
 func (b *Bot) parseCharacterPatch(bytesVal []byte) {
-	// Atualizações de progresso em tempo real
+	data := bytesVal
+	for len(data) > 0 {
+		num, wtype, n := protowire.ConsumeTag(data)
+		if n < 0 {
+			break
+		}
+		data = data[n:]
+
+		if wtype == protowire.BytesType {
+			sub, n := protowire.ConsumeBytes(data)
+			if n < 0 {
+				break
+			}
+			data = data[n:]
+
+			switch num {
+			case 3: // Progress
+				val := int64(parseVarintField(sub, 1))
+				exp := int64(parseVarintField(sub, 2))
+				if val > 0 && val < 200 {
+					b.status.Level = int(val)
+					b.status.HP = 200 + (b.status.Level * 25)
+					b.status.MaxHP = b.status.HP
+					b.status.Mana = 100 + (b.status.Level * 15)
+					b.status.MaxMana = b.status.Mana
+				}
+				if exp > 0 {
+					b.status.ExpPerHour = float64(exp)
+				}
+			case 4: // Wallet
+				gold := int64(parseVarintField(sub, 1))
+				if gold > 0 {
+					b.status.Gold = gold
+				}
+			case 14: // Hunt
+				area := parseStringField(sub, 1)
+				if area != "" {
+					b.status.CurrentArea = area
+					b.status.Status = "hunting"
+				}
+			}
+		} else {
+			_, n := protowire.ConsumeVarint(data)
+			if n < 0 {
+				break
+			}
+			data = data[n:]
+		}
+	}
+
 	b.status.Kills++
 	b.status.DurationSec += 3
 	b.status.UpdatedAt = time.Now().UnixMilli()
