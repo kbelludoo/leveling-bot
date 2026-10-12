@@ -426,12 +426,6 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 				if gold > 0 {
 					b.status.Gold = gold
 				}
-			case 14: // Hunt
-				area := parseStringField(sub, 1)
-				if area != "" {
-					b.status.CurrentArea = area
-					b.status.Status = "hunting"
-				}
 			}
 		} else {
 			_, n := protowire.ConsumeVarint(data)

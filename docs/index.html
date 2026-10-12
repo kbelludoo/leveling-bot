@@ -732,6 +732,11 @@
         const logs = acc.logs || ['Conexão ativa'];
         const logsHtml = logs.slice(-5).map(l => `<div class="terminal-line">${l}</div>`).join('');
 
+        let areaDisplay = acc.currentArea || 'floresta-sombria';
+        if (typeof areaDisplay === 'string' && (areaDisplay.length > 25 || areaDisplay.includes('rato'))) {
+          areaDisplay = 'Floresta Sombria';
+        }
+
         return `
           <div class="acc-card">
             <div>
@@ -784,7 +789,7 @@
                 </div>
                 <div class="acc-stat-item">
                   <span class="acc-stat-label">🗺️ Área</span>
-                  <span class="acc-stat-val">${acc.currentArea || 'floresta-sombria'}</span>
+                  <span class="acc-stat-val">${areaDisplay}</span>
                 </div>
               </div>
             </div>
