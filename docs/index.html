@@ -536,7 +536,7 @@
           <span class="hero-icon">👑</span>
         </div>
         <div class="hero-val val-gold" id="valPartySlots">4 / 4</div>
-        <div class="hero-sub" id="subPartyLeader">Líder: kbelludoo (Arqueiro)</div>
+        <div class="hero-sub" id="subPartyLeader">Líder: Party #1 (Arqueiro)</div>
       </div>
 
       <div class="hero-card">
@@ -591,7 +591,7 @@
           <div class="slot-icon">🏹</div>
           <div class="slot-info">
             <div class="slot-name">
-              <span>kbelludoo</span>
+              <span>Party #1</span>
               <span class="slot-badge badge-leader">👑 LÍDER</span>
             </div>
             <div class="slot-role">Arqueiro • DPS Físico Rápido</div>
@@ -602,7 +602,7 @@
           <div class="slot-icon">🌿</div>
           <div class="slot-info">
             <div class="slot-name">
-              <span>kbelludoo2</span>
+              <span>Party #2</span>
               <span class="slot-badge badge-healer">HEALER</span>
             </div>
             <div class="slot-role">Healer • Suporte & Regeneração</div>
@@ -613,7 +613,7 @@
           <div class="slot-icon">🛡️</div>
           <div class="slot-info">
             <div class="slot-name">
-              <span>lrn</span>
+              <span>Party #3</span>
               <span class="slot-badge badge-tank">TANK</span>
             </div>
             <div class="slot-role">Guerreiro • Linha de Frente</div>
@@ -624,10 +624,10 @@
           <div class="slot-icon">🔮</div>
           <div class="slot-info">
             <div class="slot-name">
-              <span>kbelludoo3</span>
+              <span>Party #4</span>
               <span class="slot-badge badge-dps">MAGE</span>
             </div>
-            <div class="slot-role">Dano Mágico • DPS Elemental</div>
+            <div class="slot-role">Mago • DPS Elemental</div>
           </div>
         </div>
       </div>
@@ -678,11 +678,13 @@
     };
 
     const roleBadges = {
-      'kbelludoo': '<span class="slot-badge badge-leader">👑 LÍDER</span>',
-      'kbelludoo2': '<span class="slot-badge badge-healer">HEALER</span>',
-      'lrn': '<span class="slot-badge badge-tank">TANK</span>',
-      'kbelludoo3': '<span class="slot-badge badge-dps">MAGE</span>'
+      'arqueiro': '<span class="slot-badge badge-leader">👑 LÍDER</span>',
+      'healer': '<span class="slot-badge badge-healer">HEALER</span>',
+      'guerreiro': '<span class="slot-badge badge-tank">TANK</span>',
+      'mago': '<span class="slot-badge badge-dps">MAGE</span>'
     };
+
+    const partyByVoc = { arqueiro: 1, healer: 2, guerreiro: 3, mago: 4 };
 
     async function fetchStatus() {
       try {
@@ -712,14 +714,16 @@
       let totalGold = 0;
       let totalKills = 0;
 
-      grid.innerHTML = accounts.map(acc => {
+      grid.innerHTML = accounts.map((acc, idx) => {
         totalExp += (acc.expPerHour || 0);
         totalGold += (acc.gold || 0);
         totalKills += (acc.kills || 0);
 
         const voc = (acc.vocation || 'arqueiro').toLowerCase();
         const icon = vocationIcons[voc] || vocationIcons.default;
-        const roleBadge = roleBadges[acc.name] || '';
+        const roleBadge = roleBadges[voc] || '';
+        const partyNo = partyByVoc[voc] || (idx + 1);
+        const partyLabel = 'Party #' + partyNo;
 
         const maxHp = acc.maxHp || 200;
         const hp = Math.min(acc.hp || maxHp, maxHp);
@@ -744,7 +748,7 @@
                 <div class="acc-title-group">
                   <h3>
                     <span>${icon}</span>
-                    <span>${acc.name || acc.id}</span>
+                    <span>${partyLabel}</span>
                     ${roleBadge}
                   </h3>
                   <div class="acc-vocation-tag">Nv. ${acc.level || 1} • ${acc.vocation ? acc.vocation.toUpperCase() : 'CAÇADOR'}</div>
