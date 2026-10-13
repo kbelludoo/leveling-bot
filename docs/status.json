@@ -2,23 +2,23 @@
   "accounts": [
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36201,
+      "durationSec": 36330,
       "expPerHour": 34385,
-      "gold": 1387108,
+      "gold": 1387283,
       "hp": 750,
       "id": "acc-1",
-      "kills": 13812,
+      "kills": 13819,
       "level": 22,
       "logs": [
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #1.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -31,17 +31,17 @@
       "maxMana": 430,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1791896286889,
+      "updatedAt": 1791896415579,
       "vocation": "arqueiro"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36537,
+      "durationSec": 36666,
       "expPerHour": 39071,
-      "gold": 1365466,
+      "gold": 1365641,
       "hp": 775,
       "id": "acc-2",
-      "kills": 24542,
+      "kills": 24549,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -65,17 +65,17 @@
       "maxMana": 445,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1791896286882,
+      "updatedAt": 1791896415586,
       "vocation": "healer"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 37863,
+      "durationSec": 37992,
       "expPerHour": 0,
-      "gold": 1152807,
+      "gold": 1152982,
       "hp": 825,
       "id": "acc-3",
-      "kills": 26110,
+      "kills": 26117,
       "level": 25,
       "logs": [
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -99,17 +99,17 @@
       "maxMana": 475,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1791896286882,
+      "updatedAt": 1791896415584,
       "vocation": "guerreiro"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36642,
+      "durationSec": 36771,
       "expPerHour": 12061,
-      "gold": 1266440,
+      "gold": 1266615,
       "hp": 775,
       "id": "acc-4",
-      "kills": 25419,
+      "kills": 25426,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -133,12 +133,12 @@
       "maxMana": 445,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1791896286882,
+      "updatedAt": 1791896415586,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.244903564453125,
+  "ramAllocMB": 2.94586181640625,
   "ramSysMB": 13.099861145019531,
-  "uptime": "9h47m36s"
+  "uptime": "9h49m44s"
 }
