@@ -9,12 +9,12 @@
       "maxHp": 750,
       "mana": 430,
       "maxMana": 430,
-      "gold": 1390433,
-      "kills": 13764,
+      "gold": 1386933,
+      "kills": 13768,
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 34530,
+      "durationSec": 34647,
       "logs": [
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -25,14 +25,14 @@
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Login bem-sucedido! Bem-vindo, Party #1.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada."
       ],
-      "updatedAt": 1791894607927
+      "updatedAt": 1791894724979
     },
     {
       "id": "acc-2",
@@ -43,16 +43,16 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1364266,
-      "kills": 24494,
+      "gold": 1364366,
+      "kills": 24498,
       "expPerHour": 39071,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 34857,
+      "durationSec": 34977,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #2.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791894607928
+      "updatedAt": 1791894724480
     },
     {
       "id": "acc-3",
@@ -77,16 +77,13 @@
       "maxHp": 825,
       "mana": 475,
       "maxMana": 475,
-      "gold": 1151607,
-      "kills": 26062,
+      "gold": 1151707,
+      "kills": 26066,
       "expPerHour": 0,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36183,
+      "durationSec": 36303,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -96,11 +93,14 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791894607927
+      "updatedAt": 1791894726324
     },
     {
       "id": "acc-4",
@@ -111,14 +111,14 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1265240,
-      "kills": 25371,
+      "gold": 1265340,
+      "kills": 25375,
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 34962,
+      "durationSec": 35082,
       "logs": [
-        "Login bem-sucedido! Bem-vindo, Party #4.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791894607927
+      "updatedAt": 1791894724480
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.5341567993164062,
+  "ramAllocMB": 1.6771316528320312,
   "ramSysMB": 13.099861145019531,
-  "uptime": "9h19m37s"
+  "uptime": "9h21m37s"
 }
