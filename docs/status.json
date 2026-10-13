@@ -14,14 +14,14 @@
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 27693,
+      "durationSec": 27813,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #1.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -32,7 +32,7 @@
         "Membro já está na Party.",
         "Membro já está na Party."
       ],
-      "updatedAt": 1791887767329
+      "updatedAt": 1791887887097
     },
     {
       "id": "acc-2",
@@ -48,7 +48,7 @@
       "expPerHour": 39071,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 28023,
+      "durationSec": 28143,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791887767328
+      "updatedAt": 1791887884179
     },
     {
       "id": "acc-3",
@@ -82,7 +82,7 @@
       "expPerHour": 0,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 29352,
+      "durationSec": 29472,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,7 +100,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791887767328
+      "updatedAt": 1791887884179
     },
     {
       "id": "acc-4",
@@ -116,7 +116,7 @@
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 28125,
+      "durationSec": 28245,
       "logs": [
         "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791887767328
+      "updatedAt": 1791887884179
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.7895736694335938,
+  "ramAllocMB": 1.6385498046875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "7h25m36s"
+  "uptime": "7h27m36s"
 }
