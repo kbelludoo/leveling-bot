@@ -14,14 +14,14 @@
       "expPerHour": 38036,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4221,
+      "durationSec": 4302,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,7 +32,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864279979
+      "updatedAt": 1791864362279
     },
     {
       "id": "acc-2",
@@ -48,7 +48,7 @@
       "expPerHour": 7027,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4554,
+      "durationSec": 4638,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864278219
+      "updatedAt": 1791864361679
     },
     {
       "id": "acc-3",
@@ -77,12 +77,12 @@
       "maxHp": 675,
       "mana": 385,
       "maxMana": 385,
-      "gold": 57040,
-      "kills": 23589,
+      "gold": 64540,
+      "kills": 23903,
       "expPerHour": 27793,
       "status": "hunting",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 5598,
+      "durationSec": 5724,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,7 +100,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864280082
+      "updatedAt": 1791864362279
     },
     {
       "id": "acc-4",
@@ -116,7 +116,7 @@
       "expPerHour": 18791,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4656,
+      "durationSec": 4740,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864279979
+      "updatedAt": 1791864362279
     }
   ],
-  "goroutines": 15,
-  "ramAllocMB": 1.51605224609375,
+  "goroutines": 14,
+  "ramAllocMB": 1.1336517333984375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "54m9s"
+  "uptime": "55m31s"
 }
