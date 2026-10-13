@@ -9,12 +9,12 @@
       "maxHp": 750,
       "mana": 430,
       "maxMana": 430,
-      "gold": 1386933,
-      "kills": 13521,
+      "gold": 1386958,
+      "kills": 13522,
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 13305,
+      "durationSec": 13425,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -22,9 +22,9 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -32,7 +32,7 @@
         "Membro já está na Party.",
         "Membro já está na Party."
       ],
-      "updatedAt": 1791873365079
+      "updatedAt": 1791873485595
     },
     {
       "id": "acc-2",
@@ -43,12 +43,12 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1360766,
-      "kills": 24251,
+      "gold": 1360791,
+      "kills": 24252,
       "expPerHour": 39071,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 13626,
+      "durationSec": 13746,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873365079
+      "updatedAt": 1791873485593
     },
     {
       "id": "acc-3",
@@ -77,12 +77,12 @@
       "maxHp": 825,
       "mana": 475,
       "maxMana": 475,
-      "gold": 1151682,
-      "kills": 25820,
+      "gold": 1151707,
+      "kills": 25821,
       "expPerHour": 1033,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 14958,
+      "durationSec": 15078,
       "logs": [
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -100,7 +100,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873365079
+      "updatedAt": 1791873485679
     },
     {
       "id": "acc-4",
@@ -111,12 +111,12 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1266140,
-      "kills": 25129,
+      "gold": 1266165,
+      "kills": 25130,
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 13740,
+      "durationSec": 13860,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873365079
+      "updatedAt": 1791873485594
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.06719970703125,
+  "ramAllocMB": 1.1238861083984375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h25m36s"
+  "uptime": "3h27m37s"
 }
