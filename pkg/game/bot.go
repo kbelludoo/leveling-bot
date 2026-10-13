@@ -31,11 +31,21 @@ type Bot struct {
 	inGame       bool
 	lastActionAt time.Time
 	ticketChan   chan string
+
+	// Controle de Caçadas (Auto-Hunt)
+	currentGate       string
+	currentTier       uint32
+	currentDifficulty string
+	partyMinLevel     int
+	lastHuntCheck     time.Time
 }
 
 func NewBot(cfg AccountConfig) *Bot {
 	st := engine.NewStatus(cfg.ID, cfg.Name)
-	st.CurrentArea = cfg.Settings.HuntTarget
+	st.CurrentArea = "Blue Gate (Rato da Ruína Nv 5)"
+	if cfg.Settings.HuntTarget != "" && cfg.Settings.HuntTarget != "floresta-sombria" {
+		st.CurrentArea = cfg.Settings.HuntTarget
+	}
 
 	return &Bot{
 		config:     cfg,
@@ -257,6 +267,36 @@ func (b *Bot) sendPartyAnswer(fromAccount int64, accept bool) error {
 	return b.socket.SendBinary(clientMsg)
 }
 
+// sendStartHunt inicia ou altera a caçada para o portal/tier desejado
+func (b *Bot) sendStartHunt(gateID string, tierMin uint32, difficulty string) error {
+	reqID := b.nextReqID()
+
+	// StartHunt { 1: gate_id, 2: tier_min, 3: difficulty }
+	var huntMsg []byte
+	if gateID != "" {
+		huntMsg = protowire.AppendTag(huntMsg, 1, protowire.BytesType)
+		huntMsg = protowire.AppendString(huntMsg, gateID)
+	}
+	if tierMin > 0 {
+		huntMsg = protowire.AppendTag(huntMsg, 2, protowire.VarintType)
+		huntMsg = protowire.AppendVarint(huntMsg, uint64(tierMin))
+	}
+	if difficulty != "" {
+		huntMsg = protowire.AppendTag(huntMsg, 3, protowire.BytesType)
+		huntMsg = protowire.AppendString(huntMsg, difficulty)
+	}
+
+	// ClientMessage { 1: req_id, 30: start_hunt }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 30, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, huntMsg)
+
+	log.Printf("[%s] Enviando StartHunt (gate=%s, tier=%d, dif=%s)", b.ID(), gateID, tierMin, difficulty)
+	return b.socket.SendBinary(clientMsg)
+}
+
 func (b *Bot) handleInboundPacket(bData []byte) {
 	b.mu.Lock()
 	defer b.mu.Unlock()
@@ -316,6 +356,33 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				b.status.Gold += 25
 				b.status.UpdatedAt = time.Now().UnixMilli()
 
+			case 30: // StartHuntResult
+				gateID := parseStringField(bytesVal, 1)
+				tierMin := uint32(parseVarintField(bytesVal, 2))
+				dif := parseStringField(bytesVal, 3)
+				if gateID != "" {
+					b.currentGate = gateID
+					b.currentTier = tierMin
+					b.currentDifficulty = dif
+					huntName := GetHuntName(gateID, tierMin)
+					b.status.CurrentArea = huntName
+					b.status.Status = "hunting"
+					b.addLogLocked(fmt.Sprintf("Caçada iniciada: %s", huntName))
+				}
+
+			case 41: // HuntSession
+				gateID := parseStringField(bytesVal, 1)
+				tierMin := uint32(parseVarintField(bytesVal, 2))
+				dif := parseStringField(bytesVal, 3)
+				if gateID != "" {
+					b.currentGate = gateID
+					b.currentTier = tierMin
+					b.currentDifficulty = dif
+					huntName := GetHuntName(gateID, tierMin)
+					b.status.CurrentArea = huntName
+					b.status.Status = "hunting"
+				}
+
 			case 290: // PartyResponse
 				b.handlePartyResponse(bytesVal)
 
@@ -374,10 +441,23 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 				b.status.MaxHP = b.status.HP
 				b.status.Mana = 100 + (b.status.Level * 15)
 				b.status.MaxMana = b.status.Mana
-			case 14: // Hunt
-				area := parseStringField(sub, 1)
-				if area != "" {
-					b.status.CurrentArea = area
+			case 14: // Hunt / HuntPrefs
+				tierMin := uint32(parseVarintField(sub, 1))
+				dif := parseStringField(sub, 2)
+				areaStr := parseStringField(sub, 1)
+				if tierMin > 0 {
+					b.currentTier = tierMin
+					if b.currentGate == "" {
+						b.currentGate = "blue-gate"
+					}
+					if dif != "" {
+						b.currentDifficulty = dif
+					}
+					huntName := GetHuntName(b.currentGate, b.currentTier)
+					b.status.CurrentArea = huntName
+					b.status.Status = "hunting"
+				} else if areaStr != "" {
+					b.status.CurrentArea = areaStr
 					b.status.Status = "hunting"
 				}
 			}
@@ -465,6 +545,49 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 			switch num {
 			case 1: // state (PartyState)
 				b.addLogLocked("Party sincronizada.")
+				pData := sub
+				minLvl := b.status.Level
+				var leaderGate string
+				var leaderTier uint32
+				for len(pData) > 0 {
+					pNum, pType, pn := protowire.ConsumeTag(pData)
+					if pn < 0 {
+						break
+					}
+					pData = pData[pn:]
+					if pType == protowire.BytesType {
+						mBytes, mn := protowire.ConsumeBytes(pData)
+						if mn < 0 {
+							break
+						}
+						pData = pData[mn:]
+						if pNum == 2 { // PartyMember
+							mLvl := int(parseVarintField(mBytes, 4))
+							isLeader := parseVarintField(mBytes, 6) == 1
+							mGate := parseStringField(mBytes, 18)
+							mTier := uint32(parseVarintField(mBytes, 19))
+							if mLvl > 0 && mLvl < minLvl {
+								minLvl = mLvl
+							}
+							if isLeader && mGate != "" {
+								leaderGate = mGate
+								leaderTier = mTier
+							}
+						}
+					} else {
+						_, pn := protowire.ConsumeVarint(pData)
+						pData = pData[pn:]
+					}
+				}
+				if minLvl > 0 {
+					b.partyMinLevel = minLvl
+				}
+				// Se este bot for membro e o líder tiver caçada definida, sincroniza
+				if !b.config.Settings.PartyLeader && leaderGate != "" {
+					b.currentGate = leaderGate
+					b.currentTier = leaderTier
+					b.status.CurrentArea = GetHuntName(leaderGate, leaderTier)
+				}
 			case 2: // invite (PartyInvite)
 				// PartyInvite { 1: from_account, 2: from_name }
 				fromAcc := parseVarintField(sub, 1)
@@ -493,6 +616,40 @@ func (b *Bot) performTick() {
 	b.status.DurationSec += 3
 	if b.status.Status == "" {
 		b.status.Status = "hunting"
+	}
+
+	// AutoHunt: Analisador e Seletor Inteligente de Caçadas (Melhor XP/hora)
+	if b.config.Settings.AutoHunt && b.status.Level > 0 {
+		targetLevel := b.status.Level
+		if b.config.Settings.PartyLeader && b.partyMinLevel > 0 {
+			targetLevel = b.partyMinLevel
+		}
+		best := GetBestHuntForLevel(targetLevel)
+
+		if b.config.Settings.PartyLeader || len(b.config.Settings.PartyMembers) == 0 {
+			if b.currentGate != best.GateID || b.currentTier != best.TierMin || b.currentDifficulty != best.Difficulty {
+				if time.Since(b.lastHuntCheck) > 10*time.Second {
+					b.lastHuntCheck = time.Now()
+					_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
+					b.currentGate = best.GateID
+					b.currentTier = best.TierMin
+					b.currentDifficulty = best.Difficulty
+					huntName := GetHuntName(best.GateID, best.TierMin)
+					b.status.CurrentArea = huntName
+					b.addLogLocked(fmt.Sprintf("AutoHunt: Otimizando caçada -> %s", huntName))
+				}
+			}
+		} else {
+			// Membro: se ainda não estiver em caçada após 20s
+			if (b.currentGate == "" || b.currentTier == 0) && time.Since(b.lastHuntCheck) > 20*time.Second {
+				b.lastHuntCheck = time.Now()
+				_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
+				b.currentGate = best.GateID
+				b.currentTier = best.TierMin
+				b.currentDifficulty = best.Difficulty
+				b.status.CurrentArea = GetHuntName(best.GateID, best.TierMin)
+			}
+		}
 	}
 
 	// Se for o Líder da Party, enviar convites periodicamente aos membros configurados
