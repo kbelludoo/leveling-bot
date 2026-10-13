@@ -14,25 +14,25 @@
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 12945,
+      "durationSec": 13071,
       "logs": [
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #1.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873007325
+      "updatedAt": 1791873132791
     },
     {
       "id": "acc-2",
@@ -43,12 +43,12 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1363816,
+      "gold": 1360741,
       "kills": 24250,
       "expPerHour": 39071,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 13269,
+      "durationSec": 13392,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -56,9 +56,9 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #2.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,26 +66,26 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873007325
+      "updatedAt": 1791873132789
     },
     {
       "id": "acc-3",
       "name": "Party #3",
-      "level": 19,
+      "level": 25,
       "vocation": "guerreiro",
-      "hp": 675,
-      "maxHp": 675,
-      "mana": 385,
-      "maxMana": 385,
-      "gold": 15570,
-      "kills": 25686,
-      "expPerHour": 27793,
+      "hp": 825,
+      "maxHp": 825,
+      "mana": 475,
+      "maxMana": 475,
+      "gold": 1151657,
+      "kills": 25819,
+      "expPerHour": 1033,
       "status": "hunting",
-      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 14604,
+      "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
+      "durationSec": 14724,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Login bem-sucedido! Bem-vindo, Party #3.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,7 +100,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873007326
+      "updatedAt": 1791873132791
     },
     {
       "id": "acc-4",
@@ -116,7 +116,7 @@
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 13380,
+      "durationSec": 13506,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791873007325
+      "updatedAt": 1791873132923
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.5107040405273438,
+  "ramAllocMB": 1.4262161254882812,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h19m37s"
+  "uptime": "3h21m42s"
 }
