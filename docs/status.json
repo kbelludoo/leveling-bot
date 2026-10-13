@@ -14,14 +14,14 @@
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 14019,
+      "durationSec": 14139,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #1.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -32,7 +32,7 @@
         "Membro já está na Party.",
         "Membro já está na Party."
       ],
-      "updatedAt": 1791874089118
+      "updatedAt": 1791874209560
     },
     {
       "id": "acc-2",
@@ -48,7 +48,7 @@
       "expPerHour": 39071,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 14343,
+      "durationSec": 14466,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791874089118
+      "updatedAt": 1791874209560
     },
     {
       "id": "acc-3",
@@ -82,7 +82,7 @@
       "expPerHour": 0,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 15675,
+      "durationSec": 15795,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,7 +100,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791874089118
+      "updatedAt": 1791874209560
     },
     {
       "id": "acc-4",
@@ -116,7 +116,7 @@
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 14448,
+      "durationSec": 14568,
       "logs": [
         "Party sincronizada.",
         "Conexão perdida com o servidor.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791874089120
+      "updatedAt": 1791874209560
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.197235107421875,
+  "ramAllocMB": 1.1612701416015625,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h37m38s"
+  "uptime": "3h39m38s"
 }
