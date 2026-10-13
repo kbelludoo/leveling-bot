@@ -9,12 +9,12 @@
       "maxHp": 750,
       "mana": 430,
       "maxMana": 430,
-      "gold": 1387208,
-      "kills": 13621,
+      "gold": 1387258,
+      "kills": 13623,
       "expPerHour": 34385,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 28296,
+      "durationSec": 28416,
       "logs": [
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -28,11 +28,11 @@
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party."
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada."
       ],
-      "updatedAt": 1791888368274
+      "updatedAt": 1791888488076
     },
     {
       "id": "acc-2",
@@ -43,17 +43,13 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1363191,
-      "kills": 24351,
+      "gold": 1363241,
+      "kills": 24353,
       "expPerHour": 39071,
-      "status": "hunting",
+      "status": "Conexão perdida (websocket: close 1006 (abnormal closure): unexpected EOF). Reconectando...",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 28623,
+      "durationSec": 28743,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #2.",
         "Party sincronizada.",
@@ -64,9 +60,13 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Conexão perdida com o servidor."
       ],
-      "updatedAt": 1791888368274
+      "updatedAt": 1791888487974
     },
     {
       "id": "acc-3",
@@ -77,16 +77,13 @@
       "maxHp": 825,
       "mana": 475,
       "maxMana": 475,
-      "gold": 1151882,
-      "kills": 25920,
+      "gold": 1151932,
+      "kills": 25922,
       "expPerHour": 0,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 29955,
+      "durationSec": 30075,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -98,9 +95,12 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791888368274
+      "updatedAt": 1791888488076
     },
     {
       "id": "acc-4",
@@ -111,14 +111,19 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1264165,
-      "kills": 25229,
+      "gold": 1261715,
+      "kills": 25230,
       "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 28728,
+      "durationSec": 28842,
       "logs": [
         "Login bem-sucedido! Bem-vindo, Party #4.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -127,18 +132,13 @@
         "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791888368274
+      "updatedAt": 1791888488078
     }
   ],
-  "goroutines": 14,
-  "ramAllocMB": 3.4503097534179688,
+  "goroutines": 13,
+  "ramAllocMB": 2.7425765991210938,
   "ramSysMB": 13.099861145019531,
-  "uptime": "7h35m37s"
+  "uptime": "7h37m37s"
 }
