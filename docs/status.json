@@ -9,12 +9,12 @@
       "maxHp": 750,
       "mana": 430,
       "maxMana": 430,
-      "gold": 1391115,
-      "kills": 13343,
+      "gold": 1391140,
+      "kills": 13344,
       "expPerHour": 38036,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4422,
+      "durationSec": 4515,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,7 +32,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864481452
+      "updatedAt": 1791864573501
     },
     {
       "id": "acc-2",
@@ -43,12 +43,12 @@
       "maxHp": 775,
       "mana": 445,
       "maxMana": 445,
-      "gold": 1584158,
-      "kills": 24076,
+      "gold": 1584183,
+      "kills": 24077,
       "expPerHour": 7027,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4758,
+      "durationSec": 4848,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,7 +66,7 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864479679
+      "updatedAt": 1791864573398
     },
     {
       "id": "acc-3",
@@ -77,12 +77,12 @@
       "maxHp": 675,
       "mana": 385,
       "maxMana": 385,
-      "gold": 75065,
-      "kills": 24346,
+      "gold": 83240,
+      "kills": 24689,
       "expPerHour": 27793,
       "status": "hunting",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 5910,
+      "durationSec": 6048,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,23 +100,23 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864482179
+      "updatedAt": 1791864573499
     },
     {
       "id": "acc-4",
       "name": "Party #4",
-      "level": 22,
+      "level": 23,
       "vocation": "mago",
-      "hp": 750,
-      "maxHp": 750,
-      "mana": 430,
-      "maxMana": 430,
-      "gold": 102960,
+      "hp": 775,
+      "maxHp": 775,
+      "mana": 445,
+      "maxMana": 445,
+      "gold": 1261715,
       "kills": 24952,
-      "expPerHour": 18791,
+      "expPerHour": 12061,
       "status": "hunting",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 4860,
+      "durationSec": 4944,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1791864481465
+      "updatedAt": 1791864573501
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.6084213256835938,
+  "ramAllocMB": 1.604644775390625,
   "ramSysMB": 13.099861145019531,
-  "uptime": "57m31s"
+  "uptime": "59m2s"
 }
