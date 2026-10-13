@@ -2,12 +2,12 @@
   "accounts": [
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 35859,
+      "durationSec": 35967,
       "expPerHour": 34385,
-      "gold": 1387733,
+      "gold": 1387833,
       "hp": 750,
       "id": "acc-1",
-      "kills": 13800,
+      "kills": 13804,
       "level": 22,
       "logs": [
         "Membro já está na Party.",
@@ -31,17 +31,17 @@
       "maxMana": 430,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1791895939426,
+      "updatedAt": 1791896047262,
       "vocation": "arqueiro"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36189,
+      "durationSec": 36297,
       "expPerHour": 39071,
-      "gold": 1365166,
+      "gold": 1365266,
       "hp": 775,
       "id": "acc-2",
-      "kills": 24530,
+      "kills": 24534,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -65,17 +65,17 @@
       "maxMana": 445,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1791895939395,
+      "updatedAt": 1791896047227,
       "vocation": "healer"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 37515,
+      "durationSec": 37623,
       "expPerHour": 0,
-      "gold": 1152507,
+      "gold": 1152607,
       "hp": 825,
       "id": "acc-3",
-      "kills": 26098,
+      "kills": 26102,
       "level": 25,
       "logs": [
         "Conexão perdida com o servidor.",
@@ -99,17 +99,17 @@
       "maxMana": 475,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1791895939395,
+      "updatedAt": 1791896047225,
       "vocation": "guerreiro"
     },
     {
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36294,
+      "durationSec": 36402,
       "expPerHour": 12061,
-      "gold": 1266140,
+      "gold": 1266240,
       "hp": 775,
       "id": "acc-4",
-      "kills": 25407,
+      "kills": 25411,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -133,12 +133,12 @@
       "maxMana": 445,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1791895939394,
+      "updatedAt": 1791896047228,
       "vocation": "mago"
     }
   ],
-  "goroutines": 15,
-  "ramAllocMB": 2.714691162109375,
+  "goroutines": 14,
+  "ramAllocMB": 2.94219970703125,
   "ramSysMB": 13.099861145019531,
-  "uptime": "9h41m49s"
+  "uptime": "9h43m37s"
 }
