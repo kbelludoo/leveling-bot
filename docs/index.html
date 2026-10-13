@@ -681,7 +681,11 @@
       'arqueiro': '<span class="slot-badge badge-leader">👑 LÍDER</span>',
       'healer': '<span class="slot-badge badge-healer">HEALER</span>',
       'guerreiro': '<span class="slot-badge badge-tank">TANK</span>',
-      'mago': '<span class="slot-badge badge-dps">MAGE</span>'
+      'mago': '<span class="slot-badge badge-dps">MAGE</span>',
+      'Party #1': '<span class="slot-badge badge-leader">👑 LÍDER</span>',
+      'Party #2': '<span class="slot-badge badge-healer">HEALER</span>',
+      'Party #3': '<span class="slot-badge badge-tank">TANK</span>',
+      'Party #4': '<span class="slot-badge badge-dps">MAGE</span>'
     };
 
     const partyByVoc = { arqueiro: 1, healer: 2, guerreiro: 3, mago: 4 };
@@ -736,10 +740,12 @@
         const logs = acc.logs || ['Conexão ativa'];
         const logsHtml = logs.slice(-5).map(l => `<div class="terminal-line">${l}</div>`).join('');
 
-        let areaDisplay = acc.currentArea || 'floresta-sombria';
-        if (typeof areaDisplay === 'string' && (areaDisplay.length > 25 || areaDisplay.includes('rato'))) {
-          areaDisplay = 'Floresta Sombria';
-        }
+        const areaDisplay = acc.currentArea || 'Iniciando caçada...';
+        const codexDisplay = acc.codexInfo ? `
+          <div class="acc-stat-item" style="grid-column: span 2; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 6px; margin-top: 2px;">
+            <span class="acc-stat-label">📖 Bestiário (Codex)</span>
+            <span class="acc-stat-val" style="color: #38bdf8; font-size: 0.76rem;">${acc.codexInfo}</span>
+          </div>` : '';
 
         return `
           <div class="acc-card">
@@ -793,8 +799,9 @@
                 </div>
                 <div class="acc-stat-item">
                   <span class="acc-stat-label">🗺️ Área</span>
-                  <span class="acc-stat-val">${areaDisplay}</span>
+                  <span class="acc-stat-val" style="font-size: 0.75rem;">${areaDisplay}</span>
                 </div>
+                ${codexDisplay}
               </div>
             </div>
 

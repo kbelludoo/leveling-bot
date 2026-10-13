@@ -97,3 +97,37 @@ func GetHuntName(gateID string, tierMin uint32) string {
 	}
 	return "Desconhecido"
 }
+
+// GetNextCodexHuntForLevel percorre os monstros acessíveis para o nível da party
+// e seleciona o primeiro monstro que ainda não atingiu a meta de abates do Codex (Modo Completista).
+func GetNextCodexHuntForLevel(level int, codexKills map[string]uint64, targetMilestone uint64) (HuntTier, bool, int, int) {
+	if level <= 0 {
+		return CatalogTiers[0], false, 0, 0
+	}
+	uLevel := uint32(level)
+	totalMonsters := 0
+	completedMonsters := 0
+
+	var pendingTier HuntTier
+	foundPending := false
+
+	// Analisa do tier mais baixo para o mais alto dentro da dificuldade normal liberada
+	for _, tier := range CatalogTiers {
+		if tier.Difficulty == "normal" && uLevel >= tier.RequiredLevel {
+			totalMonsters++
+			kills := codexKills[tier.MonsterID]
+			if kills >= targetMilestone {
+				completedMonsters++
+			} else if !foundPending {
+				pendingTier = tier
+				foundPending = true
+			}
+		}
+	}
+
+	if foundPending {
+		return pendingTier, true, completedMonsters, totalMonsters
+	}
+	// Se todos os monstros liberados já concluíram a meta, foca na caçada de maior nível/XP
+	return GetBestHuntForLevel(level), false, completedMonsters, totalMonsters
+}

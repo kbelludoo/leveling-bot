@@ -52,10 +52,10 @@ leveling-bot/
    [
      {
        "id": "acc-1",
-       "name": "kbelludoo",
+       "name": "Party #1",
        "enabled": true,
        "credentials": {
-         "username": "kbelludoo",
+         "username": "seu_nick",
          "password": "sua_senha"
        },
        "settings": {
@@ -86,6 +86,5 @@ cmd /c "set GOOS=linux&& set GOARCH=amd64&& go build -ldflags=\"-s -w\" -o bot-l
 ```
 
 Envie para a VPS:
-```bash
 scp bot-leveling-linux ubuntu@SEU_IP_DA_VPS:/home/ubuntu/leveling-bot/
 ```

@@ -16,6 +16,10 @@ data/
 
 # Logs e arquivos temporários
 *.log
+*.bin
+inspect_*.js
+save_*.js
+find_*.js
 tmp/
 temp/
 

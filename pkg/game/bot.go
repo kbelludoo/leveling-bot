@@ -32,12 +32,13 @@ type Bot struct {
 	lastActionAt time.Time
 	ticketChan   chan string
 
-	// Controle de Caçadas (Auto-Hunt)
+	// Controle de Caçadas (Auto-Hunt) & Bestiário (Codex)
 	currentGate       string
 	currentTier       uint32
 	currentDifficulty string
 	partyMinLevel     int
 	lastHuntCheck     time.Time
+	codexKills        map[string]uint64
 }
 
 func NewBot(cfg AccountConfig) *Bot {
@@ -52,6 +53,7 @@ func NewBot(cfg AccountConfig) *Bot {
 		status:     st,
 		httpCli:    network.NewHTTPClient("https://levelingidle2d.com.br", 10*time.Second),
 		ticketChan: make(chan string, 1),
+		codexKills: make(map[string]uint64),
 	}
 }
 
@@ -460,6 +462,13 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 					b.status.CurrentArea = areaStr
 					b.status.Status = "hunting"
 				}
+			case 19: // Codex (CodexState)
+				kills := parseCodexMonsters(sub)
+				for k, v := range kills {
+					if v > b.codexKills[k] {
+						b.codexKills[k] = v
+					}
+				}
 			}
 		} else {
 			_, n := protowire.ConsumeVarint(data)
@@ -506,6 +515,20 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 				if gold > 0 {
 					b.status.Gold = gold
 				}
+			case 16: // Codex (CodexState)
+				kills := parseCodexMonsters(sub)
+				for k, v := range kills {
+					if v > b.codexKills[k] {
+						b.codexKills[k] = v
+					}
+				}
+			case 17: // CodexKills
+				kills := parseCodexMonsters(sub)
+				for k, v := range kills {
+					if v > b.codexKills[k] {
+						b.codexKills[k] = v
+					}
+				}
 			}
 		} else {
 			_, n := protowire.ConsumeVarint(data)
@@ -519,6 +542,15 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 	b.status.Kills++
 	b.status.DurationSec += 3
 	b.status.UpdatedAt = time.Now().UnixMilli()
+
+	if b.currentGate != "" && b.currentTier > 0 {
+		for _, tier := range CatalogTiers {
+			if tier.GateID == b.currentGate && tier.TierMin == b.currentTier {
+				b.codexKills[tier.MonsterID]++
+				break
+			}
+		}
+	}
 }
 
 func (b *Bot) handlePartyResponse(bytesVal []byte) {
@@ -618,13 +650,30 @@ func (b *Bot) performTick() {
 		b.status.Status = "hunting"
 	}
 
-	// AutoHunt: Analisador e Seletor Inteligente de Caçadas (Melhor XP/hora)
+	// AutoHunt: Analisador e Seletor Inteligente de Caçadas (Melhor XP/hora OU Codex/Completista)
 	if b.config.Settings.AutoHunt && b.status.Level > 0 {
 		targetLevel := b.status.Level
 		if b.config.Settings.PartyLeader && b.partyMinLevel > 0 {
 			targetLevel = b.partyMinLevel
 		}
-		best := GetBestHuntForLevel(targetLevel)
+
+		var best HuntTier
+		if b.config.Settings.CodexMode {
+			targetMilestone := b.config.Settings.CodexTarget
+			if targetMilestone == 0 {
+				targetMilestone = 2000
+			}
+			tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, b.codexKills, targetMilestone)
+			best = tier
+			if pending {
+				b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, b.codexKills[tier.MonsterID], targetMilestone)
+			} else {
+				b.status.CodexInfo = fmt.Sprintf("Completo (%d/%d mobs) | Foco XP", completed, total)
+			}
+		} else {
+			best = GetBestHuntForLevel(targetLevel)
+			b.status.CodexInfo = "Desativado"
+		}
 
 		if b.config.Settings.PartyLeader || len(b.config.Settings.PartyMembers) == 0 {
 			if b.currentGate != best.GateID || b.currentTier != best.TierMin || b.currentDifficulty != best.Difficulty {
@@ -636,7 +685,11 @@ func (b *Bot) performTick() {
 					b.currentDifficulty = best.Difficulty
 					huntName := GetHuntName(best.GateID, best.TierMin)
 					b.status.CurrentArea = huntName
-					b.addLogLocked(fmt.Sprintf("AutoHunt: Otimizando caçada -> %s", huntName))
+					if b.config.Settings.CodexMode {
+						b.addLogLocked(fmt.Sprintf("Codex Completista: Mudando caçada para %s", huntName))
+					} else {
+						b.addLogLocked(fmt.Sprintf("AutoHunt: Otimizando caçada -> %s", huntName))
+					}
 				}
 			}
 		} else {
@@ -663,6 +716,69 @@ func (b *Bot) performTick() {
 			}
 		}
 	}
+}
+
+func parseCodexMonsters(data []byte) map[string]uint64 {
+	res := make(map[string]uint64)
+	for len(data) > 0 {
+		num, wtype, n := protowire.ConsumeTag(data)
+		if n < 0 {
+			break
+		}
+		data = data[n:]
+		if wtype == protowire.BytesType {
+			sub, n := protowire.ConsumeBytes(data)
+			if n < 0 {
+				break
+			}
+			data = data[n:]
+			if num == 1 { // repeated MonstersEntry
+				mEntry := sub
+				var key string
+				var val uint64
+				for len(mEntry) > 0 {
+					eNum, eWtype, en := protowire.ConsumeTag(mEntry)
+					if en < 0 {
+						break
+					}
+					mEntry = mEntry[en:]
+					if eWtype == protowire.BytesType {
+						eSub, en2 := protowire.ConsumeBytes(mEntry)
+						if en2 < 0 {
+							break
+						}
+						mEntry = mEntry[en2:]
+						if eNum == 1 {
+							key = string(eSub)
+						}
+					} else if eWtype == protowire.VarintType {
+						v, en2 := protowire.ConsumeVarint(mEntry)
+						if en2 < 0 {
+							break
+						}
+						mEntry = mEntry[en2:]
+						if eNum == 2 {
+							val = v
+						}
+					} else {
+						break
+					}
+				}
+				if key != "" {
+					res[key] = val
+				}
+			}
+		} else if wtype == protowire.VarintType {
+			_, n := protowire.ConsumeVarint(data)
+			if n < 0 {
+				break
+			}
+			data = data[n:]
+		} else {
+			break
+		}
+	}
+	return res
 }
 
 func parseStringField(b []byte, targetNum protowire.Number) string {

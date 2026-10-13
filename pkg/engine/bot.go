@@ -44,6 +44,7 @@ type AccountStatus struct {
 	ExpPerHour  float64        `json:"expPerHour"`
 	Status      string         `json:"status"` // "hunting", "training", "idle", "reconnecting", "offline"
 	CurrentArea string         `json:"currentArea"`
+	CodexInfo   string         `json:"codexInfo,omitempty"`
 	DurationSec int            `json:"durationSec"`
 	Logs        []string       `json:"logs"`
 	UpdatedAt   int64          `json:"updatedAt"`

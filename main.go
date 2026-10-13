@@ -147,6 +147,9 @@ func main() {
 					if st.CurrentArea != "" {
 						fmt.Printf("  Área: %s | EXP/H: %.0f | Duração: %ds\n", st.CurrentArea, st.ExpPerHour, st.DurationSec)
 					}
+					if st.CodexInfo != "" {
+						fmt.Printf("  Codex: %s\n", st.CodexInfo)
+					}
 					fmt.Println("--------------------------------------------------------------------------------")
 				}
 			}

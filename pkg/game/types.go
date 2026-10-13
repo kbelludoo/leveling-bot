@@ -30,6 +30,8 @@ type GameSettings struct {
 	PartyLeader  bool     `json:"partyLeader,omitempty"`  // Se true, este bot cria a party e convida os membros
 	PartyMembers []string `json:"partyMembers,omitempty"` // Lista de usuários para convidar (usado pelo líder)
 	AutoParty    bool     `json:"autoParty,omitempty"`    // Se true, aceita convites de party automaticamente
+	CodexMode    bool     `json:"codexMode,omitempty"`    // Se true, ativa o Modo Completista do Bestiário (Codex)
+	CodexTarget  uint64   `json:"codexTarget,omitempty"`  // Meta de abates por monstro (padrão: 2000 ou 5000)
 }
 
 // Mensagens básicas de controle de caçada e status

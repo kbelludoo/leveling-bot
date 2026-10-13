@@ -1,6 +1,33 @@
 #!/usr/bin/env node
 const http = require('http');
 const { execSync } = require('child_process');
+// MODO STEALTH: scrub profundo de todo o payload antes do push (nicks, e-mails, IPs).
+const NICK_RE = /kbelludoo[0-9]*|lohmoreira|\blrn\b/gi;
+const EMAIL_RE = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+const IP_RE = /\b\d{1,3}(?:\.\d{1,3}){3}\b/g;
+
+function stealthScrub(value) {
+  if (typeof value === 'string') {
+    if (/^https?:\/\//i.test(value)) return value;
+    return value
+      .replace(EMAIL_RE, 'usuario@privado.com')
+      .replace(IP_RE, 'x.x.x.x')
+      .replace(NICK_RE, 'treinador');
+  }
+  if (Array.isArray(value)) return value.map(stealthScrub);
+  if (value && typeof value === 'object') {
+    const out = {};
+    let n = 0;
+    for (const rawKey of Object.keys(value)) {
+      let key = rawKey;
+      if (!/^https?:\/\//i.test(rawKey)) key = rawKey.replace(NICK_RE, 'treinador');
+      while (Object.prototype.hasOwnProperty.call(out, key)) key = `${key}_${++n}`;
+      out[key] = stealthScrub(value[rawKey]);
+    }
+    return out;
+  }
+  return value;
+}
 
 function fetchJson(url) {
   return new Promise((resolve) => {
@@ -118,7 +145,7 @@ async function main() {
     bots
   };
 
-  const jsonStr = JSON.stringify(payload, null, 2);
+  const jsonStr = JSON.stringify(stealthScrub(payload), null, 2);
 
   // Se executado com push (--push) ou standalone no crontab
   if (process.argv.includes('--push')) {
