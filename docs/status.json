@@ -3,18 +3,18 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 93303,
+      "durationSec": 93525,
       "expPerHour": 88877,
-      "gold": 2315769,
+      "gold": 2353894,
       "hp": 1200,
       "id": "acc-1",
-      "kills": 608085,
+      "kills": 609644,
       "level": 40,
       "logs": [
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 700,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792072687417,
+      "updatedAt": 1792072808943,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 93270,
+      "durationSec": 93492,
       "expPerHour": 151079,
-      "gold": 2166463,
+      "gold": 2204588,
       "hp": 1325,
       "id": "acc-2",
-      "kills": 608156,
+      "kills": 609715,
       "level": 45,
       "logs": [
         "Party sincronizada.",
@@ -67,13 +67,13 @@
       "maxMana": 775,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792072687417,
+      "updatedAt": 1792072808944,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 57978,
+      "durationSec": 58098,
       "expPerHour": 7536,
       "gold": 1301895,
       "hp": 925,
@@ -102,18 +102,18 @@
       "maxMana": 535,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792072687399,
+      "updatedAt": 1792072808400,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 93300,
+      "durationSec": 93525,
       "expPerHour": 50585,
-      "gold": 2020932,
+      "gold": 2059057,
       "hp": 1275,
       "id": "acc-4",
-      "kills": 608222,
+      "kills": 609781,
       "level": 43,
       "logs": [
         "Party sincronizada.",
@@ -137,12 +137,12 @@
       "maxMana": 745,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792072687418,
+      "updatedAt": 1792072808942,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 3.1877288818359375,
+  "ramAllocMB": 1.3000030517578125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "13h43m8s"
+  "uptime": "13h45m9s"
 }
