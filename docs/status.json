@@ -9,31 +9,31 @@
       "maxHp": 1175,
       "mana": 685,
       "maxMana": 685,
-      "gold": 1715812,
-      "kills": 212,
+      "gold": 1721662,
+      "kills": 466,
       "expPerHour": 89330,
       "status": "hunting",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "codexInfo": "1/6 mobs | Morcego Sombrio (1062/2000)",
-      "durationSec": 84,
+      "codexInfo": "1/6 mobs | Morcego Sombrio (1080/2000)",
+      "durationSec": 174,
       "logs": [
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Codex Líder: Focando em Blue Gate (Morcego Sombrio Nv 10) (Nv Min: 28)",
-        "Caçada iniciada: Blue Gate (Morcego Sombrio Nv 10)",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
+        "Party rate limit.",
+        "Party rate limit.",
         "Party sincronizada."
       ],
-      "updatedAt": 1792023330845
+      "updatedAt": 1792023361680
     },
     {
       "id": "acc-2",
@@ -44,13 +44,13 @@
       "maxHp": 1325,
       "mana": 775,
       "maxMana": 775,
-      "gold": 1851706,
-      "kills": 212,
+      "gold": 1857556,
+      "kills": 466,
       "expPerHour": 100598,
       "status": "hunting",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "codexInfo": "1/6 mobs | Morcego Sombrio (1062/2000)",
-      "durationSec": 84,
+      "codexInfo": "1/6 mobs | Morcego Sombrio (1080/2000)",
+      "durationSec": 174,
       "logs": [
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #2.",
@@ -62,9 +62,13 @@
         "Caçada iniciada: Blue Gate (Morcego Sombrio Nv 10)",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1792023330843
+      "updatedAt": 1792023361680
     },
     {
       "id": "acc-3",
@@ -75,13 +79,13 @@
       "maxHp": 900,
       "mana": 520,
       "maxMana": 520,
-      "gold": 1254062,
-      "kills": 212,
+      "gold": 1259912,
+      "kills": 465,
       "expPerHour": 0,
       "status": "hunting",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "codexInfo": "1/6 mobs | Morcego Sombrio (1062/2000)",
-      "durationSec": 84,
+      "codexInfo": "1/6 mobs | Morcego Sombrio (1080/2000)",
+      "durationSec": 171,
       "logs": [
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -91,9 +95,13 @@
         "Codex Líder: Focando em Blue Gate (Morcego Sombrio Nv 10) (Nv Min: 28)",
         "Caçada iniciada: Blue Gate (Morcego Sombrio Nv 10)",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1792023330846
+      "updatedAt": 1792023361680
     },
     {
       "id": "acc-4",
@@ -104,13 +112,13 @@
       "maxHp": 1250,
       "mana": 730,
       "maxMana": 730,
-      "gold": 1644028,
-      "kills": 212,
+      "gold": 1649878,
+      "kills": 466,
       "expPerHour": 178256,
       "status": "hunting",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "codexInfo": "1/6 mobs | Morcego Sombrio (1062/2000)",
-      "durationSec": 84,
+      "codexInfo": "1/6 mobs | Morcego Sombrio (1080/2000)",
+      "durationSec": 174,
       "logs": [
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #4.",
@@ -122,13 +130,17 @@
         "Caçada iniciada: Blue Gate (Morcego Sombrio Nv 10)",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "updatedAt": 1792023330846
+      "updatedAt": 1792023361680
     }
   ],
-  "goroutines": 14,
-  "ramAllocMB": 1.7494659423828125,
+  "goroutines": 15,
+  "ramAllocMB": 1.190032958984375,
   "ramSysMB": 12.849861145019531,
-  "uptime": "31s"
+  "uptime": "1m2s"
 }
