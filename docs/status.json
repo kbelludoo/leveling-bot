@@ -1,17 +1,17 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/6 mobs | Goblin (1127/2000)",
+      "codexInfo": "2/6 mobs | Goblin (1182/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 5154,
+      "durationSec": 5436,
       "expPerHour": 89330,
-      "gold": 2048487,
+      "gold": 2071737,
       "hp": 1175,
       "id": "acc-1",
-      "kills": 14597,
+      "kills": 15581,
       "level": 39,
       "logs": [
-        "Membro já está na Party.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 685,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792025167565,
+      "updatedAt": 1792025287156,
       "vocation": "arqueiro"
     },
     {
-      "codexInfo": "2/6 mobs | Goblin (1127/2000)",
+      "codexInfo": "2/6 mobs | Goblin (1182/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 5118,
+      "durationSec": 5400,
       "expPerHour": 100598,
-      "gold": 2184356,
+      "gold": 2207606,
       "hp": 1325,
       "id": "acc-2",
-      "kills": 14584,
+      "kills": 15568,
       "level": 45,
       "logs": [
         "Party sincronizada.",
@@ -67,18 +67,18 @@
       "maxMana": 775,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792025167563,
+      "updatedAt": 1792025287154,
       "vocation": "healer"
     },
     {
-      "codexInfo": "2/6 mobs | Goblin (1127/2000)",
+      "codexInfo": "2/6 mobs | Goblin (1182/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 5136,
+      "durationSec": 5421,
       "expPerHour": 0,
-      "gold": 1586712,
+      "gold": 1609962,
       "hp": 900,
       "id": "acc-3",
-      "kills": 14590,
+      "kills": 15575,
       "level": 28,
       "logs": [
         "Party sincronizada.",
@@ -102,18 +102,18 @@
       "maxMana": 520,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792025167566,
+      "updatedAt": 1792025287156,
       "vocation": "guerreiro"
     },
     {
-      "codexInfo": "2/6 mobs | Goblin (1127/2000)",
+      "codexInfo": "2/6 mobs | Goblin (1182/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 5121,
+      "durationSec": 5403,
       "expPerHour": 178256,
-      "gold": 1976678,
+      "gold": 1999928,
       "hp": 1250,
       "id": "acc-4",
-      "kills": 14585,
+      "kills": 15569,
       "level": 42,
       "logs": [
         "Party sincronizada.",
@@ -137,12 +137,12 @@
       "maxMana": 730,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792025167568,
+      "updatedAt": 1792025287158,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 3.2652969360351562,
+  "ramAllocMB": 3.2073898315429688,
   "ramSysMB": 12.849861145019531,
-  "uptime": "31m8s"
+  "uptime": "33m8s"
 }
