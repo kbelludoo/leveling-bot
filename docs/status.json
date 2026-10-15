@@ -3,16 +3,16 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36522,
+      "durationSec": 36744,
       "expPerHour": 140273,
-      "gold": 16525,
+      "gold": 56325,
       "hp": 1175,
       "id": "acc-1",
-      "kills": 210221,
+      "kills": 211847,
       "level": 39,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 685,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792041366603,
+      "updatedAt": 1792041486687,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36492,
+      "durationSec": 36717,
       "expPerHour": 105046,
-      "gold": 1512645,
+      "gold": 1552445,
       "hp": 1325,
       "id": "acc-2",
-      "kills": 210253,
+      "kills": 211879,
       "level": 45,
       "logs": [
         "Party sincronizada.",
@@ -67,13 +67,13 @@
       "maxMana": 775,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792041366603,
+      "updatedAt": 1792041486666,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 26730,
+      "durationSec": 26850,
       "expPerHour": 40189,
       "gold": 172715,
       "hp": 900,
@@ -102,18 +102,18 @@
       "maxMana": 520,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792041366584,
+      "updatedAt": 1792041486686,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 36492,
+      "durationSec": 36714,
       "expPerHour": 6351,
-      "gold": 1817144,
+      "gold": 1856944,
       "hp": 1275,
       "id": "acc-4",
-      "kills": 210222,
+      "kills": 211848,
       "level": 43,
       "logs": [
         "Party sincronizada.",
@@ -137,12 +137,12 @@
       "maxMana": 745,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792041366603,
+      "updatedAt": 1792041486688,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.4363327026367188,
+  "ramAllocMB": 2.3807373046875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "5h1m7s"
+  "uptime": "5h3m7s"
 }
