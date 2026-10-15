@@ -3,17 +3,14 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 94839,
+      "durationSec": 95037,
       "expPerHour": 88877,
-      "gold": 2583044,
+      "gold": 2616569,
       "hp": 1200,
       "id": "acc-1",
-      "kills": 619008,
+      "kills": 620377,
       "level": 40,
       "logs": [
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -25,25 +22,28 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Conexão perdida com o servidor."
       ],
       "mana": 700,
       "maxHp": 1200,
       "maxMana": 700,
       "name": "Party #1",
-      "status": "hunting",
-      "updatedAt": 1792073527472,
+      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
+      "updatedAt": 1792073644867,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 94803,
+      "durationSec": 95004,
       "expPerHour": 151079,
-      "gold": 2433738,
+      "gold": 2467263,
       "hp": 1325,
       "id": "acc-2",
-      "kills": 619078,
+      "kills": 620448,
       "level": 45,
       "logs": [
         "Party sincronizada.",
@@ -60,25 +60,25 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Conexão perdida com o servidor."
       ],
       "mana": 775,
       "maxHp": 1325,
       "maxMana": 775,
       "name": "Party #2",
-      "status": "hunting",
-      "updatedAt": 1792073527463,
+      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
+      "updatedAt": 1792073644788,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 58818,
+      "durationSec": 58932,
       "expPerHour": 7536,
-      "gold": 1302370,
+      "gold": 1302420,
       "hp": 925,
       "id": "acc-3",
-      "kills": 55852,
+      "kills": 55854,
       "level": 29,
       "logs": [
         "Party sincronizada.",
@@ -95,25 +95,25 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Conexão perdida com o servidor."
       ],
       "mana": 535,
       "maxHp": 925,
       "maxMana": 535,
       "name": "Party #3",
-      "status": "hunting",
-      "updatedAt": 1792073527408,
+      "status": "Conectando ao servidor...",
+      "updatedAt": 1792073646880,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 94836,
+      "durationSec": 95034,
       "expPerHour": 50585,
-      "gold": 2288207,
+      "gold": 2321732,
       "hp": 1275,
       "id": "acc-4",
-      "kills": 619144,
+      "kills": 620514,
       "level": 43,
       "logs": [
         "Party sincronizada.",
@@ -130,19 +130,19 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Conexão perdida com o servidor."
       ],
       "mana": 745,
       "maxHp": 1275,
       "maxMana": 745,
       "name": "Party #4",
-      "status": "hunting",
-      "updatedAt": 1792073527463,
+      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
+      "updatedAt": 1792073644816,
       "vocation": "mago"
     }
   ],
-  "goroutines": 14,
-  "ramAllocMB": 2.7538681030273438,
+  "goroutines": 10,
+  "ramAllocMB": 3.2680511474609375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "13h57m8s"
+  "uptime": "13h59m8s"
 }
