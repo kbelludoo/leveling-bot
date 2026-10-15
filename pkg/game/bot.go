@@ -41,6 +41,97 @@ type Bot struct {
 	codexKills        map[string]uint64
 }
 
+type PartyCoordinator struct {
+	mu           sync.RWMutex
+	LeaderGate   string
+	LeaderTier   uint32
+	LeaderDif    string
+	Levels       map[string]int
+	MonsterKills map[string]map[string]uint64
+}
+
+var GlobalParty = &PartyCoordinator{
+	Levels:       make(map[string]int),
+	MonsterKills: make(map[string]map[string]uint64),
+}
+
+func (p *PartyCoordinator) ReportLevel(botID string, level int) {
+	if level <= 0 {
+		return
+	}
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	p.Levels[botID] = level
+}
+
+func (p *PartyCoordinator) ReportKills(botID string, kills map[string]uint64) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	if p.MonsterKills[botID] == nil {
+		p.MonsterKills[botID] = make(map[string]uint64)
+	}
+	for k, v := range kills {
+		p.MonsterKills[botID][k] = v
+	}
+}
+
+func (p *PartyCoordinator) GetMinLevel(fallback int) int {
+	p.mu.RLock()
+	defer p.mu.RUnlock()
+	if len(p.Levels) == 0 {
+		return fallback
+	}
+	minLvl := 999
+	for _, lvl := range p.Levels {
+		if lvl > 0 && lvl < minLvl {
+			minLvl = lvl
+		}
+	}
+	if minLvl == 999 {
+		return fallback
+	}
+	return minLvl
+}
+
+func (p *PartyCoordinator) GetSharedCodexKills() map[string]uint64 {
+	p.mu.RLock()
+	defer p.mu.RUnlock()
+	minKills := make(map[string]uint64)
+	for _, tier := range CatalogTiers {
+		if tier.Difficulty != "normal" {
+			continue
+		}
+		var lowest uint64 = 99999999
+		foundAny := false
+		for _, botMap := range p.MonsterKills {
+			foundAny = true
+			k := botMap[tier.MonsterID]
+			if k < lowest {
+				lowest = k
+			}
+		}
+		if !foundAny || lowest == 99999999 {
+			lowest = 0
+		}
+		minKills[tier.MonsterID] = lowest
+	}
+	return minKills
+}
+
+func (p *PartyCoordinator) SetLeaderHunt(gate string, tier uint32, dif string) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	p.LeaderGate = gate
+	p.LeaderTier = tier
+	p.LeaderDif = dif
+}
+
+func (p *PartyCoordinator) GetLeaderHunt() (string, uint32, string) {
+	p.mu.RLock()
+	defer p.mu.RUnlock()
+	return p.LeaderGate, p.LeaderTier, p.LeaderDif
+}
+
 func NewBot(cfg AccountConfig) *Bot {
 	st := engine.NewStatus(cfg.ID, cfg.Name)
 	st.CurrentArea = "Blue Gate (Rato da Ruína Nv 5)"
@@ -269,6 +360,24 @@ func (b *Bot) sendPartyAnswer(fromAccount int64, accept bool) error {
 	return b.socket.SendBinary(clientMsg)
 }
 
+// sendPartyLeave envia requisição para sair da Party atual
+func (b *Bot) sendPartyLeave() error {
+	reqID := b.nextReqID()
+	// PartyRequest { 4: leave (PartyLeave) }
+	var partyReq []byte
+	partyReq = protowire.AppendTag(partyReq, 4, protowire.BytesType)
+	partyReq = protowire.AppendBytes(partyReq, []byte{})
+
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 290, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, partyReq)
+
+	log.Printf("[%s] Saindo da Party atual", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
 // sendStartHunt inicia ou altera a caçada para o portal/tier desejado
 func (b *Bot) sendStartHunt(gateID string, tierMin uint32, difficulty string) error {
 	reqID := b.nextReqID()
@@ -478,6 +587,10 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 	if b.status.Status == "" || b.status.Status == "Conectado e Autenticado" {
 		b.status.Status = "hunting"
 	}
+	if b.status.Level > 0 {
+		GlobalParty.ReportLevel(b.ID(), b.status.Level)
+	}
+	GlobalParty.ReportKills(b.ID(), b.codexKills)
 }
 
 func (b *Bot) parseCharacterPatch(bytesVal []byte) {
@@ -551,6 +664,11 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 			}
 		}
 	}
+
+	if b.status.Level > 0 {
+		GlobalParty.ReportLevel(b.ID(), b.status.Level)
+	}
+	GlobalParty.ReportKills(b.ID(), b.codexKills)
 }
 
 func (b *Bot) handlePartyResponse(bytesVal []byte) {
@@ -615,10 +733,15 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 					b.partyMinLevel = minLvl
 				}
 				// Se este bot for membro e o líder tiver caçada definida, sincroniza
-				if !b.config.Settings.PartyLeader && leaderGate != "" {
-					b.currentGate = leaderGate
-					b.currentTier = leaderTier
-					b.status.CurrentArea = GetHuntName(leaderGate, leaderTier)
+				if !b.config.Settings.PartyLeader && leaderGate != "" && leaderTier > 0 {
+					if b.currentGate != leaderGate || b.currentTier != leaderTier {
+						_ = b.sendStartHunt(leaderGate, leaderTier, "normal")
+						b.currentGate = leaderGate
+						b.currentTier = leaderTier
+						b.currentDifficulty = "normal"
+						b.status.CurrentArea = GetHuntName(leaderGate, leaderTier)
+						b.addLogLocked(fmt.Sprintf("Auto-Follow: Sincronizando caçada com o líder -> %s", b.status.CurrentArea))
+					}
 				}
 			case 2: // invite (PartyInvite)
 				// PartyInvite { 1: from_account, 2: from_name }
@@ -650,34 +773,40 @@ func (b *Bot) performTick() {
 		b.status.Status = "hunting"
 	}
 
+	if b.status.Level > 0 {
+		GlobalParty.ReportLevel(b.ID(), b.status.Level)
+	}
+	GlobalParty.ReportKills(b.ID(), b.codexKills)
+
 	// AutoHunt: Analisador e Seletor Inteligente de Caçadas (Melhor XP/hora OU Codex/Completista)
 	if b.config.Settings.AutoHunt && b.status.Level > 0 {
-		targetLevel := b.status.Level
-		if b.config.Settings.PartyLeader && b.partyMinLevel > 0 {
-			targetLevel = b.partyMinLevel
-		}
-
-		var best HuntTier
-		if b.config.Settings.CodexMode {
-			targetMilestone := b.config.Settings.CodexTarget
-			if targetMilestone == 0 {
-				targetMilestone = 2000
-			}
-			tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, b.codexKills, targetMilestone)
-			best = tier
-			if pending {
-				b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, b.codexKills[tier.MonsterID], targetMilestone)
-			} else {
-				b.status.CodexInfo = fmt.Sprintf("Completo (%d/%d mobs) | Foco XP", completed, total)
-			}
-		} else {
-			best = GetBestHuntForLevel(targetLevel)
-			b.status.CodexInfo = "Desativado"
-		}
-
 		if b.config.Settings.PartyLeader || len(b.config.Settings.PartyMembers) == 0 {
+			targetLevel := GlobalParty.GetMinLevel(b.status.Level)
+
+			var best HuntTier
+			if b.config.Settings.CodexMode {
+				targetMilestone := b.config.Settings.CodexTarget
+				if targetMilestone == 0 {
+					targetMilestone = 2000
+				}
+				sharedKills := GlobalParty.GetSharedCodexKills()
+				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone)
+				best = tier
+				if pending {
+					b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, sharedKills[tier.MonsterID], targetMilestone)
+				} else {
+					b.status.CodexInfo = fmt.Sprintf("Completo (%d/%d mobs) | Foco XP", completed, total)
+				}
+			} else {
+				best = GetBestHuntForLevel(targetLevel)
+				b.status.CodexInfo = "Desativado"
+			}
+
+			// Publica caçada do líder para todos os membros no processo
+			GlobalParty.SetLeaderHunt(best.GateID, best.TierMin, best.Difficulty)
+
 			if b.currentGate != best.GateID || b.currentTier != best.TierMin || b.currentDifficulty != best.Difficulty {
-				if time.Since(b.lastHuntCheck) > 10*time.Second {
+				if time.Since(b.lastHuntCheck) > 5*time.Second {
 					b.lastHuntCheck = time.Now()
 					_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
 					b.currentGate = best.GateID
@@ -686,29 +815,55 @@ func (b *Bot) performTick() {
 					huntName := GetHuntName(best.GateID, best.TierMin)
 					b.status.CurrentArea = huntName
 					if b.config.Settings.CodexMode {
-						b.addLogLocked(fmt.Sprintf("Codex Completista: Mudando caçada para %s", huntName))
+						b.addLogLocked(fmt.Sprintf("Codex Líder: Focando em %s (Nv Min: %d)", huntName, targetLevel))
 					} else {
-						b.addLogLocked(fmt.Sprintf("AutoHunt: Otimizando caçada -> %s", huntName))
+						b.addLogLocked(fmt.Sprintf("AutoHunt Líder: Otimizando caçada -> %s", huntName))
 					}
 				}
 			}
 		} else {
-			// Membro: se ainda não estiver em caçada após 20s
-			if (b.currentGate == "" || b.currentTier == 0) && time.Since(b.lastHuntCheck) > 20*time.Second {
-				b.lastHuntCheck = time.Now()
-				_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
-				b.currentGate = best.GateID
-				b.currentTier = best.TierMin
-				b.currentDifficulty = best.Difficulty
-				b.status.CurrentArea = GetHuntName(best.GateID, best.TierMin)
+			// Membro da party: SEGUIR O LÍDER RIGOROSAMENTE!
+			targetGate, targetTier, targetDif := GlobalParty.GetLeaderHunt()
+
+			if targetGate != "" && targetTier > 0 {
+				if b.currentGate != targetGate || b.currentTier != targetTier || b.currentDifficulty != targetDif {
+					if time.Since(b.lastHuntCheck) > 4*time.Second {
+						b.lastHuntCheck = time.Now()
+						_ = b.sendStartHunt(targetGate, targetTier, targetDif)
+						b.currentGate = targetGate
+						b.currentTier = targetTier
+						b.currentDifficulty = targetDif
+						huntName := GetHuntName(targetGate, targetTier)
+						b.status.CurrentArea = huntName
+						b.addLogLocked(fmt.Sprintf("Auto-Follow: Sincronizando com líder -> %s", huntName))
+					}
+				}
+			}
+
+			// Atualiza CodexInfo do membro com o status compartilhado da party
+			if b.config.Settings.CodexMode {
+				targetMilestone := b.config.Settings.CodexTarget
+				if targetMilestone == 0 {
+					targetMilestone = 2000
+				}
+				targetLevel := GlobalParty.GetMinLevel(b.status.Level)
+				sharedKills := GlobalParty.GetSharedCodexKills()
+				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone)
+				if pending {
+					b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, b.codexKills[tier.MonsterID], targetMilestone)
+				} else {
+					b.status.CodexInfo = fmt.Sprintf("Completo (%d/%d mobs) | Foco XP", completed, total)
+				}
+			} else {
+				b.status.CodexInfo = "Desativado"
 			}
 		}
 	}
 
-	// Se for o Líder da Party, enviar convites periodicamente aos membros configurados
+	// Se for o Líder da Party, manter a party completa enviando convites
 	if b.config.Settings.PartyLeader && len(b.config.Settings.PartyMembers) > 0 {
-		// Enviar convite no início ou a cada ~120 segundos
-		if b.status.DurationSec <= 15 || b.status.DurationSec%120 == 0 {
+		// Envia convite a cada ~45 segundos
+		if b.status.DurationSec <= 15 || b.status.DurationSec%45 == 0 {
 			for _, member := range b.config.Settings.PartyMembers {
 				if member != "" && member != b.config.Credentials.Username {
 					_ = b.sendPartyInvite(member)
