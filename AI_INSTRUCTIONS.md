@@ -13,7 +13,8 @@ Você está construindo um bot autônomo nativo em **Go (Golang)** de altíssima
 2. **Consumo de Memória Cirúrgico:** O processo deve consumir **menos de 15 MB de RAM** (geralmente entre 2 e 5 MB). Nunca use browsers headless (Puppeteer/Playwright/Chromium) na VPS para rodar o loop de jogo. Conecte diretamente via WebSockets ou HTTP.
 3. **Resiliência Total contra Crash:** Toda conta roda em Goroutine protegida com `engine.RunWithSupervisor` e `recover()`. Um panic de unmarshal ou erro de rede NUNCA deve derrubar o executável principal.
 4. **Isolamento de Portas Web:** Cada bot tem sua própria porta no dashboard embutido (ex: Huntera usa 3000, Tibidle usa 3001, Sigma usa 3002). Nunca crie conflito de portas.
-5. **Segurança de Segredos:** `accounts.json`, cookies, senhas e chaves SSH (`*.key`) NUNCA podem ser adicionados ao Git. O `.gitignore` deste template já está calibrado.
+5. **Segurança Absoluta de Segredos (Zero Hardcoding):** NUNCA insira tokens de API (Telegram, Discord, Twitch OAuth), senhas, cookies, chaves SSH (`*.key`) ou IPs públicos da VPS diretamente em arquivos `.go`, `.json`, `.sh`, `.bat` ou scripts que serão commitados. TODAS as credenciais devem ser obrigatoriamente carregadas via variáveis de ambiente (`os.Getenv`) ou arquivos locais no `.gitignore` (`.secrets.json`, `.env`, `accounts.json`). Commitar tokens gera vazamento público imediato!
+6. **Modo Stealth & Anti-Ban (Zero Nicks Públicos):** NUNCA exponha o nome real do personagem/treinador/streamer nos dashboards web do GitHub Pages (`docs/index.html` ou `status.json`). Sempre exiba apenas a classe/vocação, índice anônimo (ex: `Conta #1`, `Treinador #1`, `Guerreiro`, `Arqueiro`) e estatísticas técnicas (Level, EXP/h, Kills, Gold, Mapa). Transmitir nicks reais gera denúncias e banimentos manuais imediatos!
 
 ---
 
@@ -99,7 +100,83 @@ Mantenha `pkg/engine/`, `pkg/network/` e `pkg/server/` intactos. Concentre **100
 
 ---
 
+## 🧠 REGRAS DE OURO DA IA: GAMEPLAY & ARQUITETURA AUTÔNOMA
+
+Sempre que construir um novo bot usando este template, a IA deve projetar e codificar os **10 Pilares da Eficiência Máxima** aprendidos com o ecossistema real de bots do projeto:
+
+### 1. Algoritmo de Melhor Rota de EXP/h (Dynamic Route Solver)
+- **Mineração do Catálogo do Jogo:** A IA deve analisar o código JavaScript/bundle do jogo e extrair todos os monstros, mapas, fraquezas elementais, dano base e requisitos de nível para um catálogo estático ou dinâmico (`pkg/game/catalog.go`).
+- **Cálculo da Rota Ótima:**
+  - **Fator Nível:** $\text{Nível da Área} \le \text{Nível do Personagem}$ (evitar penalidades ou bloqueios).
+  - **Multiplicador Elemental / Fraqueza:** Se o jogo tiver sistema de fraquezas elementais ou tipos (ex: 4.0x no Poke Idle World), o algoritmo deve priorizar alvos onde o dano do bot seja maximizado para matar monstros em 1 ou 2 turnos (aumentando *kills por minuto*).
+  - **Risco Defensivo:** Evitar monstros que causem dano super efetivo ou possam nocautear o jogador, eliminando o tempo morto de morte/revive.
+  - **Reavaliação Contínua:** Ao subir de nível (Level Up) ou trocar de equipamento, o bot deve recalcular instantaneamente e transitar para a nova melhor rota.
+
+### 2. Auto-Sell Inteligente (Gestão de Inventário)
+- Monitorar a capacidade da mochila/inventário.
+- Manter uma lista de itens protegidos (itens equipados, itens de tier alto, consumíveis raros).
+- Vender automaticamente o lixo/loot acumulado assim que o inventário atingir o limite ou a cada intervalo programado, convertendo em ouro sem travar a caça.
+
+### 3. Auto-Equip e Auto-Upgrade
+- Sempre que dropar um equipamento superior ao atual (maior ataque, maior defesa, melhor tier), o bot deve equipar automaticamente.
+- Se o jogo tiver sistema de pontos de atributos (força, agilidade, talentos), distribuir automaticamente conforme a vocação/classe configurada.
+
+### 4. Extração Contínua de Informações (Engenharia Reversa Ativa)
+- **A IA deve "ler o jogo":** Inspecionar pacotes de rede, analisar o código-fonte client-side (JS/Wasm) e salvar o maior número de tabelas de dados possíveis (`hunts.json`, `items.json`, `monsters.json`).
+- Toda informação descoberta deve ser persistida para enriquecer o algoritmo e tornar o bot 100% autônomo sem necessidade de intervenção humana.
+
+### 5. Isolamento Multi-IP para Múltiplas Contas (Anti-Ban)
+- Quando o usuário configurar mais de uma conta no mesmo jogo, a IA deve verificar se o jogo bloqueia múltiplos logins no mesmo endereço IP.
+- **Implementação:** Suportar o campo `"bindIP": "10.0.0.X"` no `accounts.json`.
+- O cliente HTTP e o `websocket.Dialer` devem fazer bind no IP local configurado usando `net.Dialer{LocalAddr: &net.TCPAddr{IP: net.ParseIP(bindIP)}}` (como usado com sucesso no Pokemon Sigma e Baiak Idle).
+
+### 6. Suporte a Protocolos Binários (Protobuf / Colyseus / MessagePack)
+- Nem todo jogo se comunica com JSON em texto simples. Se a inspeção da aba Network revelar pacotes binários:
+  - **Protobuf 3:** Usar `google.golang.org/protobuf/encoding/protowire` para ler tags e decodificar campos binários de alta velocidade sem precisar compilar arquivos `.proto` pesados (como no Leveling Idle 2D).
+  - **Colyseus / State Sync:** Tratar frames binários (`websocket.BinaryMessage`) lendo schema offsets ou action bytes iniciais.
+
+### 7. Bônus Externos & Lurker Integrado (Twitch & Kick Drops)
+- Se o jogo oferecer bônus de EXP/Ouro (+15% a +25%) por assistir streamers ou canais parceiros (como no PokeIdle.io):
+  - A IA deve implementar um módulo concorrente em Goroutine que autentica na API da plataforma de streaming (Twitch/Kick) e mantém a presença ativa em background, garantindo o bônus máximo 24/7 sem abrir navegadores pesados.
+
+### 8. Gestão Inteligente de Stamina / Vigor & Modos de Descanso
+- Em jogos onde o farm depende de Stamina (ex: Huntera, Tibidle, Baiak):
+  - O bot deve calcular o tempo restante de stamina e o custo do refil.
+  - Se o farm de ouro cobrir o custo de compra de refil (`staminaRefillCost`), efetuar a recarga automaticamente.
+  - Se a stamina esgotar e não houver refis, o bot deve mover o personagem para modo *Treino Online* ou *Descanso* para regeneração acelerada, evitando desperdício de tempo e EXP zerada.
+
+### 9. Cooperação em Grupo (Party & Sinergia de Classes)
+- Se o jogo tiver mecânicas de grupo/party (como o Leveling Idle 2D):
+  - A IA deve implementar lógica de líder e membros: a Conta 1 cria a sala/party e as outras contas entram na mesma sessão.
+  - Sincronizar papéis (ex: Tanker puxa os monstros, Dps causa dano à distância e Healer cura o time), garantindo o bônus de EXP compartilhada.
+
+### 10. Contrato de Telemetria com o VPS Command Center
+Todo bot criado deve expor um endpoint HTTP leve em sua porta designada (`GET /api/status`) retornando JSON padronizado para integração nativa com o **Bot Hub**, o **Watchdog** e os **Alertas do Telegram**:
+```json
+{
+  "online": true,
+  "uptime": "14h20m",
+  "ramAllocMB": 3.2,
+  "goroutines": 12,
+  "accounts": [
+    {
+      "id": "acc1",
+      "name": "NickDoChar",
+      "level": 150,
+      "gold": 87000000,
+      "kills": 4200,
+      "currentArea": "Glooth Bandit",
+      "expPerHour": 1450000
+    }
+  ]
+}
+```
+
+---
+
 ## ⚠️ ARMADILHAS COMUNS QUE A IA DEVE EVITAR
 - ❌ **NÃO crie dependências de CGO:** Mantenha `CGO_ENABLED=0` para que o binário rode em qualquer distro Linux sem exigir bibliotecas glibc externas.
 - ❌ **NÃO faça escrita concorrente no WebSocket:** Sempre use o método `s.SendJSON()` ou `s.SendText()` do `pkg/network/socket.go` porque ele já protege contra concorrência com mutex (`writeMu`).
 - ❌ **NÃO deixe loops sem select em `ctx.Done()`:** Todo loop `for` com ticker deve escutar `case <-ctx.Done(): return` para permitir encerramento limpo via SIGTERM.
+
+
