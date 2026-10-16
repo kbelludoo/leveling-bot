@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302727,
+      "durationSec": 302817,
       "expPerHour": 0,
       "gold": 7775,
       "hp": 1900,
@@ -11,8 +11,6 @@
       "kills": 2033162,
       "level": 68,
       "logs": [
-        "Servidor erro: request.invalid",
-        "Servidor erro: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -25,20 +23,22 @@
         "Servidor erro: request.invalid",
         "Servidor erro: request.invalid",
         "Servidor erro: request.invalid",
-        "Conexão perdida com o servidor."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance"
       ],
       "mana": 1120,
       "maxHp": 1900,
       "maxMana": 1120,
       "name": "Party #1",
-      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
-      "updatedAt": 1792191844498,
+      "status": "Erro: session.maintenance",
+      "updatedAt": 1792191965179,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302679,
+      "durationSec": 302769,
       "expPerHour": 0,
       "gold": 7725,
       "hp": 1975,
@@ -46,8 +46,6 @@
       "kills": 2032989,
       "level": 71,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -60,20 +58,22 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
-        "Conexão perdida com o servidor."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance"
       ],
       "mana": 1165,
       "maxHp": 1975,
       "maxMana": 1165,
       "name": "Party #2",
-      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
-      "updatedAt": 1792191844486,
+      "status": "Erro: session.maintenance",
+      "updatedAt": 1792191965103,
       "vocation": "healer"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 174471,
+      "durationSec": 174561,
       "expPerHour": 0,
       "gold": 7750,
       "hp": 225,
@@ -81,8 +81,6 @@
       "kills": 58381,
       "level": 1,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -95,20 +93,22 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
-        "Conexão perdida com o servidor."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance"
       ],
       "mana": 115,
       "maxHp": 225,
       "maxMana": 115,
       "name": "Party #3",
-      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
-      "updatedAt": 1792191844592,
+      "status": "Erro: session.maintenance",
+      "updatedAt": 1792191965221,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302751,
+      "durationSec": 302841,
       "expPerHour": 0,
       "gold": 7800,
       "hp": 1950,
@@ -116,8 +116,6 @@
       "kills": 2033361,
       "level": 70,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -130,19 +128,21 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
-        "Conexão perdida com o servidor."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance"
       ],
       "mana": 1150,
       "maxHp": 1950,
       "maxMana": 1150,
       "name": "Party #4",
-      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
-      "updatedAt": 1792191844432,
+      "status": "Erro: session.maintenance",
+      "updatedAt": 1792191965179,
       "vocation": "mago"
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.6892852783203125,
+  "goroutines": 14,
+  "ramAllocMB": 0.9546585083007812,
   "ramSysMB": 17.34986114501953,
-  "uptime": "46h49m7s"
+  "uptime": "46h51m8s"
 }
