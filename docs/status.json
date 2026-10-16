@@ -3,7 +3,7 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 299292,
+      "durationSec": 299385,
       "expPerHour": 76204,
       "gold": 3088019,
       "hp": 1250,
@@ -11,9 +11,6 @@
       "kills": 2032839,
       "level": 42,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance",
         "Servidor erro: request.invalid",
         "Servidor erro: request.invalid",
         "Servidor erro: request.invalid",
@@ -25,20 +22,23 @@
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance"
+        "Servidor erro: session.maintenance",
+        "Servidor erro: request.invalid",
+        "Servidor erro: request.invalid",
+        "Servidor erro: request.invalid"
       ],
       "mana": 730,
       "maxHp": 1250,
       "maxMana": 730,
       "name": "Party #1",
-      "status": "Erro: session.maintenance",
-      "updatedAt": 1792186685185,
+      "status": "Erro: request.invalid",
+      "updatedAt": 1792186805307,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 299241,
+      "durationSec": 299334,
       "expPerHour": 45506,
       "gold": 3421670,
       "hp": 1350,
@@ -67,13 +67,13 @@
       "maxMana": 790,
       "name": "Party #2",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792186678940,
+      "updatedAt": 1792186805986,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 171030,
+      "durationSec": 171123,
       "expPerHour": 7536,
       "gold": 1302070,
       "hp": 925,
@@ -102,13 +102,13 @@
       "maxMana": 535,
       "name": "Party #3",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792186684179,
+      "updatedAt": 1792186801221,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 299319,
+      "durationSec": 299412,
       "expPerHour": 39994,
       "gold": 2969482,
       "hp": 1300,
@@ -137,12 +137,12 @@
       "maxMana": 760,
       "name": "Party #4",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792186682439,
+      "updatedAt": 1792186799545,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.262298583984375,
+  "ramAllocMB": 3.2777557373046875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "45h23m7s"
+  "uptime": "45h25m7s"
 }
