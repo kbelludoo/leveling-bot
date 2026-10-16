@@ -3,12 +3,12 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 261876,
+      "durationSec": 262095,
       "expPerHour": 32390,
-      "gold": 2118227,
+      "gold": 2155452,
       "hp": 1250,
       "id": "acc-1",
-      "kills": 1785848,
+      "kills": 1787371,
       "level": 42,
       "logs": [
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 730,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792164968027,
+      "updatedAt": 1792165086896,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 261792,
+      "durationSec": 262014,
       "expPerHour": 28055,
-      "gold": 2168495,
+      "gold": 2205720,
       "hp": 1350,
       "id": "acc-2",
-      "kills": 1785465,
+      "kills": 1786988,
       "level": 46,
       "logs": [
         "Party sincronizada.",
@@ -67,18 +67,18 @@
       "maxMana": 790,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792164968017,
+      "updatedAt": 1792165086890,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 149901,
+      "durationSec": 150021,
       "expPerHour": 7536,
-      "gold": 1301545,
+      "gold": 1301670,
       "hp": 925,
       "id": "acc-3",
-      "kills": 57611,
+      "kills": 57616,
       "level": 29,
       "logs": [
         "Party sincronizada.",
@@ -102,18 +102,18 @@
       "maxMana": 535,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792164967756,
+      "updatedAt": 1792165086898,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 261888,
-      "expPerHour": 14215,
-      "gold": 2077622,
+      "durationSec": 262101,
+      "expPerHour": 15626,
+      "gold": 1830027,
       "hp": 1300,
       "id": "acc-4",
-      "kills": 1785871,
+      "kills": 1787326,
       "level": 44,
       "logs": [
         "Party sincronizada.",
@@ -125,9 +125,9 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
@@ -137,12 +137,12 @@
       "maxMana": 760,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792164968030,
+      "updatedAt": 1792165086890,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.8062210083007812,
+  "ramAllocMB": 3.201690673828125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "39h21m8s"
+  "uptime": "39h23m7s"
 }
