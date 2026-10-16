@@ -1,20 +1,17 @@
 {
   "accounts": [
     {
-      "codexInfo": "4/14 mobs | Orc Jovem (25/2000)",
+      "codexInfo": "4/14 mobs | Orc Jovem (26/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 305301,
+      "durationSec": 305463,
       "expPerHour": 241,
-      "gold": 36830,
+      "gold": 51405,
       "hp": 5175,
       "id": "acc-1",
-      "kills": 2040467,
+      "kills": 2041064,
       "level": 199,
       "logs": [
         "Party sincronizada.",
-        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 195)",
-        "Servidor erro: level.tooLow",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -22,6 +19,9 @@
         "Party sincronizada.",
         "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 195)",
         "Servidor erro: level.tooLow",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
+        "Membro já está na Party.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 3085,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792194126357,
+      "updatedAt": 1792194246389,
       "vocation": "arqueiro"
     },
     {
-      "codexInfo": "4/14 mobs | Orc Jovem (25/2000)",
+      "codexInfo": "4/14 mobs | Orc Jovem (26/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 304881,
+      "durationSec": 305022,
       "expPerHour": 241,
-      "gold": 35055,
+      "gold": 48905,
       "hp": 5075,
       "id": "acc-2",
-      "kills": 2039942,
+      "kills": 2040503,
       "level": 195,
       "logs": [
         "Auto-Follow: Sincronizando caçada com o líder -\u003e Blue Gate (Rato da Ruína Nv 5)",
@@ -67,18 +67,18 @@
       "maxMana": 3025,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792194126355,
+      "updatedAt": 1792194246437,
       "vocation": "healer"
     },
     {
-      "codexInfo": "4/14 mobs | Orc Jovem (25/2000)",
+      "codexInfo": "4/14 mobs | Orc Jovem (26/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 176853,
+      "durationSec": 177012,
       "expPerHour": 0,
-      "gold": 28780,
+      "gold": 42555,
       "hp": 5100,
       "id": "acc-3",
-      "kills": 65410,
+      "kills": 65974,
       "level": 196,
       "logs": [
         "Auto-Follow: Sincronizando caçada com o líder -\u003e Blue Gate (Rato da Ruína Nv 5)",
@@ -102,18 +102,18 @@
       "maxMana": 3040,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792194126356,
+      "updatedAt": 1792194246437,
       "vocation": "guerreiro"
     },
     {
-      "codexInfo": "4/14 mobs | Orc Jovem (25/2000)",
+      "codexInfo": "4/14 mobs | Orc Jovem (26/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 304980,
+      "durationSec": 305115,
       "expPerHour": 241,
-      "gold": 34905,
+      "gold": 48605,
       "hp": 5125,
       "id": "acc-4",
-      "kills": 2040258,
+      "kills": 2040811,
       "level": 197,
       "logs": [
         "Auto-Follow: Sincronizando caçada com o líder -\u003e Blue Gate (Rato da Ruína Nv 5)",
@@ -137,12 +137,12 @@
       "maxMana": 3055,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792194126354,
+      "updatedAt": 1792194246435,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.8349456787109375,
+  "ramAllocMB": 3.0377044677734375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "47h27m7s"
+  "uptime": "47h29m7s"
 }
