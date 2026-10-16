@@ -3,7 +3,7 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 301938,
+      "durationSec": 302028,
       "expPerHour": 76204,
       "gold": 3088019,
       "hp": 1250,
@@ -11,7 +11,6 @@
       "kills": 2032839,
       "level": 42,
       "logs": [
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
@@ -25,20 +24,21 @@
         "Servidor erro: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance"
+        "Servidor erro: session.maintenance",
+        "Conexão perdida com o servidor."
       ],
       "mana": 730,
       "maxHp": 1250,
       "maxMana": 730,
       "name": "Party #1",
-      "status": "Erro: session.maintenance",
-      "updatedAt": 1792190877522,
+      "status": "Conexão perdida (websocket: close 1006 (abnormal closure): unexpected EOF). Reconectando...",
+      "updatedAt": 1792191004445,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 301881,
+      "durationSec": 301974,
       "expPerHour": 45506,
       "gold": 3421670,
       "hp": 1350,
@@ -46,7 +46,6 @@
       "kills": 2032666,
       "level": 46,
       "logs": [
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
@@ -60,20 +59,21 @@
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance"
+        "Servidor erro: session.maintenance",
+        "Conexão perdida com o servidor."
       ],
       "mana": 790,
       "maxHp": 1350,
       "maxMana": 790,
       "name": "Party #2",
-      "status": "Erro: session.maintenance",
-      "updatedAt": 1792190878414,
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792191005337,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 173676,
+      "durationSec": 173766,
       "expPerHour": 7536,
       "gold": 1302070,
       "hp": 925,
@@ -81,7 +81,6 @@
       "kills": 58057,
       "level": 29,
       "logs": [
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
@@ -95,20 +94,21 @@
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance"
+        "Servidor erro: session.maintenance",
+        "Conexão perdida com o servidor."
       ],
       "mana": 535,
       "maxHp": 925,
       "maxMana": 535,
       "name": "Party #3",
-      "status": "Erro: session.maintenance",
-      "updatedAt": 1792190877482,
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792191004345,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 301959,
+      "durationSec": 302052,
       "expPerHour": 39994,
       "gold": 2969482,
       "hp": 1300,
@@ -116,7 +116,6 @@
       "kills": 2033037,
       "level": 44,
       "logs": [
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
@@ -130,19 +129,20 @@
         "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Servidor erro: session.maintenance"
+        "Servidor erro: session.maintenance",
+        "Conexão perdida com o servidor."
       ],
       "mana": 760,
       "maxHp": 1300,
       "maxMana": 760,
       "name": "Party #4",
-      "status": "Erro: session.maintenance",
-      "updatedAt": 1792190878394,
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792191005307,
       "vocation": "mago"
     }
   ],
-  "goroutines": 14,
-  "ramAllocMB": 1.9692611694335938,
+  "goroutines": 10,
+  "ramAllocMB": 3.0509872436523438,
   "ramSysMB": 17.34986114501953,
-  "uptime": "46h33m6s"
+  "uptime": "46h35m7s"
 }
