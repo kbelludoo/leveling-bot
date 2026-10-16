@@ -3,12 +3,12 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 254031,
-      "expPerHour": 21457,
-      "gold": 2050035,
+      "durationSec": 254247,
+      "expPerHour": 22141,
+      "gold": 2012751,
       "hp": 1250,
       "id": "acc-1",
-      "kills": 1731072,
+      "kills": 1732659,
       "level": 42,
       "logs": [
         "Party sincronizada.",
@@ -25,25 +25,25 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor."
+        "Party sincronizada."
       ],
       "mana": 730,
       "maxHp": 1250,
       "maxMana": 730,
       "name": "Party #1",
-      "status": "Conectando ao servidor...",
-      "updatedAt": 1792160647223,
+      "status": "hunting",
+      "updatedAt": 1792160766857,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 253971,
-      "expPerHour": 22172,
-      "gold": 2457329,
+      "durationSec": 254187,
+      "expPerHour": 23716,
+      "gold": 2069911,
       "hp": 1350,
       "id": "acc-2",
-      "kills": 1730745,
+      "kills": 1732328,
       "level": 46,
       "logs": [
         "Party sincronizada.",
@@ -60,25 +60,25 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor."
+        "Party sincronizada."
       ],
       "mana": 790,
       "maxHp": 1350,
       "maxMana": 790,
       "name": "Party #2",
-      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
-      "updatedAt": 1792160644888,
+      "status": "hunting",
+      "updatedAt": 1792160766856,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 145626,
+      "durationSec": 145740,
       "expPerHour": 7536,
-      "gold": 1301795,
+      "gold": 1301520,
       "hp": 925,
       "id": "acc-3",
-      "kills": 57513,
+      "kills": 57518,
       "level": 29,
       "logs": [
         "Party sincronizada.",
@@ -95,25 +95,25 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor."
+        "Party sincronizada."
       ],
       "mana": 535,
       "maxHp": 925,
       "maxMana": 535,
       "name": "Party #3",
-      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
-      "updatedAt": 1792160645488,
+      "status": "hunting",
+      "updatedAt": 1792160766859,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 253986,
-      "expPerHour": 8352,
-      "gold": 1915290,
+      "durationSec": 254202,
+      "expPerHour": 8825,
+      "gold": 1862391,
       "hp": 1300,
       "id": "acc-4",
-      "kills": 1730764,
+      "kills": 1732350,
       "level": 44,
       "logs": [
         "Party sincronizada.",
@@ -130,19 +130,19 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor."
+        "Party sincronizada."
       ],
       "mana": 760,
       "maxHp": 1300,
       "maxMana": 760,
       "name": "Party #4",
-      "status": "Conectando ao servidor...",
-      "updatedAt": 1792160647279,
+      "status": "hunting",
+      "updatedAt": 1792160766855,
       "vocation": "mago"
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.1089096069335938,
+  "goroutines": 14,
+  "ramAllocMB": 1.4748687744140625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "38h9m8s"
+  "uptime": "38h11m7s"
 }
