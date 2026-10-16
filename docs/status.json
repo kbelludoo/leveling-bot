@@ -3,12 +3,12 @@
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 232146,
+      "durationSec": 232356,
       "expPerHour": 177274,
-      "gold": 2492710,
+      "gold": 2527810,
       "hp": 1225,
       "id": "acc-1",
-      "kills": 1578404,
+      "kills": 1579838,
       "level": 41,
       "logs": [
         "Party sincronizada.",
@@ -32,18 +32,18 @@
       "maxMana": 715,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792148766489,
+      "updatedAt": 1792148886652,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 232086,
+      "durationSec": 232296,
       "expPerHour": 10365,
-      "gold": 2104896,
+      "gold": 2139971,
       "hp": 1350,
       "id": "acc-2",
-      "kills": 1578169,
+      "kills": 1579602,
       "level": 46,
       "logs": [
         "Party sincronizada.",
@@ -67,18 +67,18 @@
       "maxMana": 790,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792148766493,
+      "updatedAt": 1792148886604,
       "vocation": "healer"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 133767,
+      "durationSec": 133887,
       "expPerHour": 7536,
-      "gold": 1302070,
+      "gold": 1302095,
       "hp": 925,
       "id": "acc-3",
-      "kills": 57354,
+      "kills": 57355,
       "level": 29,
       "logs": [
         "Party sincronizada.",
@@ -102,18 +102,18 @@
       "maxMana": 535,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792148766111,
+      "updatedAt": 1792148886112,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "4/6 mobs | Orc Jovem (16/2000)",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 232098,
-      "expPerHour": 195635,
-      "gold": 2980026,
+      "durationSec": 232305,
+      "expPerHour": 203532,
+      "gold": 1842366,
       "hp": 1275,
       "id": "acc-4",
-      "kills": 1578122,
+      "kills": 1579547,
       "level": 43,
       "logs": [
         "Party sincronizada.",
@@ -130,19 +130,19 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Conexão perdida com o servidor."
+        "Party sincronizada."
       ],
       "mana": 745,
       "maxHp": 1275,
       "maxMana": 745,
       "name": "Party #4",
-      "status": "Conexão perdida (websocket: close 1006 (abnormal closure): unexpected EOF). Reconectando...",
-      "updatedAt": 1792148763660,
+      "status": "hunting",
+      "updatedAt": 1792148886652,
       "vocation": "mago"
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 2.9373016357421875,
+  "goroutines": 14,
+  "ramAllocMB": 2.8143386840820312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "34h51m7s"
+  "uptime": "34h53m7s"
 }
