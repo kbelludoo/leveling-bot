@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302544,
+      "durationSec": 302637,
       "expPerHour": 0,
       "gold": 7775,
       "hp": 1900,
@@ -32,13 +32,13 @@
       "maxMana": 1120,
       "name": "Party #1",
       "status": "Erro: request.invalid",
-      "updatedAt": 1792191600515,
+      "updatedAt": 1792191717584,
       "vocation": "arqueiro"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302496,
+      "durationSec": 302589,
       "expPerHour": 0,
       "gold": 7725,
       "hp": 1975,
@@ -46,9 +46,9 @@
       "kills": 2032989,
       "level": 71,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -67,13 +67,13 @@
       "maxMana": 1165,
       "name": "Party #2",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792191600428,
+      "updatedAt": 1792191717574,
       "vocation": "healer"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 174288,
+      "durationSec": 174381,
       "expPerHour": 0,
       "gold": 7750,
       "hp": 225,
@@ -81,9 +81,9 @@
       "kills": 58381,
       "level": 1,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -102,13 +102,13 @@
       "maxMana": 115,
       "name": "Party #3",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792191600524,
+      "updatedAt": 1792191717678,
       "vocation": "guerreiro"
     },
     {
       "codexInfo": "Completo (1/1 mobs) | Foco XP",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 302568,
+      "durationSec": 302661,
       "expPerHour": 0,
       "gold": 7800,
       "hp": 1950,
@@ -116,9 +116,9 @@
       "kills": 2033361,
       "level": 70,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: session.maintenance",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: session.maintenance",
@@ -137,12 +137,12 @@
       "maxMana": 1150,
       "name": "Party #4",
       "status": "Erro: session.maintenance",
-      "updatedAt": 1792191600431,
+      "updatedAt": 1792191717512,
       "vocation": "mago"
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.7632217407226562,
+  "ramAllocMB": 2.82427978515625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "46h45m8s"
+  "uptime": "46h47m7s"
 }
