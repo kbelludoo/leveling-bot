@@ -31,8 +31,8 @@
       "maxHp": 1250,
       "maxMana": 730,
       "name": "Party #1",
-      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
-      "updatedAt": 1792189565641,
+      "status": "Conectando ao servidor...",
+      "updatedAt": 1792189686022,
       "vocation": "arqueiro"
     },
     {
@@ -66,8 +66,8 @@
       "maxHp": 1350,
       "maxMana": 790,
       "name": "Party #2",
-      "status": "Conectando ao servidor...",
-      "updatedAt": 1792189566157,
+      "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
+      "updatedAt": 1792189684980,
       "vocation": "healer"
     },
     {
@@ -102,7 +102,7 @@
       "maxMana": 535,
       "name": "Party #3",
       "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
-      "updatedAt": 1792189565189,
+      "updatedAt": 1792189683284,
       "vocation": "guerreiro"
     },
     {
@@ -137,12 +137,12 @@
       "maxMana": 760,
       "name": "Party #4",
       "status": "Erro de conexão: websocket dial failed: websocket: bad handshake",
-      "updatedAt": 1792189563883,
+      "updatedAt": 1792189684879,
       "vocation": "mago"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.0137481689453125,
+  "ramAllocMB": 1.7343673706054688,
   "ramSysMB": 17.34986114501953,
-  "uptime": "46h11m7s"
+  "uptime": "46h13m7s"
 }
