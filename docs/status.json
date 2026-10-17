@@ -3,12 +3,12 @@
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 34392,
+      "durationSec": 34512,
       "expPerHour": 4108,
-      "gold": 405,
+      "gold": 455,
       "hp": 250,
       "id": "acc-1",
-      "kills": 1565,
+      "kills": 1567,
       "level": 2,
       "logs": [
         "Membro já está na Party.",
@@ -32,17 +32,17 @@
       "maxMana": 130,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792231446129
+      "updatedAt": 1792231566295
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 34398,
+      "durationSec": 34518,
       "expPerHour": 1376,
-      "gold": 2410,
+      "gold": 2460,
       "hp": 275,
       "id": "acc-2",
-      "kills": 1577,
+      "kills": 1579,
       "level": 3,
       "logs": [
         "Conexão WebSocket estabelecida. Enviando login...",
@@ -66,17 +66,17 @@
       "maxMana": 145,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792231446130
+      "updatedAt": 1792231566295
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 34395,
+      "durationSec": 34515,
       "expPerHour": 976,
-      "gold": 2839,
+      "gold": 2864,
       "hp": 275,
       "id": "acc-3",
-      "kills": 1290,
+      "kills": 1291,
       "level": 3,
       "logs": [
         "Conexão perdida com o servidor.",
@@ -100,17 +100,17 @@
       "maxMana": 145,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792231446176
+      "updatedAt": 1792231566227
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 34398,
+      "durationSec": 34518,
       "expPerHour": 1376,
-      "gold": 2515,
+      "gold": 2540,
       "hp": 275,
       "id": "acc-4",
-      "kills": 1331,
+      "kills": 1332,
       "level": 3,
       "logs": [
         "Login bem-sucedido! Bem-vindo, Party #4.",
@@ -134,11 +134,11 @@
       "maxMana": 145,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792231446176
+      "updatedAt": 1792231566227
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 3.2901763916015625,
+  "ramAllocMB": 1.8381500244140625,
   "ramSysMB": 17.09986114501953,
-  "uptime": "9h35m20s"
+  "uptime": "9h37m20s"
 }
