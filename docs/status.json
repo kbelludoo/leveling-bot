@@ -1,14 +1,14 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (417/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (420/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 5151,
+      "durationSec": 5298,
       "expPerHour": 9724,
-      "gold": 5038,
+      "gold": 5163,
       "hp": 325,
       "id": "acc-1",
-      "kills": 4745,
+      "kills": 4752,
       "level": 5,
       "logs": [
         "Party sincronizada.",
@@ -21,8 +21,8 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
@@ -32,17 +32,17 @@
       "maxMana": 175,
       "name": "Party #1",
       "status": "Erro: state.invalid",
-      "updatedAt": 1792263246314
+      "updatedAt": 1792263385579
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (417/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (420/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 12672,
-      "expPerHour": 17018,
-      "gold": 32863,
+      "durationSec": 13086,
+      "expPerHour": 25922,
+      "gold": 32940,
       "hp": 625,
       "id": "acc-2",
-      "kills": 36703,
+      "kills": 37757,
       "level": 17,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 355,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792263246461
+      "updatedAt": 1792263385579
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (417/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (420/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 8295,
+      "durationSec": 8442,
       "expPerHour": 62619,
-      "gold": 26606,
+      "gold": 26731,
       "hp": 575,
       "id": "acc-3",
-      "kills": 17769,
+      "kills": 17776,
       "level": 15,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 325,
       "name": "Party #3",
       "status": "Erro: state.invalid",
-      "updatedAt": 1792263246317
+      "updatedAt": 1792263385579
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (417/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (420/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 13146,
-      "expPerHour": 18799,
-      "gold": 33130,
+      "durationSec": 13584,
+      "expPerHour": 27703,
+      "gold": 33182,
       "hp": 625,
       "id": "acc-4",
-      "kills": 36802,
+      "kills": 37871,
       "level": 17,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 355,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792263246463
+      "updatedAt": 1792263385579
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.970458984375,
+  "ramAllocMB": 1.65765380859375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "1h7m54s"
+  "uptime": "1h10m13s"
 }
