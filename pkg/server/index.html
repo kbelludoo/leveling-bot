@@ -212,10 +212,13 @@
               <div><strong>EXP/h:</strong> ${Math.round(acc.expPerHour || 0).toLocaleString()}</div>
             </div>
 
-            <div class="actions">
+            <div class="actions" style="flex-wrap: wrap;">
               <button class="btn btn-primary" onclick="dispatchAction('${acc.id}', 'autoHunt')">Toggle Hunt</button>
-              <button class="btn" onclick="dispatchAction('${acc.id}', 'autoHeal')">Curar</button>
-              <button class="btn" onclick="dispatchAction('${acc.id}', 'autoSell')">Vender Loot</button>
+              <button class="btn" onclick="dispatchAction('${acc.id}', 'equipBest')">Equip Best</button>
+              <button class="btn" onclick="dispatchAction('${acc.id}', 'allocateStats')">Distribuir Stats</button>
+              <button class="btn" onclick="dispatchAction('${acc.id}', 'repair')">Reparar</button>
+              <button class="btn" onclick="dispatchAction('${acc.id}', 'claimMissions')">Missões</button>
+              <button class="btn" onclick="dispatchAction('${acc.id}', 'shadowTeam')">Sombras</button>
             </div>
 
             <div class="logs-box">

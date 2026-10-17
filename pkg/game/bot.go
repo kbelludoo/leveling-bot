@@ -33,13 +33,25 @@ type Bot struct {
 	ticketChan   chan string
 
 	// Controle de Caçadas (Auto-Hunt) & Bestiário (Codex)
-	currentGate           string
-	currentTier           uint32
-	currentDifficulty     string
-	partyMinLevel         int
-	lastHuntCheck         time.Time
-	lastAttemptedHuntKey  string
-	codexKills            map[string]uint64
+	currentGate          string
+	currentTier          uint32
+	currentDifficulty    string
+	partyMinLevel        int
+	lastHuntCheck        time.Time
+	lastAttemptedHuntKey string
+	codexKills           map[string]uint64
+	activePartyMembers   map[string]bool
+	huntConfirmed        bool
+
+	// Controle de Progressão Completa (Zero Limitações)
+	statPoints           uint32
+	talentPoints         uint32
+	automationConfigured bool
+	lastEquipCheck       time.Time
+	lastRepairCheck      time.Time
+	lastMissionCheck     time.Time
+	lastShadowCheck      time.Time
+	lastPromotionCheck   time.Time
 }
 
 type PartyCoordinator struct {
@@ -431,6 +443,307 @@ func (b *Bot) sendStartHunt(gateID string, tierMin uint32, difficulty string) er
 	return b.socket.SendBinary(clientMsg)
 }
 
+// sendEquipBest equipa automaticamente os melhores itens do inventário (Tag 54)
+func (b *Bot) sendEquipBest() error {
+	reqID := b.nextReqID()
+
+	// EquipBestApply { 1: criterion = 2 (EQUIP_CRITERION_POWER) }
+	var equipApply []byte
+	equipApply = protowire.AppendTag(equipApply, 1, protowire.VarintType)
+	equipApply = protowire.AppendVarint(equipApply, 2)
+
+	// ClientMessage { 1: req_id, 54: equip_best_apply }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 54, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, equipApply)
+
+	log.Printf("[%s] Enviando EquipBest (auto-equipar melhores itens)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendAllocateStats distribui pontos de atributo conforme a vocação (Tag 90)
+// StatId enum: STR=1, AGI=2, VIT=3, INT=6, PER=7
+func (b *Bot) sendAllocateStats(points uint32) error {
+	if points == 0 {
+		return nil
+	}
+	reqID := b.nextReqID()
+
+	voc := b.status.Vocation
+	if voc == "" {
+		voc = b.config.Settings.PreferredClass
+	}
+
+	var statAmounts [][]byte
+
+	switch voc {
+	case "mago":
+		// 80% INT (6), 20% VIT (3)
+		intPts := uint32(float64(points) * 0.8)
+		vitPts := points - intPts
+		if intPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(6, intPts))
+		}
+		if vitPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(3, vitPts))
+		}
+
+	case "healer", "sacerdote":
+		// 70% INT (6), 30% VIT (3)
+		intPts := uint32(float64(points) * 0.7)
+		vitPts := points - intPts
+		if intPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(6, intPts))
+		}
+		if vitPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(3, vitPts))
+		}
+
+	case "arqueiro":
+		// 70% AGI (2), 30% PER (7)
+		agiPts := uint32(float64(points) * 0.7)
+		perPts := points - agiPts
+		if agiPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(2, agiPts))
+		}
+		if perPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(7, perPts))
+		}
+
+	case "assassino":
+		// 60% AGI (2), 40% PER (7)
+		agiPts := uint32(float64(points) * 0.6)
+		perPts := points - agiPts
+		if agiPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(2, agiPts))
+		}
+		if perPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(7, perPts))
+		}
+
+	default: // guerreiro ou sem vocação definida -> STR + VIT
+		// 80% STR (1), 20% VIT (3)
+		strPts := uint32(float64(points) * 0.8)
+		vitPts := points - strPts
+		if strPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(1, strPts))
+		}
+		if vitPts > 0 {
+			statAmounts = append(statAmounts, buildStatAmount(3, vitPts))
+		}
+	}
+
+	// AllocateStats { 1: repeated StatAmount points }
+	var allocMsg []byte
+	for _, sa := range statAmounts {
+		allocMsg = protowire.AppendTag(allocMsg, 1, protowire.BytesType)
+		allocMsg = protowire.AppendBytes(allocMsg, sa)
+	}
+
+	// ClientMessage { 1: req_id, 90: allocate_stats }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 90, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, allocMsg)
+
+	log.Printf("[%s] Distribuindo %d pontos de atributo para vocação '%s'", b.ID(), points, voc)
+	b.addLogLocked(fmt.Sprintf("Atributos: Distribuídos %d pontos (%s)", points, voc))
+	return b.socket.SendBinary(clientMsg)
+}
+
+func buildStatAmount(statID uint32, points uint32) []byte {
+	var sa []byte
+	sa = protowire.AppendTag(sa, 1, protowire.VarintType)
+	sa = protowire.AppendVarint(sa, uint64(statID))
+	sa = protowire.AppendTag(sa, 2, protowire.VarintType)
+	sa = protowire.AppendVarint(sa, uint64(points))
+	return sa
+}
+
+// sendRepairAll repara todos os equipamentos do personagem (Tag 65)
+func (b *Bot) sendRepairAll() error {
+	reqID := b.nextReqID()
+
+	// Repair { 1: repeated uids, 2: partial = false }
+	// Deixar uids vazio com partial=false repara todo o inventário/set equipado
+	var repairMsg []byte
+	repairMsg = protowire.AppendTag(repairMsg, 2, protowire.VarintType)
+	repairMsg = protowire.AppendVarint(repairMsg, 0)
+
+	// ClientMessage { 1: req_id, 65: repair }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 65, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, repairMsg)
+
+	log.Printf("[%s] Enviando Repair (reparar todos os itens)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendClaimMissions resgata recompensas de missões (Journey e Daily) (Tag 410)
+func (b *Bot) sendClaimMissions() error {
+	reqID := b.nextReqID()
+
+	// MissionsRequest { 1: state = true, 2: claim_journey = true, 3: claim_daily = "" }
+	var missionsReq []byte
+	missionsReq = protowire.AppendTag(missionsReq, 1, protowire.VarintType)
+	missionsReq = protowire.AppendVarint(missionsReq, 1)
+	missionsReq = protowire.AppendTag(missionsReq, 2, protowire.VarintType)
+	missionsReq = protowire.AppendVarint(missionsReq, 1)
+	missionsReq = protowire.AppendTag(missionsReq, 3, protowire.BytesType)
+	missionsReq = protowire.AppendString(missionsReq, "daily")
+
+	// ClientMessage { 1: req_id, 410: missions_request }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 410, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, missionsReq)
+
+	log.Printf("[%s] Enviando ClaimMissions (resgate de missões diárias e jornada)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendSetAutomation configura a automação completa no servidor (Tag 98)
+// ativa auto_continue, auto_arise, auto_chest, poções e auto_sell
+func (b *Bot) sendSetAutomation() error {
+	reqID := b.nextReqID()
+
+	// AutoPotion for HP (threshold 0.5)
+	var hpPotion []byte
+	hpPotion = protowire.AppendTag(hpPotion, 2, protowire.Fixed32Type)
+	hpPotion = protowire.AppendFixed32(hpPotion, 0x3f000000) // float32(0.5)
+	hpPotion = protowire.AppendTag(hpPotion, 4, protowire.VarintType)
+	hpPotion = protowire.AppendVarint(hpPotion, 1) // best_fit = true
+
+	// AutoPotion for Mana (threshold 0.3)
+	var manaPotion []byte
+	manaPotion = protowire.AppendTag(manaPotion, 2, protowire.Fixed32Type)
+	manaPotion = protowire.AppendFixed32(manaPotion, 0x3e99999a) // float32(0.3)
+	manaPotion = protowire.AppendTag(manaPotion, 4, protowire.VarintType)
+	manaPotion = protowire.AppendVarint(manaPotion, 1) // best_fit = true
+
+	// Automation { 2: auto_continue, 5: auto_arise, 6: auto_chest, 7: hp_potion, 8: mana_potion, 9: auto_shadow_potion, 10: auto_sell, 16: auto_shadow_revive }
+	var autoMsg []byte
+	autoMsg = protowire.AppendTag(autoMsg, 2, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_continue
+	autoMsg = protowire.AppendTag(autoMsg, 5, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_arise (ressuscitar sombras)
+	autoMsg = protowire.AppendTag(autoMsg, 6, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_chest (abrir baús)
+	autoMsg = protowire.AppendTag(autoMsg, 7, protowire.BytesType)
+	autoMsg = protowire.AppendBytes(autoMsg, hpPotion)
+	autoMsg = protowire.AppendTag(autoMsg, 8, protowire.BytesType)
+	autoMsg = protowire.AppendBytes(autoMsg, manaPotion)
+	autoMsg = protowire.AppendTag(autoMsg, 9, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_potion
+	autoMsg = protowire.AppendTag(autoMsg, 10, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_sell
+	autoMsg = protowire.AppendTag(autoMsg, 16, protowire.VarintType)
+	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_revive
+
+	// SetAutomation { 1: automation }
+	var setAuto []byte
+	setAuto = protowire.AppendTag(setAuto, 1, protowire.BytesType)
+	setAuto = protowire.AppendBytes(setAuto, autoMsg)
+
+	// ClientMessage { 1: req_id, 98: set_automation }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 98, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, setAuto)
+
+	log.Printf("[%s] Enviando SetAutomation (auto_arise, auto_chest, auto_sell, potions)", b.ID())
+	b.addLogLocked("Servidor: Automação completa ativada (Arise, Baús, Poções, Auto-Sell)")
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendShadowTeamBest escala automaticamente o melhor time de sombras (Tag 121)
+func (b *Bot) sendShadowTeamBest() error {
+	reqID := b.nextReqID()
+
+	// ShadowSetTeam { 1: action = 5 (SHADOW_TEAM_ACTION_BEST) }
+	var shadowTeam []byte
+	shadowTeam = protowire.AppendTag(shadowTeam, 1, protowire.VarintType)
+	shadowTeam = protowire.AppendVarint(shadowTeam, 5)
+
+	// ClientMessage { 1: req_id, 121: shadow_set_team }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 121, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, shadowTeam)
+
+	log.Printf("[%s] Enviando ShadowTeamBest (escalar melhores sombras)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendShadowEquipBest equipa automaticamente os melhores itens nas sombras (Tag 127)
+func (b *Bot) sendShadowEquipBest() error {
+	reqID := b.nextReqID()
+
+	// ShadowEquipBest {}
+	// ClientMessage { 1: req_id, 127: shadow_equip_best }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 127, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, []byte{})
+
+	log.Printf("[%s] Enviando ShadowEquipBest (equipar melhores itens nas sombras)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendChooseClass escolhe a classe do caçador caso ainda seja aprendiz (Tag 93)
+func (b *Bot) sendChooseClass(classID string) error {
+	if classID == "" {
+		return nil
+	}
+	reqID := b.nextReqID()
+
+	// ChooseClass { 1: class_id }
+	var chooseClass []byte
+	chooseClass = protowire.AppendTag(chooseClass, 1, protowire.BytesType)
+	chooseClass = protowire.AppendString(chooseClass, classID)
+
+	// ClientMessage { 1: req_id, 93: choose_class }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 93, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, chooseClass)
+
+	log.Printf("[%s] Escolhendo classe: %s", b.ID(), classID)
+	b.addLogLocked(fmt.Sprintf("Classe escolhida: %s", classID))
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendStartPromotion inicia a batalha de promoção de Rank (Tag 99)
+func (b *Bot) sendStartPromotion() error {
+	reqID := b.nextReqID()
+
+	// Promotion { 2: start = true }
+	var promoMsg []byte
+	promoMsg = protowire.AppendTag(promoMsg, 2, protowire.VarintType)
+	promoMsg = protowire.AppendVarint(promoMsg, 1)
+
+	// ClientMessage { 1: req_id, 99: promotion }
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 99, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, promoMsg)
+
+	log.Printf("[%s] Enviando StartPromotion (tentar subida de Rank)", b.ID())
+	b.addLogLocked("Promoção de Rank solicitada!")
+	return b.socket.SendBinary(clientMsg)
+}
+
 func (b *Bot) handleInboundPacket(bData []byte) {
 	b.mu.Lock()
 	defer b.mu.Unlock()
@@ -465,6 +778,9 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 					b.addLogLocked("Membro já está na Party.")
 				} else if errMsg == "ratelimit.party" {
 					b.addLogLocked("Party rate limit.")
+				} else if errMsg == "shadow.notFound" || errMsg == "missions.unknown" || errMsg == "request.invalid" || errMsg == "repair.nothing" {
+					// Avisos normais quando ainda não possui sombras, missões ou nada para reparar
+					b.addLogLocked(fmt.Sprintf("Info servidor: %s", errMsg))
 				} else {
 					b.status.Status = fmt.Sprintf("Erro: %s", errMsg)
 					b.addLogLocked(fmt.Sprintf("Servidor erro: %s", errMsg))
@@ -497,6 +813,7 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 
 			case 30: // StartHuntResult
 				b.lastAttemptedHuntKey = ""
+				b.huntConfirmed = true
 				gateID := parseStringField(bytesVal, 1)
 				tierMin := uint32(parseVarintField(bytesVal, 2))
 				dif := parseStringField(bytesVal, 3)
@@ -512,6 +829,7 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 
 			case 41: // HuntSession
 				b.lastAttemptedHuntKey = ""
+				b.huntConfirmed = true
 				gateID := parseStringField(bytesVal, 1)
 				tierMin := uint32(parseVarintField(bytesVal, 2))
 				dif := parseStringField(bytesVal, 3)
@@ -576,6 +894,9 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 				if gold > 0 {
 					b.status.Gold = gold
 				}
+			case 5: // Points
+				b.statPoints = uint32(parseVarintField(sub, 1))
+				b.talentPoints = uint32(parseVarintField(sub, 2))
 			case 6: // Stats
 				// HP e Mana
 				b.status.HP = 200 + (b.status.Level * 25)
@@ -658,6 +979,9 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 				if gold > 0 {
 					b.status.Gold = gold
 				}
+			case 4: // Points
+				b.statPoints = uint32(parseVarintField(sub, 1))
+				b.talentPoints = uint32(parseVarintField(sub, 2))
 			case 16: // Codex (CodexState)
 				kills := parseCodexMonsters(sub)
 				for k, v := range kills {
@@ -729,6 +1053,7 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 				minLvl := b.status.Level
 				var leaderGate string
 				var leaderTier uint32
+				activeMembers := make(map[string]bool)
 				for len(pData) > 0 {
 					pNum, pType, pn := protowire.ConsumeTag(pData)
 					if pn < 0 {
@@ -742,10 +1067,14 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 						}
 						pData = pData[mn:]
 						if pNum == 2 { // PartyMember
+							mName := parseStringField(mBytes, 2)
 							mLvl := int(parseVarintField(mBytes, 4))
 							isLeader := parseVarintField(mBytes, 6) == 1
 							mGate := parseStringField(mBytes, 18)
 							mTier := uint32(parseVarintField(mBytes, 19))
+							if mName != "" {
+								activeMembers[mName] = true
+							}
 							if mLvl > 0 && mLvl < minLvl {
 								minLvl = mLvl
 							}
@@ -759,6 +1088,7 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 						pData = pData[pn:]
 					}
 				}
+				b.activePartyMembers = activeMembers
 				if minLvl > 0 {
 					b.partyMinLevel = minLvl
 				}
@@ -836,7 +1166,7 @@ func (b *Bot) performTick() {
 			// Publica caçada do líder para todos os membros no processo
 			GlobalParty.SetLeaderHunt(best.GateID, best.TierMin, best.Difficulty)
 
-			if b.currentGate != best.GateID || b.currentTier != best.TierMin || b.currentDifficulty != best.Difficulty {
+			if !b.huntConfirmed || b.currentGate != best.GateID || b.currentTier != best.TierMin || b.currentDifficulty != best.Difficulty {
 				if time.Since(b.lastHuntCheck) > 5*time.Second {
 					b.lastHuntCheck = time.Now()
 					_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
@@ -892,16 +1222,72 @@ func (b *Bot) performTick() {
 		}
 	}
 
-	// Se for o Líder da Party, manter a party completa enviando convites
+	// Se for o Líder da Party, manter a party completa convidando APENAS quem ainda não entrou
 	if b.config.Settings.PartyLeader && len(b.config.Settings.PartyMembers) > 0 {
-		// Envia convite a cada ~45 segundos
-		if b.status.DurationSec <= 15 || b.status.DurationSec%45 == 0 {
+		// Envia convite a cada ~60 segundos apenas para membros ausentes
+		if b.status.DurationSec <= 15 || b.status.DurationSec%60 == 0 {
 			for _, member := range b.config.Settings.PartyMembers {
 				if member != "" && member != b.config.Credentials.Username {
-					_ = b.sendPartyInvite(member)
+					if b.activePartyMembers == nil || !b.activePartyMembers[member] {
+						_ = b.sendPartyInvite(member)
+					}
 				}
 			}
 		}
+	}
+
+	// ==========================================
+	// AUTONOMOUS PROGRESSION (Zero Limitações)
+	// ==========================================
+
+	// 1. Configurar Automações do Servidor (Arise, Baús, Poções, Auto-Sell)
+	if !b.automationConfigured {
+		b.automationConfigured = true
+		_ = b.sendSetAutomation()
+	}
+
+	// 2. Escolha Automática de Classe se ainda não tiver e tiver configurada
+	if (b.status.Vocation == "" || b.status.Vocation == "aprendiz") && b.config.Settings.PreferredClass != "" {
+		_ = b.sendChooseClass(b.config.Settings.PreferredClass)
+	}
+
+	// 3. Distribuição Automática de Atributos (AutoStats)
+	// Por padrão ativo, distribui todos os statPoints acumulados
+	if (b.config.Settings.AutoStats || true) && b.statPoints > 0 {
+		pts := b.statPoints
+		b.statPoints = 0
+		_ = b.sendAllocateStats(pts)
+	}
+
+	// 4. Auto-Equip Melhores Itens a cada 30 segundos
+	if (b.config.Settings.AutoEquip || true) && time.Since(b.lastEquipCheck) > 30*time.Second {
+		b.lastEquipCheck = time.Now()
+		_ = b.sendEquipBest()
+	}
+
+	// 5. Auto-Repair Equipamentos a cada 3 minutos
+	if (b.config.Settings.AutoRepair || true) && time.Since(b.lastRepairCheck) > 3*time.Minute {
+		b.lastRepairCheck = time.Now()
+		_ = b.sendRepairAll()
+	}
+
+	// 6. Resgatar Missões (Journey / Daily) a cada 60 segundos
+	if (b.config.Settings.AutoMissions || true) && time.Since(b.lastMissionCheck) > 60*time.Second {
+		b.lastMissionCheck = time.Now()
+		_ = b.sendClaimMissions()
+	}
+
+	// 7. Auto-Shadows: Escalar Melhores Sombras e Equipar a cada 60 segundos
+	if (b.config.Settings.AutoShadows || true) && time.Since(b.lastShadowCheck) > 60*time.Second {
+		b.lastShadowCheck = time.Now()
+		_ = b.sendShadowTeamBest()
+		_ = b.sendShadowEquipBest()
+	}
+
+	// 8. Auto-Promotion: Tentar Promoção de Rank a cada 5 minutos
+	if b.config.Settings.AutoPromotion && time.Since(b.lastPromotionCheck) > 5*time.Minute {
+		b.lastPromotionCheck = time.Now()
+		_ = b.sendStartPromotion()
 	}
 }
 
@@ -1055,6 +1441,47 @@ func (b *Bot) ExecuteAction(action string, payload map[string]any) (any, error) 
 		err := b.sendStartHunt(gate, tierMin, dif)
 		b.addLogLocked(fmt.Sprintf("Ação Manual testHunt enviada: Gate=%s Tier=%d Dif=%s", gate, tierMin, dif))
 		return map[string]any{"sent": true, "gate": gate, "tier": tierMin, "difficulty": dif}, err
+
+	case "equipBest":
+		err := b.sendEquipBest()
+		b.addLogLocked("Ação Manual: Equipar Melhores Itens executado.")
+		return map[string]any{"executed": true}, err
+
+	case "allocateStats":
+		points := b.statPoints
+		if pVal, ok := payload["points"].(float64); ok && pVal > 0 {
+			points = uint32(pVal)
+		}
+		if points == 0 {
+			points = 5 // mínimo para teste
+		}
+		err := b.sendAllocateStats(points)
+		b.statPoints = 0
+		return map[string]any{"executed": true, "points": points}, err
+
+	case "repair":
+		err := b.sendRepairAll()
+		b.addLogLocked("Ação Manual: Reparar Todos os Equipamentos executado.")
+		return map[string]any{"executed": true}, err
+
+	case "claimMissions":
+		err := b.sendClaimMissions()
+		b.addLogLocked("Ação Manual: Resgatar Missões executado.")
+		return map[string]any{"executed": true}, err
+
+	case "setAutomation":
+		err := b.sendSetAutomation()
+		return map[string]any{"executed": true}, err
+
+	case "shadowTeam":
+		err := b.sendShadowTeamBest()
+		_ = b.sendShadowEquipBest()
+		b.addLogLocked("Ação Manual: Otimizar Sombras executado.")
+		return map[string]any{"executed": true}, err
+
+	case "promotion":
+		err := b.sendStartPromotion()
+		return map[string]any{"executed": true}, err
 
 	default:
 		return nil, fmt.Errorf("ação não implementada: %s", action)

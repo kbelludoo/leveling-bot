@@ -32,6 +32,15 @@ type GameSettings struct {
 	AutoParty    bool     `json:"autoParty,omitempty"`    // Se true, aceita convites de party automaticamente
 	CodexMode    bool     `json:"codexMode,omitempty"`    // Se true, ativa o Modo Completista do Bestiário (Codex)
 	CodexTarget  uint64   `json:"codexTarget,omitempty"`  // Meta de abates por monstro (padrão: 2000 ou 5000)
+
+	// Automações Avançadas de Progressão (Zero Limitações)
+	AutoEquip      bool   `json:"autoEquip,omitempty"`      // Equipa automaticamente os melhores itens (EquipBest)
+	AutoStats      bool   `json:"autoStats,omitempty"`      // Distribui atributos automaticamente conforme vocação/classe
+	AutoRepair     bool   `json:"autoRepair,omitempty"`     // Repara todos os equipamentos gastos
+	AutoMissions   bool   `json:"autoMissions,omitempty"`   // Resgata automaticamente missões (Journey/Daily)
+	AutoShadows    bool   `json:"autoShadows,omitempty"`    // Monta melhor time de sombras e equipa melhor
+	AutoPromotion  bool   `json:"autoPromotion,omitempty"`  // Tenta promoção de Rank automaticamente
+	PreferredClass string `json:"preferredClass,omitempty"` // Classe desejada (guerreiro, mago, arqueiro, assassino, healer)
 }
 
 // Mensagens básicas de controle de caçada e status

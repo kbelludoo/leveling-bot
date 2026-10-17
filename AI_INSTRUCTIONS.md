@@ -15,6 +15,7 @@ Você está construindo um bot autônomo nativo em **Go (Golang)** de altíssima
 4. **Isolamento de Portas Web:** Cada bot tem sua própria porta no dashboard embutido (ex: Huntera usa 3000, Tibidle usa 3001, Sigma usa 3002). Nunca crie conflito de portas.
 5. **Segurança Absoluta de Segredos (Zero Hardcoding):** NUNCA insira tokens de API (Telegram, Discord, Twitch OAuth), senhas, cookies, chaves SSH (`*.key`) ou IPs públicos da VPS diretamente em arquivos `.go`, `.json`, `.sh`, `.bat` ou scripts que serão commitados. TODAS as credenciais devem ser obrigatoriamente carregadas via variáveis de ambiente (`os.Getenv`) ou arquivos locais no `.gitignore` (`.secrets.json`, `.env`, `accounts.json`). Commitar tokens gera vazamento público imediato!
 6. **Modo Stealth & Anti-Ban (Zero Nicks Públicos):** NUNCA exponha o nome real do personagem/treinador/streamer nos dashboards web do GitHub Pages (`docs/index.html` ou `status.json`). Sempre exiba apenas a classe/vocação, índice anônimo (ex: `Conta #1`, `Treinador #1`, `Guerreiro`, `Arqueiro`) e estatísticas técnicas (Level, EXP/h, Kills, Gold, Mapa). Transmitir nicks reais gera denúncias e banimentos manuais imediatos!
+7. **Proteção Anti-Ban Circuit Breaker Obrigatória:** Todo bot deve integrar `pkg/engine.CircuitBreaker`. Diante de qualquer recusa de save, rate-limit ou erro de anti-cheat (`experiência rápida demais`, `recusado: true`), o bot NUNCA deve insistir em novos saves. Deve desarmar o combate, recuar para zona segura e aguardar cooldown de 15 a 30 minutos. Insistir em saves rejeitados resulta em banimento de 7 dias por programa de terceiros!
 
 ---
 
@@ -25,11 +26,13 @@ bot-template-go/
 ├── main.go                     # Entrypoint universal (carrega JSON, inicia bots, web server e console ticker)
 ├── accounts.json               # Credenciais reais (IGNORADO PELO GIT)
 ├── accounts.example.json       # Exemplo limpo para o usuário
+├── AGENTS.md                   # Diretrizes universais de IA e anti-ban
 ├── go.mod / go.sum             # Módulo Go nativo (dependência única: gorilla/websocket)
 │
 ├── pkg/
 │   ├── engine/                 # [NÃO MODIFICAR A MENOS QUE NECESSÁRIO]
 │   │   ├── bot.go              # Interface GameBot e struct AccountStatus
+│   │   ├── circuit_breaker.go  # Disjuntor anti-ban, detecção de anti-cheat e cálculo de taxa coletiva
 │   │   ├── manager.go          # Gerenciador concorrente (thread-safe) de contas
 │   │   └── supervisor.go       # Goroutine runner com backoff e proteção contra panic
 │   │
@@ -171,6 +174,63 @@ Todo bot criado deve expor um endpoint HTTP leve em sua porta designada (`GET /a
   ]
 }
 ```
+
+### 12. Padrão de Validação Estrita de Schema, Anti-Tampering e WebSocket Híbrido (Lições do LoL Idle)
+
+Jogos com sistemas de save avançados em nuvem e multiplayer híbrido (como o LoL Idle / Runeterra) possuem defesas sofisticadas contra bots que quebram implementações ingênuas. Sempre que enfrentar um jogo com essas características, siga estes padrões obrigatórios:
+
+#### A. O Padrão Dynamic Overlay (`RawEstado map[string]any`) — Prevenção de "Save Malformado"
+* **O Problema:** A maioria dos bots em Go define uma struct tipada com 10 a 15 campos (`Level`, `Gold`, `Hp`, etc.). No entanto, servidores modernos validam **dezenas de chaves obrigatórias** no schema do JSON (ex: `conquistas`, `skins`, `skin`, `gemas`, `rotina`, `auto`, `autoHab`, `espolios`, `montaria`, `itens`, `mochila`, etc.). Quando a struct Go serializa o JSON no `PUT /api/save`, ela omite os campos desconhecidos. O servidor detecta o schema incompleto e rejeita o progresso com erro silencioso de `"save malformado"`.
+* **A Solução:** Nunca envie um JSON derivado apenas de uma struct estática.
+  1. No `GET /api/eu`, armazene o JSON bruto do estado em um `RawEstado map[string]any`.
+  2. Mantenha os campos de combate tipados para lógica de jogo interna (`Level`, `Exp`, `Gold`).
+  3. No momento de salvar (`salvarSave`), faça o **overlay** apenas das propriedades alteradas sobre o `RawEstado` original e envie `{ "estado": raw }`. Isso garante preservação de 100% dos campos que o servidor espera, independentemente de atualizações futuras.
+
+#### B. Isolamento de Instâncias e Headers de Origem (`X-Instancia` e `outraAba`)
+* **O Problema:** Para impedir que duas abas ou dois aparelhos salvem ao mesmo tempo gerando conflitos de concorrência, o servidor gera ou exige um identificador único de instância da página (`X-Instancia`).
+* **A Regra:** Gere uma string aleatória única na inicialização da conta (`X-Instancia: Math.random() + Date.now()`) e envie esse mesmo header em **todas** as requisições (`GET /api/eu`, `PUT /api/save`, etc.). Mudar de instância entre um GET e um PUT fará o servidor responder com `outraAba: true`, desativando o salvamento.
+* **Headers de Fingerprint:** Requisições de save via HTTP REST em jogos web frequentemente exigem cabeçalhos de navegador autênticos: `Origin: https://dominio.com` e `Referer: https://dominio.com/jogar`. Omiti-los pode disparar recusas silenciosas ou bloqueios WAF.
+
+#### C. Controle Otimista de Concorrência (`rev` Tracking)
+* O servidor mantém uma chave de revisão atômica no banco de dados (`rev`).
+* Toda resposta de `GET /api/eu` ou de `PUT /api/save` bem-sucedido retorna a nova `rev`.
+* **Regra:** O bot deve atualizar o campo `rev` imediatamente na memória local. Enviar um save com `rev` antiga resulta em `409 Conflict: Progresso desatualizado`.
+
+#### D. Invariantes Matemáticas e Orçamento de Atributos (Anti-Tampering)
+Servidores com validação heurística checam a coerência lógica e matemática do save:
+1. **Orçamento Rígido de Atributos:** Os pontos de atributo distribuídos somados aos pontos livres devem respeitar rigorosamente a fórmula matemática:  
+   $$\sum \text{atrib} + \text{pontosAtrib} \le \text{PONTOS\_POR\_NIVEL} \times (\text{nível} - 1)$$  
+   Se você injetar pontos ou se a simulação acumular além desse teto, o servidor rejeita com `"pontos de atributo demais"`.
+2. **Requisitos de Nível em Habilidades:** As habilidades devem respeitar os caps da classe (ex: Ultimate *R* desbloqueada apenas nos níveis 6, 11, 16... e habilidades comuns limitadas a `(nível + 1) / 2`).
+3. **Monotonicidade Estrita (Contadores que Não Voltam para Trás):**
+   * $\Delta(\text{totais.abates}) \ge 0$
+   * $\Delta(\text{totais.ouro}) \ge 0$
+   * $\Delta(\text{tempoJogo}) \ge 0$
+   * $\Delta(\text{relogio}) \ge 0$  
+   Se qualquer um desses valores for inferior ao registrado no banco, o servidor aborta com `"contadores voltaram para trás"` ou `"relógio do jogo inválido"`.
+4. **Coerência Econômica:** O ouro possuído nunca pode exceder o total histórico ganho somado ao nível (`totais.ouro - gasto <= ouro`), impedindo injeções mágicas de moedas (`"ouro demais"`).
+
+#### E. Arquitetura Híbrida: REST para Saves + WebSocket para Presença e Party
+Em jogos onde o mundo aberto possui modo cooperativo (party/grupo):
+* **Separação de Camadas:** A persistência definitiva ocorre via REST (`PUT /api/save`), enquanto a presença em tempo real, visualização de aliados e buffs de grupo ocorrem no WebSocket.
+* **Pré-requisito de Localização:** Para que convites de grupo (`{t: "grupo", acao: "convidar"}`) sejam aceitos, ambos os personagens devem estar fisicamente no mapa multiplayer correspondente (`local: "arena"` / Runeterra) e transmitindo frames de posição (`{t: "pos"}`) a ~10 Hz. Convites enviados para personagens no modo offline/Rift retornam `"{nome} não pode entrar no grupo agora"`.
+* **Distribuição de EXP em Grupo:** Quando em grupo, cada monstro abatido deve transmitir o frame de abate (`{t: "abateGrupo", id: monstro.id}`) via WebSocket para que o servidor oficial calcule e credite a parcela de EXP compartilhada aos membros próximos (+45% de bônus).
+
+#### F. Regra de Concorrência de Conta Única
+* O servidor derruba sessões com `401 Unauthorized` se houver múltiplas conexões simultâneas na mesma conta.
+* Para formar uma party de 4 jogadores, utilize **4 contas distintas cadastradas**, preferencialmente isoladas por IPs privados/secundários da VPS (`bindIP: 10.0.0.X`) para máxima discrição.
+
+#### G. Padrão Circuit Breaker de Anti-Cheat (Lição Crítica de Prevenção de Ban)
+* **O Gatilho da Suspensão:** Servidores com anti-cheat server-side rastreiam a taxa de erros heurísticos (ex: `"experiência rápida demais para este personagem"`). Se um bot continuar caçando e insistir em múltiplos `PUT /api/save` enquanto o servidor estiver recusando o progresso, o sistema automatizado de segurança detecta a discrepância acumulada e aplica suspensão temporária de 7 dias com o motivo `"uso de programas de terceiros"`.
+* **A Regra do Disjuntor (Circuit Breaker):**
+  1. Ao receber qualquer resposta com `recusado: true` ou erro de taxa/limite, o bot deve **desarmar o combate imediatamente** (`AutoHunt = false`).
+  2. Forçar recuo para zona segura/Fonte (`local: "fonte"`).
+  3. Resfriamento obrigatório: **pausar novos saves por 15 a 30 minutos** até o relógio real do servidor avançar e absorver a margem temporal.
+  4. Recarregar o estado canônico exclusivamente via `GET /api/eu`.
+* **Cálculo da Taxa Coletiva em Party (Collective Throttling):**
+  Em grupos onde cada abate compartilha EXP (+45% de bônus via frames de WebSocket), a soma das mortes de todos os integrantes canaliza XP em massa para cada membro. A taxa individual deve ser rigorosamente balanceada para que a soma nunca ultrapasse a produtividade de um jogador solo:
+  $$\text{KillRate}_{\text{individual}} \le \frac{\text{KillRate}_{\text{solo\_seguro}}}{N_{\text{membros}} \times (1 + \text{BônusGrupo})}$$
+  Exemplo: se o teto humano solo for 40 monstros/minuto, em um grupo de 4 com bônus de 45%, cada bot deve matar no máximo $40 / (4 \times 1.45) \approx 7\text{ monstros/minuto}$. Taxas superiores acumulam XP mais rápido do que o relógio físico permite salvar.
 
 ---
 
