@@ -33,12 +33,13 @@ type Bot struct {
 	ticketChan   chan string
 
 	// Controle de Caçadas (Auto-Hunt) & Bestiário (Codex)
-	currentGate       string
-	currentTier       uint32
-	currentDifficulty string
-	partyMinLevel     int
-	lastHuntCheck     time.Time
-	codexKills        map[string]uint64
+	currentGate           string
+	currentTier           uint32
+	currentDifficulty     string
+	partyMinLevel         int
+	lastHuntCheck         time.Time
+	lastAttemptedHuntKey  string
+	codexKills            map[string]uint64
 }
 
 type PartyCoordinator struct {
@@ -48,11 +49,35 @@ type PartyCoordinator struct {
 	LeaderDif    string
 	Levels       map[string]int
 	MonsterKills map[string]map[string]uint64
+	LockedHunts  map[string]time.Time
 }
 
 var GlobalParty = &PartyCoordinator{
 	Levels:       make(map[string]int),
 	MonsterKills: make(map[string]map[string]uint64),
+	LockedHunts:  make(map[string]time.Time),
+}
+
+func (p *PartyCoordinator) MarkHuntLocked(key string, duration time.Duration) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	if p.LockedHunts == nil {
+		p.LockedHunts = make(map[string]time.Time)
+	}
+	p.LockedHunts[key] = time.Now().Add(duration)
+}
+
+func (p *PartyCoordinator) GetLockedHunts() map[string]time.Time {
+	p.mu.RLock()
+	defer p.mu.RUnlock()
+	cp := make(map[string]time.Time)
+	now := time.Now()
+	for k, v := range p.LockedHunts {
+		if v.After(now) {
+			cp[k] = v
+		}
+	}
+	return cp
 }
 
 func (p *PartyCoordinator) ReportLevel(botID string, level int) {
@@ -98,9 +123,6 @@ func (p *PartyCoordinator) GetSharedCodexKills() map[string]uint64 {
 	defer p.mu.RUnlock()
 	minKills := make(map[string]uint64)
 	for _, tier := range CatalogTiers {
-		if tier.Difficulty != "normal" {
-			continue
-		}
 		var lowest uint64 = 99999999
 		foundAny := false
 		for _, botMap := range p.MonsterKills {
@@ -404,6 +426,7 @@ func (b *Bot) sendStartHunt(gateID string, tierMin uint32, difficulty string) er
 	clientMsg = protowire.AppendTag(clientMsg, 30, protowire.BytesType)
 	clientMsg = protowire.AppendBytes(clientMsg, huntMsg)
 
+	b.lastAttemptedHuntKey = fmt.Sprintf("%s:%d:%s", gateID, tierMin, difficulty)
 	log.Printf("[%s] Enviando StartHunt (gate=%s, tier=%d, dif=%s)", b.ID(), gateID, tierMin, difficulty)
 	return b.socket.SendBinary(clientMsg)
 }
@@ -445,6 +468,11 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				} else {
 					b.status.Status = fmt.Sprintf("Erro: %s", errMsg)
 					b.addLogLocked(fmt.Sprintf("Servidor erro: %s", errMsg))
+					if b.lastAttemptedHuntKey != "" && (errMsg == "level.tooLow" || errMsg == "gate.locked" || errMsg == "hunt.locked" || errMsg == "tier.invalid") {
+						GlobalParty.MarkHuntLocked(b.lastAttemptedHuntKey, 15*time.Minute)
+						b.addLogLocked(fmt.Sprintf("Codex: Caçada %s bloqueada pelo servidor (%s). Avançando para o próximo monstro!", b.lastAttemptedHuntKey, errMsg))
+						b.lastAttemptedHuntKey = ""
+					}
 				}
 
 			case 4: // AuthOk
@@ -468,6 +496,7 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				b.status.UpdatedAt = time.Now().UnixMilli()
 
 			case 30: // StartHuntResult
+				b.lastAttemptedHuntKey = ""
 				gateID := parseStringField(bytesVal, 1)
 				tierMin := uint32(parseVarintField(bytesVal, 2))
 				dif := parseStringField(bytesVal, 3)
@@ -482,6 +511,7 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				}
 
 			case 41: // HuntSession
+				b.lastAttemptedHuntKey = ""
 				gateID := parseStringField(bytesVal, 1)
 				tierMin := uint32(parseVarintField(bytesVal, 2))
 				dif := parseStringField(bytesVal, 3)
@@ -610,7 +640,7 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 			data = data[n:]
 
 			switch num {
-			case 3: // Progress
+			case 2: // Progress
 				val := int64(parseVarintField(sub, 1))
 				exp := int64(parseVarintField(sub, 2))
 				if val > 0 && val < 200 {
@@ -623,7 +653,7 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 				if exp > 0 {
 					b.status.ExpPerHour = float64(exp)
 				}
-			case 4: // Wallet
+			case 3: // Wallet
 				gold := int64(parseVarintField(sub, 1))
 				if gold > 0 {
 					b.status.Gold = gold
@@ -790,7 +820,8 @@ func (b *Bot) performTick() {
 					targetMilestone = 2000
 				}
 				sharedKills := GlobalParty.GetSharedCodexKills()
-				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone)
+				lockedHunts := GlobalParty.GetLockedHunts()
+				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone, lockedHunts)
 				best = tier
 				if pending {
 					b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, sharedKills[tier.MonsterID], targetMilestone)
@@ -848,7 +879,8 @@ func (b *Bot) performTick() {
 				}
 				targetLevel := GlobalParty.GetMinLevel(b.status.Level)
 				sharedKills := GlobalParty.GetSharedCodexKills()
-				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone)
+				lockedHunts := GlobalParty.GetLockedHunts()
+				tier, pending, completed, total := GetNextCodexHuntForLevel(targetLevel, sharedKills, targetMilestone, lockedHunts)
 				if pending {
 					b.status.CodexInfo = fmt.Sprintf("%d/%d mobs | %s (%d/%d)", completed, total, tier.MonsterName, b.codexKills[tier.MonsterID], targetMilestone)
 				} else {
@@ -1011,6 +1043,18 @@ func (b *Bot) ExecuteAction(action string, payload map[string]any) (any, error) 
 		b.status.Mana = b.status.MaxMana
 		b.status.Logs = append(b.status.Logs, "Vida e mana recuperadas.")
 		return "Curado!", nil
+
+	case "testHunt":
+		gate, _ := payload["gate"].(string)
+		tierFloat, _ := payload["tier"].(float64)
+		dif, _ := payload["difficulty"].(string)
+		if dif == "" {
+			dif = "normal"
+		}
+		tierMin := uint32(tierFloat)
+		err := b.sendStartHunt(gate, tierMin, dif)
+		b.addLogLocked(fmt.Sprintf("Ação Manual testHunt enviada: Gate=%s Tier=%d Dif=%s", gate, tierMin, dif))
+		return map[string]any{"sent": true, "gate": gate, "tier": tierMin, "difficulty": dif}, err
 
 	default:
 		return nil, fmt.Errorf("ação não implementada: %s", action)

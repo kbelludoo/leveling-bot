@@ -1,6 +1,9 @@
 package game
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // HuntTier representa uma faixa de caçada / portal no Leveling Idle 2D
 type HuntTier struct {
@@ -99,8 +102,9 @@ func GetHuntName(gateID string, tierMin uint32) string {
 }
 
 // GetNextCodexHuntForLevel percorre os monstros acessíveis para o nível da party
-// e seleciona o primeiro monstro que ainda não atingiu a meta de abates do Codex (Modo Completista).
-func GetNextCodexHuntForLevel(level int, codexKills map[string]uint64, targetMilestone uint64) (HuntTier, bool, int, int) {
+// e seleciona o primeiro monstro que ainda não atingiu a meta de abates do Codex (Modo Completista),
+// ignorando automaticamente áreas que foram marcadas como bloqueadas/erro pelo servidor.
+func GetNextCodexHuntForLevel(level int, codexKills map[string]uint64, targetMilestone uint64, lockedHunts map[string]time.Time) (HuntTier, bool, int, int) {
 	if level <= 0 {
 		return CatalogTiers[0], false, 0, 0
 	}
@@ -110,17 +114,50 @@ func GetNextCodexHuntForLevel(level int, codexKills map[string]uint64, targetMil
 
 	var pendingTier HuntTier
 	foundPending := false
+	now := time.Now()
 
-	// Analisa do tier mais baixo para o mais alto dentro da dificuldade normal liberada
+	// 1. Analisa do tier mais baixo para o mais alto dentro da dificuldade normal liberada
 	for _, tier := range CatalogTiers {
 		if tier.Difficulty == "normal" && uLevel >= tier.RequiredLevel {
 			totalMonsters++
 			kills := codexKills[tier.MonsterID]
+			tierKey := fmt.Sprintf("%s:%d:%s", tier.GateID, tier.TierMin, tier.Difficulty)
+			isLocked := false
+			if lockedHunts != nil {
+				if exp, ok := lockedHunts[tierKey]; ok && exp.After(now) {
+					isLocked = true
+				}
+			}
+
 			if kills >= targetMilestone {
 				completedMonsters++
-			} else if !foundPending {
+			} else if !foundPending && !isLocked {
 				pendingTier = tier
 				foundPending = true
+			}
+		}
+	}
+
+	// 2. Se não houver pendentes na normal (ou se os pendentes estiverem bloqueados), analisa a dificuldade difícil (níveis 71+)
+	if !foundPending && uLevel >= 71 {
+		for _, tier := range CatalogTiers {
+			if tier.Difficulty == "dificil" && uLevel >= tier.RequiredLevel {
+				totalMonsters++
+				kills := codexKills[tier.MonsterID]
+				tierKey := fmt.Sprintf("%s:%d:%s", tier.GateID, tier.TierMin, tier.Difficulty)
+				isLocked := false
+				if lockedHunts != nil {
+					if exp, ok := lockedHunts[tierKey]; ok && exp.After(now) {
+						isLocked = true
+					}
+				}
+
+				if kills >= targetMilestone {
+					completedMonsters++
+				} else if !foundPending && !isLocked {
+					pendingTier = tier
+					foundPending = true
+				}
 			}
 		}
 	}
@@ -128,6 +165,6 @@ func GetNextCodexHuntForLevel(level int, codexKills map[string]uint64, targetMil
 	if foundPending {
 		return pendingTier, true, completedMonsters, totalMonsters
 	}
-	// Se todos os monstros liberados já concluíram a meta, foca na caçada de maior nível/XP
+	// Se todos os monstros liberados já concluíram a meta ou estão bloqueados, foca na caçada de maior nível/XP liberada!
 	return GetBestHuntForLevel(level), false, completedMonsters, totalMonsters
 }
