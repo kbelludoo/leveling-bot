@@ -3,12 +3,12 @@
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (36/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 19881,
+      "durationSec": 20001,
       "expPerHour": 4108,
-      "gold": 2055,
+      "gold": 2155,
       "hp": 250,
       "id": "acc-1",
-      "kills": 1368,
+      "kills": 1372,
       "level": 2,
       "logs": [
         "Membro já está na Party.",
@@ -17,9 +17,9 @@
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -32,22 +32,19 @@
       "maxMana": 130,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792216925858
+      "updatedAt": 1792217046408
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (36/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 19884,
+      "durationSec": 20004,
       "expPerHour": 1376,
-      "gold": 2335,
+      "gold": 2435,
       "hp": 275,
       "id": "acc-2",
-      "kills": 1382,
+      "kills": 1386,
       "level": 3,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #2.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -56,6 +53,9 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #2.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 145,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792216925861
+      "updatedAt": 1792217046411
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (36/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 19884,
+      "durationSec": 20004,
       "expPerHour": 976,
-      "gold": 2139,
+      "gold": 364,
       "hp": 275,
       "id": "acc-3",
-      "kills": 1116,
+      "kills": 1118,
       "level": 3,
       "logs": [
         "Party sincronizada.",
@@ -100,22 +100,19 @@
       "maxMana": 145,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792216925861
+      "updatedAt": 1792217046416
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (36/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 19887,
+      "durationSec": 20007,
       "expPerHour": 1376,
-      "gold": 2990,
+      "gold": 3015,
       "hp": 275,
       "id": "acc-4",
-      "kills": 1157,
+      "kills": 1158,
       "level": 3,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -123,6 +120,9 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #4.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 145,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792216925863
+      "updatedAt": 1792217046414
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 1.54620361328125,
+  "ramAllocMB": 2.8018875122070312,
   "ramSysMB": 17.09986114501953,
-  "uptime": "5h33m20s"
+  "uptime": "5h35m20s"
 }
