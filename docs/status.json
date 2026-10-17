@@ -3,23 +3,23 @@
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 33318,
+      "durationSec": 33435,
       "expPerHour": 4108,
-      "gold": 1530,
+      "gold": 280,
       "hp": 250,
       "id": "acc-1",
-      "kills": 1557,
+      "kills": 1560,
       "level": 2,
       "logs": [
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
-        "Membro já está na Party.",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Login bem-sucedido! Bem-vindo, Party #1.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
@@ -32,23 +32,23 @@
       "maxMana": 130,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792230369038
+      "updatedAt": 1792230490725
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 33321,
+      "durationSec": 33444,
       "expPerHour": 1376,
-      "gold": 2235,
+      "gold": 2285,
       "hp": 275,
       "id": "acc-2",
-      "kills": 1570,
+      "kills": 1572,
       "level": 3,
       "logs": [
-        "Party sincronizada.",
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #2.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,12 +66,12 @@
       "maxMana": 145,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792230369041
+      "updatedAt": 1792230490725
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 33318,
+      "durationSec": 33441,
       "expPerHour": 976,
       "gold": 2239,
       "hp": 275,
@@ -79,11 +79,11 @@
       "kills": 1266,
       "level": 3,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,12 +100,12 @@
       "maxMana": 145,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792230369116
+      "updatedAt": 1792230490866
     },
     {
       "codexInfo": "0/1 mobs | Rato da Ruína (37/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 33321,
+      "durationSec": 33441,
       "expPerHour": 1376,
       "gold": 1915,
       "hp": 275,
@@ -113,8 +113,6 @@
       "kills": 1307,
       "level": 3,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -125,6 +123,8 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #4.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
@@ -134,11 +134,11 @@
       "maxMana": 145,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792230369115
+      "updatedAt": 1792230490866
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 2.61480712890625,
+  "ramAllocMB": 1.350860595703125,
   "ramSysMB": 17.09986114501953,
-  "uptime": "9h17m23s"
+  "uptime": "9h19m25s"
 }
