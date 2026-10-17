@@ -1,14 +1,14 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (58/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (60/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 1971,
+      "durationSec": 2097,
       "expPerHour": 4108,
-      "gold": 1477,
+      "gold": 1527,
       "hp": 250,
       "id": "acc-1",
-      "kills": 81,
+      "kills": 85,
       "level": 2,
       "logs": [
         "Info servidor: shadow.notFound",
@@ -20,36 +20,32 @@
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
-        "Info servidor: repair.nothing",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Membro já está na Party.",
         "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound"
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing"
       ],
       "mana": 130,
       "maxHp": 250,
       "maxMana": 130,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792249926248
+      "updatedAt": 1792250046551
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (58/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (60/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 1971,
+      "durationSec": 2097,
       "expPerHour": 1376,
-      "gold": 2382,
+      "gold": 2557,
       "hp": 275,
       "id": "acc-2",
-      "kills": 106,
+      "kills": 115,
       "level": 3,
       "logs": [
         "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
@@ -58,6 +54,10 @@
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
@@ -66,24 +66,20 @@
       "maxMana": 145,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792249926278
+      "updatedAt": 1792250046574
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (58/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (60/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 1971,
+      "durationSec": 2097,
       "expPerHour": 976,
-      "gold": 2185,
+      "gold": 2360,
       "hp": 275,
       "id": "acc-3",
-      "kills": 106,
+      "kills": 115,
       "level": 3,
       "logs": [
         "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
@@ -92,6 +88,10 @@
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
@@ -100,24 +100,20 @@
       "maxMana": 145,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792249926279
+      "updatedAt": 1792250046574
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (58/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (60/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 1971,
+      "durationSec": 2097,
       "expPerHour": 1376,
-      "gold": 2362,
+      "gold": 2537,
       "hp": 275,
       "id": "acc-4",
-      "kills": 106,
+      "kills": 115,
       "level": 3,
       "logs": [
         "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
@@ -126,6 +122,10 @@
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
@@ -134,11 +134,11 @@
       "maxMana": 145,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792249926277
+      "updatedAt": 1792250046574
     }
   ],
   "goroutines": 14,
-  "ramAllocMB": 3.3642120361328125,
+  "ramAllocMB": 1.650146484375,
   "ramSysMB": 16.84986114501953,
-  "uptime": "31m17s"
+  "uptime": "33m18s"
 }
