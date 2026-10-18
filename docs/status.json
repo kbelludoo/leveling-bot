@@ -1,20 +1,20 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1382/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1384/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 67368,
+      "durationSec": 67494,
       "expPerHour": 9724,
-      "gold": 3288,
+      "gold": 3338,
       "hp": 325,
       "id": "acc-1",
-      "kills": 7272,
+      "kills": 7276,
       "level": 5,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: repair.nothing",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,19 +32,20 @@
       "maxMana": 175,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792322646080
+      "updatedAt": 1792322766730
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1382/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1384/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 197010,
-      "expPerHour": 402357,
-      "gold": 348566,
+      "durationSec": 197421,
+      "expPerHour": 413646,
+      "gold": 349403,
       "hp": 925,
       "id": "acc-2",
-      "kills": 488917,
+      "kills": 489753,
       "level": 29,
       "logs": [
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -58,7 +59,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 535,
@@ -66,24 +66,24 @@
       "maxMana": 535,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792322646173
+      "updatedAt": 1792322766724
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1382/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1384/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 70521,
+      "durationSec": 70647,
       "expPerHour": 62619,
       "gold": 25206,
       "hp": 575,
       "id": "acc-3",
-      "kills": 20269,
+      "kills": 20271,
       "level": 15,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: repair.nothing",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 325,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792322646147
+      "updatedAt": 1792322766327
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1382/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1384/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 204225,
-      "expPerHour": 379797,
-      "gold": 346414,
+      "durationSec": 204654,
+      "expPerHour": 391086,
+      "gold": 347276,
       "hp": 925,
       "id": "acc-4",
-      "kills": 490674,
+      "kills": 491512,
       "level": 29,
       "logs": [
         "Party sincronizada.",
@@ -119,10 +119,10 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
@@ -134,11 +134,11 @@
       "maxMana": 535,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792322646175
+      "updatedAt": 1792322766726
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.6186370849609375,
+  "ramAllocMB": 2.1729965209960938,
   "ramSysMB": 17.34986114501953,
-  "uptime": "17h37m54s"
+  "uptime": "17h39m54s"
 }
