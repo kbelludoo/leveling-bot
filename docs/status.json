@@ -1,15 +1,15 @@
 {
   "accounts": [
     {
-      "codexInfo": "Completo (4/4 mobs) | Foco XP",
-      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 43497,
-      "expPerHour": 306070.07022050605,
-      "gold": 54845,
-      "hp": 700,
+      "codexInfo": "4/5 mobs | Orc Jovem (12/2000)",
+      "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
+      "durationSec": 43848,
+      "expPerHour": 306891.0084182603,
+      "gold": 55464,
+      "hp": 725,
       "id": "acc-1",
-      "kills": 158201,
-      "level": 20,
+      "kills": 159574,
+      "level": 21,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -27,29 +27,29 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 400,
-      "maxHp": 700,
-      "maxMana": 400,
+      "mana": 415,
+      "maxHp": 725,
+      "maxMana": 415,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792346286628
+      "updatedAt": 1792346407440
     },
     {
-      "codexInfo": "Completo (4/4 mobs) | Foco XP",
-      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 38589,
-      "expPerHour": 303362.11937538564,
-      "gold": 466502,
+      "codexInfo": "4/5 mobs | Orc Jovem (12/2000)",
+      "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
+      "durationSec": 38883,
+      "expPerHour": 304086.2517405989,
+      "gold": 467072,
       "hp": 975,
       "id": "acc-2",
-      "kills": 156897,
+      "kills": 158251,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792346286630
+      "updatedAt": 1792346407490
     },
     {
-      "codexInfo": "Completo (4/4 mobs) | Foco XP",
-      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 43767,
-      "expPerHour": 305381.25399722136,
-      "gold": 78630,
+      "codexInfo": "4/5 mobs | Orc Jovem (12/2000)",
+      "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
+      "durationSec": 44115,
+      "expPerHour": 306087.5677459574,
+      "gold": 79275,
       "hp": 750,
       "id": "acc-3",
-      "kills": 158230,
+      "kills": 159605,
       "level": 22,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 430,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792346286628
+      "updatedAt": 1792346407492
     },
     {
-      "codexInfo": "Completo (4/4 mobs) | Foco XP",
-      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 40038,
-      "expPerHour": 304839.22440276376,
-      "gold": 464129,
+      "codexInfo": "4/5 mobs | Orc Jovem (12/2000)",
+      "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
+      "durationSec": 40350,
+      "expPerHour": 305550.25359514536,
+      "gold": 464765,
       "hp": 975,
       "id": "acc-4",
-      "kills": 157056,
+      "kills": 158419,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792346286626
+      "updatedAt": 1792346407488
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.0657730102539062,
+  "ramAllocMB": 2.2930526733398438,
   "ramSysMB": 17.34986114501953,
-  "uptime": "3h44m14s"
+  "uptime": "3h46m15s"
 }
