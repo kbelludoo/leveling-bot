@@ -3,12 +3,12 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 88326,
-      "expPerHour": 334068.78187371447,
-      "gold": 111182,
+      "durationSec": 88560,
+      "expPerHour": 334067.165778641,
+      "gold": 111520,
       "hp": 725,
       "id": "acc-1",
-      "kills": 384460,
+      "kills": 385769,
       "level": 21,
       "logs": [
         "Party sincronizada.",
@@ -32,17 +32,17 @@
       "maxMana": 415,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792365490375
+      "updatedAt": 1792365610472
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 87726,
-      "expPerHour": 333074.9341076019,
-      "gold": 523069,
+      "durationSec": 88053,
+      "expPerHour": 333139.04036312894,
+      "gold": 523410,
       "hp": 975,
       "id": "acc-2",
-      "kills": 387300,
+      "kills": 388667,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792365490362
+      "updatedAt": 1792365610479
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 91251,
-      "expPerHour": 334017.2956061027,
-      "gold": 134913,
+      "durationSec": 91512,
+      "expPerHour": 334077.938978929,
+      "gold": 135269,
       "hp": 750,
       "id": "acc-3",
-      "kills": 388478,
+      "kills": 389811,
       "level": 22,
       "logs": [
         "Party sincronizada.",
@@ -100,19 +100,22 @@
       "maxMana": 430,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792365490358
+      "updatedAt": 1792365610472
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 89961,
-      "expPerHour": 336958.49689042504,
-      "gold": 521284,
+      "durationSec": 90270,
+      "expPerHour": 337008.31588399474,
+      "gold": 521615,
       "hp": 975,
       "id": "acc-4",
-      "kills": 389065,
+      "kills": 390428,
       "level": 31,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -124,9 +127,6 @@
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792365490370
+      "updatedAt": 1792365610479
     }
   ],
   "goroutines": 16,
-  "ramAllocMB": 3.01446533203125,
+  "ramAllocMB": 1.4603805541992188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "9h4m18s"
+  "uptime": "9h6m18s"
 }
