@@ -1,20 +1,20 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/2 mobs | Rato da Ruína (1987/2000)",
-      "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 79155,
-      "expPerHour": 6427,
-      "gold": 3092,
+      "codexInfo": "1/2 mobs | Morcego Sombrio (72/2000)",
+      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
+      "durationSec": 79590,
+      "expPerHour": 12239,
+      "gold": 3490,
       "hp": 375,
       "id": "acc-1",
-      "kills": 11865,
+      "kills": 13233,
       "level": 7,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,17 +32,17 @@
       "maxMana": 205,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792332616282
+      "updatedAt": 1792332736596
     },
     {
-      "codexInfo": "0/2 mobs | Rato da Ruína (1984/2000)",
-      "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 230967,
-      "expPerHour": 488203,
-      "gold": 413744,
+      "codexInfo": "1/2 mobs | Morcego Sombrio (70/2000)",
+      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
+      "durationSec": 231342,
+      "expPerHour": 494015,
+      "gold": 414185,
       "hp": 950,
       "id": "acc-2",
-      "kills": 558706,
+      "kills": 560054,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 550,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792332616282
+      "updatedAt": 1792332736596
     },
     {
-      "codexInfo": "0/2 mobs | Rato da Ruína (1988/2000)",
-      "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 82224,
-      "expPerHour": 86407,
-      "gold": 25673,
+      "codexInfo": "1/2 mobs | Morcego Sombrio (74/2000)",
+      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
+      "durationSec": 82626,
+      "expPerHour": 92219,
+      "gold": 26315,
       "hp": 575,
       "id": "acc-3",
-      "kills": 24806,
+      "kills": 26163,
       "level": 15,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 325,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792332616282
+      "updatedAt": 1792332736599
     },
     {
-      "codexInfo": "0/2 mobs | Rato da Ruína (1984/2000)",
-      "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 238836,
-      "expPerHour": 465643,
-      "gold": 411528,
+      "codexInfo": "1/2 mobs | Morcego Sombrio (70/2000)",
+      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
+      "durationSec": 239205,
+      "expPerHour": 471455,
+      "gold": 411979,
       "hp": 950,
       "id": "acc-4",
-      "kills": 560622,
+      "kills": 561967,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 550,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792332616282
+      "updatedAt": 1792332736598
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.4957962036132812,
+  "ramAllocMB": 1.2418289184570312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "20h24m4s"
+  "uptime": "20h26m4s"
 }
