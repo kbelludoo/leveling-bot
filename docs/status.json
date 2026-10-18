@@ -1,15 +1,15 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/4 mobs | Goblin (1950/2000)",
-      "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 27201,
-      "expPerHour": 251448.66161162333,
-      "gold": 34069,
-      "hp": 600,
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (20/2000)",
+      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
+      "durationSec": 27573,
+      "expPerHour": 253836.4142752829,
+      "gold": 34577,
+      "hp": 625,
       "id": "acc-1",
-      "kills": 85996,
-      "level": 16,
+      "kills": 87374,
+      "level": 17,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -27,22 +27,22 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 340,
-      "maxHp": 600,
-      "maxMana": 340,
+      "mana": 355,
+      "maxHp": 625,
+      "maxMana": 355,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792340165615
+      "updatedAt": 1792340286274
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1948/2000)",
-      "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 23877,
-      "expPerHour": 249806.50822072054,
-      "gold": 445732,
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (19/2000)",
+      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
+      "durationSec": 24213,
+      "expPerHour": 252064.25853365188,
+      "gold": 446230,
       "hp": 975,
       "id": "acc-2",
-      "kills": 85022,
+      "kills": 86389,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792340165619
+      "updatedAt": 1792340286275
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1948/2000)",
-      "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 26949,
-      "expPerHour": 250403.50086884023,
-      "gold": 57739,
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (20/2000)",
+      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
+      "durationSec": 27321,
+      "expPerHour": 252651.59635006066,
+      "gold": 58235,
       "hp": 675,
       "id": "acc-3",
-      "kills": 85933,
+      "kills": 87308,
       "level": 19,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 385,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792340165617
+      "updatedAt": 1792340286274
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1948/2000)",
-      "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 24780,
-      "expPerHour": 249952.22083861125,
-      "gold": 443238,
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (20/2000)",
+      "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
+      "durationSec": 25140,
+      "expPerHour": 252207.5643711692,
+      "gold": 443751,
       "hp": 975,
       "id": "acc-4",
-      "kills": 85213,
+      "kills": 86584,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792340165617
+      "updatedAt": 1792340286274
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.7370758056640625,
+  "ramAllocMB": 2.9014434814453125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "2h2m13s"
+  "uptime": "2h4m14s"
 }
