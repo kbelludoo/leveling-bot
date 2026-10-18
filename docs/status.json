@@ -1,14 +1,14 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1450/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1452/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 71775,
+      "durationSec": 71901,
       "expPerHour": 9724,
-      "gold": 6463,
+      "gold": 6588,
       "hp": 325,
       "id": "acc-1",
-      "kills": 7468,
+      "kills": 7475,
       "level": 5,
       "logs": [
         "Party sincronizada.",
@@ -23,30 +23,30 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound"
+        "Info servidor: shadow.notFound",
+        "Party sincronizada."
       ],
       "mana": 175,
       "maxHp": 325,
       "maxMana": 175,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792326846231
+      "updatedAt": 1792326966433
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1450/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1452/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 211143,
-      "expPerHour": 788091,
-      "gold": 376120,
+      "durationSec": 211554,
+      "expPerHour": 799380,
+      "gold": 376986,
       "hp": 925,
       "id": "acc-2",
-      "kills": 517783,
+      "kills": 518583,
       "level": 29,
       "logs": [
-        "Party sincronizada.",
         "Info servidor: missions.unknown",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 535,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792326846227
+      "updatedAt": 1792326966478
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1450/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1452/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 74925,
+      "durationSec": 75051,
       "expPerHour": 62619,
-      "gold": 28081,
+      "gold": 28106,
       "hp": 575,
       "id": "acc-3",
-      "kills": 20452,
+      "kills": 20455,
       "level": 15,
       "logs": [
         "Party sincronizada.",
@@ -86,9 +86,9 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -100,19 +100,21 @@
       "maxMana": 325,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792326846143
+      "updatedAt": 1792326966493
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (1450/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (1452/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 218607,
-      "expPerHour": 765531,
-      "gold": 373774,
+      "durationSec": 219030,
+      "expPerHour": 776820,
+      "gold": 374647,
       "hp": 925,
       "id": "acc-4",
-      "kills": 519585,
+      "kills": 520392,
       "level": 29,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -125,8 +127,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 535,
@@ -134,11 +134,11 @@
       "maxMana": 535,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792326846229
+      "updatedAt": 1792326966480
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.81280517578125,
+  "ramAllocMB": 2.8311767578125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "18h47m54s"
+  "uptime": "18h49m54s"
 }
