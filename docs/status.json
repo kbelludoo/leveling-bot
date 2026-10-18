@@ -1,15 +1,15 @@
 {
   "accounts": [
     {
-      "codexInfo": "1/3 mobs | Morcego Sombrio (133/2000)",
+      "codexInfo": "1/3 mobs | Morcego Sombrio (227/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7389,
-      "expPerHour": 255452.23322395165,
-      "gold": 10646,
-      "hp": 475,
+      "durationSec": 7872,
+      "expPerHour": 253734.4230406018,
+      "gold": 11508,
+      "hp": 500,
       "id": "acc-1",
-      "kills": 17941,
-      "level": 11,
+      "kills": 19474,
+      "level": 12,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -18,31 +18,31 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "🎉 LEVEL UP! Nível 12 alcançado!",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Atributos: Distribuídos 5 pontos ()",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 265,
-      "maxHp": 475,
-      "maxMana": 265,
+      "mana": 280,
+      "maxHp": 500,
+      "maxMana": 280,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792334406393
+      "updatedAt": 1792334526644
     },
     {
-      "codexInfo": "1/3 mobs | Morcego Sombrio (133/2000)",
+      "codexInfo": "1/3 mobs | Morcego Sombrio (227/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 6666,
-      "expPerHour": 251309.83380804415,
-      "gold": 422312,
+      "durationSec": 7068,
+      "expPerHour": 248889.16002770167,
+      "gold": 423161,
       "hp": 950,
       "id": "acc-2",
-      "kills": 17705,
+      "kills": 19216,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 550,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792334406394
+      "updatedAt": 1792334526645
     },
     {
-      "codexInfo": "1/3 mobs | Morcego Sombrio (133/2000)",
+      "codexInfo": "1/3 mobs | Morcego Sombrio (227/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7251,
-      "expPerHour": 252281.53246495075,
-      "gold": 34383,
+      "durationSec": 7719,
+      "expPerHour": 249791.3252349564,
+      "gold": 35230,
       "hp": 625,
       "id": "acc-3",
-      "kills": 17890,
+      "kills": 19418,
       "level": 17,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 355,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792334406390
+      "updatedAt": 1792334526642
     },
     {
-      "codexInfo": "1/3 mobs | Morcego Sombrio (133/2000)",
+      "codexInfo": "1/3 mobs | Morcego Sombrio (227/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 6738,
-      "expPerHour": 251311.3931126551,
-      "gold": 420034,
+      "durationSec": 7161,
+      "expPerHour": 248890.51995934913,
+      "gold": 420881,
       "hp": 950,
       "id": "acc-4",
-      "kills": 17721,
+      "kills": 19235,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 550,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792334406393
+      "updatedAt": 1792334526600
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.478057861328125,
+  "ramAllocMB": 1.9800033569335938,
   "ramSysMB": 16.84986114501953,
-  "uptime": "26m14s"
+  "uptime": "28m14s"
 }
