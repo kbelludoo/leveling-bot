@@ -52,6 +52,12 @@ type Bot struct {
 	lastMissionCheck     time.Time
 	lastShadowCheck      time.Time
 	lastPromotionCheck   time.Time
+
+	// Métricas de EXP real e cálculo de ExpPerHour
+	xpStartTime   time.Time
+	totalXPGained uint64
+	lastExp       int64
+	lastLevel     int
 }
 
 type PartyCoordinator struct {
@@ -443,6 +449,32 @@ func (b *Bot) sendStartHunt(gateID string, tierMin uint32, difficulty string) er
 	return b.socket.SendBinary(clientMsg)
 }
 
+// sendGiveUp envia desistência quando o personagem morre em combate (Tag 36)
+func (b *Bot) sendGiveUp() error {
+	reqID := b.nextReqID()
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 36, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, []byte{})
+
+	log.Printf("[%s] Enviando GiveUp (reiniciar combate após derrota)", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
+// sendRevive tenta reviver o personagem se houver consumível (Tag 35)
+func (b *Bot) sendRevive() error {
+	reqID := b.nextReqID()
+	var clientMsg []byte
+	clientMsg = protowire.AppendTag(clientMsg, 1, protowire.VarintType)
+	clientMsg = protowire.AppendVarint(clientMsg, uint64(reqID))
+	clientMsg = protowire.AppendTag(clientMsg, 35, protowire.BytesType)
+	clientMsg = protowire.AppendBytes(clientMsg, []byte{})
+
+	log.Printf("[%s] Enviando Revive", b.ID())
+	return b.socket.SendBinary(clientMsg)
+}
+
 // sendEquipBest equipa automaticamente os melhores itens do inventário (Tag 54)
 func (b *Bot) sendEquipBest() error {
 	reqID := b.nextReqID()
@@ -631,20 +663,26 @@ func (b *Bot) sendSetAutomation() error {
 	var autoMsg []byte
 	autoMsg = protowire.AppendTag(autoMsg, 2, protowire.VarintType)
 	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_continue
-	autoMsg = protowire.AppendTag(autoMsg, 5, protowire.VarintType)
-	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_arise (ressuscitar sombras)
+	if b.status.Level >= 15 {
+		autoMsg = protowire.AppendTag(autoMsg, 5, protowire.VarintType)
+		autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_arise (ressuscitar sombras)
+	}
 	autoMsg = protowire.AppendTag(autoMsg, 6, protowire.VarintType)
 	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_chest (abrir baús)
 	autoMsg = protowire.AppendTag(autoMsg, 7, protowire.BytesType)
 	autoMsg = protowire.AppendBytes(autoMsg, hpPotion)
 	autoMsg = protowire.AppendTag(autoMsg, 8, protowire.BytesType)
 	autoMsg = protowire.AppendBytes(autoMsg, manaPotion)
-	autoMsg = protowire.AppendTag(autoMsg, 9, protowire.VarintType)
-	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_potion
+	if b.status.Level >= 15 {
+		autoMsg = protowire.AppendTag(autoMsg, 9, protowire.VarintType)
+		autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_potion
+	}
 	autoMsg = protowire.AppendTag(autoMsg, 10, protowire.VarintType)
 	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_sell
-	autoMsg = protowire.AppendTag(autoMsg, 16, protowire.VarintType)
-	autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_revive
+	if b.status.Level >= 15 {
+		autoMsg = protowire.AppendTag(autoMsg, 16, protowire.VarintType)
+		autoMsg = protowire.AppendVarint(autoMsg, 1) // auto_shadow_revive
+	}
 
 	// SetAutomation { 1: automation }
 	var setAuto []byte
@@ -800,6 +838,12 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 				b.status.Name = username
 				b.addLogLocked(fmt.Sprintf("Login bem-sucedido! Bem-vindo, %s.", username))
 
+			case 6: // SessionEnded
+				b.huntConfirmed = false
+				b.currentGate = ""
+				b.currentTier = 0
+				b.addLogLocked("Sessão finalizada pelo servidor.")
+
 			case 8: // CharacterState
 				b.parseCharacterState(bytesVal)
 
@@ -827,20 +871,33 @@ func (b *Bot) handleInboundPacket(bData []byte) {
 					b.addLogLocked(fmt.Sprintf("Caçada iniciada: %s", huntName))
 				}
 
+			case 31: // LeaveHuntResult
+				b.huntConfirmed = false
+				b.currentGate = ""
+				b.currentTier = 0
+				b.addLogLocked("Saiu da caçada.")
+
+			case 36: // GiveUpResult
+				b.huntConfirmed = false
+				b.currentGate = ""
+				b.currentTier = 0
+				b.addLogLocked("Desistência confirmada. Retomando caçada...")
+
 			case 41: // HuntSession
 				b.lastAttemptedHuntKey = ""
-				b.huntConfirmed = true
+				// Metadados informativos de caçada anterior. NÃO confirma caçada na sessão ativa!
 				gateID := parseStringField(bytesVal, 1)
 				tierMin := uint32(parseVarintField(bytesVal, 2))
-				dif := parseStringField(bytesVal, 3)
 				if gateID != "" {
-					b.currentGate = gateID
-					b.currentTier = tierMin
-					b.currentDifficulty = dif
-					huntName := GetHuntName(gateID, tierMin)
-					b.status.CurrentArea = huntName
-					b.status.Status = "hunting"
+					b.status.CurrentArea = GetHuntName(gateID, tierMin)
 				}
+
+			case 43: // DeathState
+				b.huntConfirmed = false
+				b.currentGate = ""
+				b.currentTier = 0
+				b.addLogLocked("Personagem derrotado em combate! Reiniciando caçada...")
+				_ = b.sendGiveUp()
 
 			case 290: // PartyResponse
 				b.handlePartyResponse(bytesVal)
@@ -888,7 +945,11 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 				if level > 0 {
 					b.status.Level = level
 				}
-				b.status.ExpPerHour = float64(exp)
+				b.lastLevel = level
+				b.lastExp = exp
+				if b.xpStartTime.IsZero() {
+					b.xpStartTime = time.Now()
+				}
 			case 4: // Wallet
 				gold := int64(parseVarintField(sub, 1))
 				if gold > 0 {
@@ -905,22 +966,12 @@ func (b *Bot) parseCharacterState(bytesVal []byte) {
 				b.status.MaxMana = b.status.Mana
 			case 14: // Hunt / HuntPrefs
 				tierMin := uint32(parseVarintField(sub, 1))
-				dif := parseStringField(sub, 2)
 				areaStr := parseStringField(sub, 1)
 				if tierMin > 0 {
-					b.currentTier = tierMin
-					if b.currentGate == "" {
-						b.currentGate = "blue-gate"
-					}
-					if dif != "" {
-						b.currentDifficulty = dif
-					}
-					huntName := GetHuntName(b.currentGate, b.currentTier)
+					huntName := GetHuntName("blue-gate", tierMin)
 					b.status.CurrentArea = huntName
-					b.status.Status = "hunting"
 				} else if areaStr != "" {
 					b.status.CurrentArea = areaStr
-					b.status.Status = "hunting"
 				}
 			case 19: // Codex (CodexState)
 				kills := parseCodexMonsters(sub)
@@ -962,17 +1013,36 @@ func (b *Bot) parseCharacterPatch(bytesVal []byte) {
 
 			switch num {
 			case 2: // Progress
-				val := int64(parseVarintField(sub, 1))
+				val := int(parseVarintField(sub, 1))
 				exp := int64(parseVarintField(sub, 2))
 				if val > 0 && val < 200 {
-					b.status.Level = int(val)
+					b.status.Level = val
 					b.status.HP = 200 + (b.status.Level * 25)
 					b.status.MaxHP = b.status.HP
 					b.status.Mana = 100 + (b.status.Level * 15)
 					b.status.MaxMana = b.status.Mana
 				}
-				if exp > 0 {
-					b.status.ExpPerHour = float64(exp)
+				if b.xpStartTime.IsZero() {
+					b.xpStartTime = time.Now()
+					b.lastLevel = val
+					b.lastExp = exp
+				} else {
+					var gain int64
+					if val > b.lastLevel {
+						gain = exp + 500
+						b.addLogLocked(fmt.Sprintf("🎉 LEVEL UP! Nível %d alcançado!", val))
+					} else if exp > b.lastExp {
+						gain = exp - b.lastExp
+					}
+					if gain > 0 {
+						b.totalXPGained += uint64(gain)
+						elapsed := time.Since(b.xpStartTime).Hours()
+						if elapsed > 0.001 {
+							b.status.ExpPerHour = float64(b.totalXPGained) / elapsed
+						}
+					}
+					b.lastLevel = val
+					b.lastExp = exp
 				}
 			case 3: // Wallet
 				gold := int64(parseVarintField(sub, 1))
@@ -1094,11 +1164,8 @@ func (b *Bot) handlePartyPush(bytesVal []byte) {
 				}
 				// Se este bot for membro e o líder tiver caçada definida, sincroniza
 				if !b.config.Settings.PartyLeader && leaderGate != "" && leaderTier > 0 {
-					if b.currentGate != leaderGate || b.currentTier != leaderTier {
+					if !b.huntConfirmed || b.currentGate != leaderGate || b.currentTier != leaderTier {
 						_ = b.sendStartHunt(leaderGate, leaderTier, "normal")
-						b.currentGate = leaderGate
-						b.currentTier = leaderTier
-						b.currentDifficulty = "normal"
 						b.status.CurrentArea = GetHuntName(leaderGate, leaderTier)
 						b.addLogLocked(fmt.Sprintf("Auto-Follow: Sincronizando caçada com o líder -> %s", b.status.CurrentArea))
 					}
@@ -1170,9 +1237,6 @@ func (b *Bot) performTick() {
 				if time.Since(b.lastHuntCheck) > 5*time.Second {
 					b.lastHuntCheck = time.Now()
 					_ = b.sendStartHunt(best.GateID, best.TierMin, best.Difficulty)
-					b.currentGate = best.GateID
-					b.currentTier = best.TierMin
-					b.currentDifficulty = best.Difficulty
 					huntName := GetHuntName(best.GateID, best.TierMin)
 					b.status.CurrentArea = huntName
 					if b.config.Settings.CodexMode {
@@ -1187,13 +1251,10 @@ func (b *Bot) performTick() {
 			targetGate, targetTier, targetDif := GlobalParty.GetLeaderHunt()
 
 			if targetGate != "" && targetTier > 0 {
-				if b.currentGate != targetGate || b.currentTier != targetTier || b.currentDifficulty != targetDif {
+				if !b.huntConfirmed || b.currentGate != targetGate || b.currentTier != targetTier || b.currentDifficulty != targetDif {
 					if time.Since(b.lastHuntCheck) > 4*time.Second {
 						b.lastHuntCheck = time.Now()
 						_ = b.sendStartHunt(targetGate, targetTier, targetDif)
-						b.currentGate = targetGate
-						b.currentTier = targetTier
-						b.currentDifficulty = targetDif
 						huntName := GetHuntName(targetGate, targetTier)
 						b.status.CurrentArea = huntName
 						b.addLogLocked(fmt.Sprintf("Auto-Follow: Sincronizando com líder -> %s", huntName))
