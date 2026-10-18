@@ -1,15 +1,15 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1969/2000)",
+      "codexInfo": "Completo (4/4 mobs) | Foco XP",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 38949,
-      "expPerHour": 294234.5501479254,
-      "gold": 50145,
-      "hp": 675,
+      "durationSec": 39267,
+      "expPerHour": 295367.91889856517,
+      "gold": 49983,
+      "hp": 700,
       "id": "acc-1",
-      "kills": 137907,
-      "level": 19,
+      "kills": 139384,
+      "level": 20,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -27,24 +27,26 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 385,
-      "maxHp": 675,
-      "maxMana": 385,
+      "mana": 400,
+      "maxHp": 700,
+      "maxMana": 400,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792344606268
+      "updatedAt": 1792344726467
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1969/2000)",
+      "codexInfo": "Completo (4/4 mobs) | Foco XP",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 34425,
-      "expPerHour": 291670.0269435626,
-      "gold": 461818,
+      "durationSec": 34713,
+      "expPerHour": 292699.3025916851,
+      "gold": 461642,
       "hp": 975,
       "id": "acc-2",
-      "kills": 136659,
+      "kills": 138129,
       "level": 31,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -57,8 +59,6 @@
         "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792344606268
+      "updatedAt": 1792344726469
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1969/2000)",
+      "codexInfo": "Completo (4/4 mobs) | Foco XP",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 39045,
-      "expPerHour": 293472.38261214993,
-      "gold": 73918,
+      "durationSec": 39375,
+      "expPerHour": 294482.86107925046,
+      "gold": 73719,
       "hp": 725,
       "id": "acc-3",
-      "kills": 137907,
+      "kills": 139391,
       "level": 21,
       "logs": [
         "Party sincronizada.",
@@ -100,17 +100,17 @@
       "maxMana": 415,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792344606267
+      "updatedAt": 1792344726467
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1969/2000)",
+      "codexInfo": "Completo (4/4 mobs) | Foco XP",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 35793,
-      "expPerHour": 292959.39148422464,
-      "gold": 459499,
+      "durationSec": 36087,
+      "expPerHour": 293975.23571952095,
+      "gold": 459300,
       "hp": 975,
       "id": "acc-4",
-      "kills": 136872,
+      "kills": 138341,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792344606263
+      "updatedAt": 1792344726465
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.893890380859375,
+  "ramAllocMB": 2.6893768310546875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "3h16m14s"
+  "uptime": "3h18m14s"
 }
