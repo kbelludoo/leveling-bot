@@ -1,16 +1,18 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/3 mobs | Goblin (1172/2000)",
+      "codexInfo": "2/3 mobs | Goblin (1245/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 22812,
-      "expPerHour": 230938.2708443032,
-      "gold": 28759,
+      "durationSec": 23211,
+      "expPerHour": 233286.63465475303,
+      "gold": 29483,
       "hp": 575,
       "id": "acc-1",
-      "kills": 70062,
+      "kills": 71506,
       "level": 15,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -23,8 +25,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 325,
@@ -32,17 +32,17 @@
       "maxMana": 325,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792338725900
+      "updatedAt": 1792338846544
     },
     {
-      "codexInfo": "2/3 mobs | Goblin (1172/2000)",
+      "codexInfo": "2/3 mobs | Goblin (1245/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 20118,
-      "expPerHour": 228917.91165853033,
-      "gold": 440434,
+      "durationSec": 20460,
+      "expPerHour": 231306.8029092236,
+      "gold": 441162,
       "hp": 950,
       "id": "acc-2",
-      "kills": 69267,
+      "kills": 70696,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -66,18 +66,18 @@
       "maxMana": 550,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792338725901
+      "updatedAt": 1792338846544
     },
     {
-      "codexInfo": "2/3 mobs | Goblin (1172/2000)",
+      "codexInfo": "2/3 mobs | Goblin (1245/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 22581,
-      "expPerHour": 229674.05394010633,
-      "gold": 52452,
-      "hp": 650,
+      "durationSec": 22950,
+      "expPerHour": 232284.40017826774,
+      "gold": 53174,
+      "hp": 675,
       "id": "acc-3",
-      "kills": 70000,
-      "level": 18,
+      "kills": 71432,
+      "level": 19,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -86,35 +86,35 @@
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
         "Party sincronizada.",
+        "🎉 LEVEL UP! Nível 19 alcançado!",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Atributos: Distribuídos 5 pontos ()",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 370,
-      "maxHp": 650,
-      "maxMana": 370,
+      "mana": 385,
+      "maxHp": 675,
+      "maxMana": 385,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792338725897
+      "updatedAt": 1792338846541
     },
     {
-      "codexInfo": "2/3 mobs | Goblin (1172/2000)",
+      "codexInfo": "2/3 mobs | Goblin (1245/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 20799,
-      "expPerHour": 229123.5831618723,
-      "gold": 438001,
+      "durationSec": 21156,
+      "expPerHour": 231508.47337996378,
+      "gold": 438726,
       "hp": 950,
       "id": "acc-4",
-      "kills": 69430,
+      "kills": 70856,
       "level": 30,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 550,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792338725899
+      "updatedAt": 1792338846542
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.1849365234375,
+  "ramAllocMB": 2.4183807373046875,
   "ramSysMB": 16.84986114501953,
-  "uptime": "1h38m13s"
+  "uptime": "1h40m14s"
 }
