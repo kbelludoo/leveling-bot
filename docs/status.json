@@ -1,14 +1,14 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/4 mobs | Goblin (1449/2000)",
+      "codexInfo": "2/4 mobs | Goblin (1514/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 24378,
-      "expPerHour": 239036.81649552748,
-      "gold": 31317,
+      "durationSec": 24747,
+      "expPerHour": 241146.66620904568,
+      "gold": 31115,
       "hp": 600,
       "id": "acc-1",
-      "kills": 75697,
+      "kills": 77024,
       "level": 16,
       "logs": [
         "Party sincronizada.",
@@ -32,17 +32,17 @@
       "maxMana": 340,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792339207797
+      "updatedAt": 1792339326021
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1449/2000)",
+      "codexInfo": "2/4 mobs | Goblin (1514/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 21429,
-      "expPerHour": 236911.36850647943,
-      "gold": 442950,
+      "durationSec": 21744,
+      "expPerHour": 239061.0911734781,
+      "gold": 442758,
       "hp": 950,
       "id": "acc-2",
-      "kills": 74824,
+      "kills": 76140,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 550,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792339207798
+      "updatedAt": 1792339326026
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1449/2000)",
+      "codexInfo": "2/4 mobs | Goblin (1514/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 24081,
-      "expPerHour": 237833.87229742494,
-      "gold": 54998,
+      "durationSec": 24423,
+      "expPerHour": 239966.30713956506,
+      "gold": 54804,
       "hp": 675,
       "id": "acc-3",
-      "kills": 75608,
+      "kills": 76932,
       "level": 19,
       "logs": [
         "Party sincronizada.",
@@ -88,29 +88,29 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada."
+        "Party sincronizada.",
+        "Info servidor: missions.unknown"
       ],
       "mana": 385,
       "maxHp": 675,
       "maxMana": 385,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792339207794
+      "updatedAt": 1792339326006
     },
     {
-      "codexInfo": "2/4 mobs | Goblin (1449/2000)",
+      "codexInfo": "2/4 mobs | Goblin (1514/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 22146,
-      "expPerHour": 237101.68598100185,
-      "gold": 440510,
+      "durationSec": 22491,
+      "expPerHour": 239247.80404934764,
+      "gold": 440324,
       "hp": 950,
       "id": "acc-4",
-      "kills": 74979,
+      "kills": 76298,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 550,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792339207796
+      "updatedAt": 1792339326018
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.4566268920898438,
+  "ramAllocMB": 2.04388427734375,
   "ramSysMB": 16.84986114501953,
-  "uptime": "1h46m15s"
+  "uptime": "1h48m14s"
 }
