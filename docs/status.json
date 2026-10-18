@@ -1,16 +1,18 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1202/2000)",
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1265/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 34440,
-      "expPerHour": 281387.33560470975,
-      "gold": 43421,
-      "hp": 650,
+      "durationSec": 34782,
+      "expPerHour": 282825.0500360511,
+      "gold": 43734,
+      "hp": 675,
       "id": "acc-1",
-      "kills": 118157,
-      "level": 18,
+      "kills": 119612,
+      "level": 19,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -23,26 +25,24 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 370,
-      "maxHp": 650,
-      "maxMana": 370,
+      "mana": 385,
+      "maxHp": 675,
+      "maxMana": 385,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792342926146
+      "updatedAt": 1792343046246
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1201/2000)",
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1265/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 30426,
-      "expPerHour": 279336.02357295534,
-      "gold": 455120,
+      "durationSec": 30735,
+      "expPerHour": 280636.9684177428,
+      "gold": 455410,
       "hp": 975,
       "id": "acc-2",
-      "kills": 117040,
+      "kills": 118483,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792342926149
+      "updatedAt": 1792343046250
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1201/2000)",
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1265/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 34500,
-      "expPerHour": 280661.4178423431,
-      "gold": 67186,
+      "durationSec": 34827,
+      "expPerHour": 281946.61969933345,
+      "gold": 67489,
       "hp": 725,
       "id": "acc-3",
-      "kills": 118155,
+      "kills": 119604,
       "level": 21,
       "logs": [
         "Party sincronizada.",
@@ -90,8 +90,8 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -100,22 +100,22 @@
       "maxMana": 415,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792342926150
+      "updatedAt": 1792343046248
     },
     {
-      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1201/2000)",
+      "codexInfo": "3/4 mobs | Esqueleto Guerreiro (1265/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 31674,
-      "expPerHour": 280063.0616722844,
-      "gold": 452722,
+      "durationSec": 31995,
+      "expPerHour": 281355.3904205411,
+      "gold": 453035,
       "hp": 975,
       "id": "acc-4",
-      "kills": 117253,
+      "kills": 118698,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792342926147
+      "updatedAt": 1792343046248
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.6218109130859375,
+  "ramAllocMB": 1.9257125854492188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "2h48m14s"
+  "uptime": "2h50m14s"
 }
