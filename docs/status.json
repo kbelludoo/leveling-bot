@@ -1,18 +1,20 @@
 {
   "accounts": [
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (724/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (726/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 24864,
+      "durationSec": 24990,
       "expPerHour": 9724,
-      "gold": 3863,
+      "gold": 3913,
       "hp": 325,
       "id": "acc-1",
-      "kills": 5806,
+      "kills": 5810,
       "level": 5,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -22,8 +24,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Info servidor: repair.nothing",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -32,23 +32,23 @@
       "maxMana": 175,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792282086061
+      "updatedAt": 1792282206611
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (724/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (726/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 68178,
-      "expPerHour": 156895,
-      "gold": 107279,
+      "durationSec": 68580,
+      "expPerHour": 166276,
+      "gold": 107821,
       "hp": 775,
       "id": "acc-2",
-      "kills": 182070,
+      "kills": 182978,
       "level": 23,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 445,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792282086020
+      "updatedAt": 1792282206623
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (724/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (726/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 28017,
+      "durationSec": 28143,
       "expPerHour": 62619,
-      "gold": 26206,
+      "gold": 26431,
       "hp": 575,
       "id": "acc-3",
-      "kills": 18814,
+      "kills": 18825,
       "level": 15,
       "logs": [
         "Party sincronizada.",
@@ -87,11 +87,11 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: repair.nothing",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -100,17 +100,17 @@
       "maxMana": 325,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792282086050
+      "updatedAt": 1792282206598
     },
     {
-      "codexInfo": "0/1 mobs | Rato da Ruína (724/2000)",
+      "codexInfo": "0/1 mobs | Rato da Ruína (726/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 71559,
-      "expPerHour": 156748,
-      "gold": 107644,
+      "durationSec": 71937,
+      "expPerHour": 166129,
+      "gold": 108181,
       "hp": 775,
       "id": "acc-4",
-      "kills": 182914,
+      "kills": 183811,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 445,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792282086021
+      "updatedAt": 1792282206622
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.4788436889648438,
+  "ramAllocMB": 1.126739501953125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "6h21m54s"
+  "uptime": "6h23m54s"
 }
