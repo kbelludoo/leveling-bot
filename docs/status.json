@@ -3,12 +3,12 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 156894,
-      "expPerHour": 302624.4323713698,
-      "gold": 185608,
+      "durationSec": 157134,
+      "expPerHour": 302356.46412391635,
+      "gold": 186195,
       "hp": 725,
       "id": "acc-1",
-      "kills": 761177,
+      "kills": 762436,
       "level": 21,
       "logs": [
         "Party sincronizada.",
@@ -32,17 +32,17 @@
       "maxMana": 415,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792401725896
+      "updatedAt": 1792401846147
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 174714,
-      "expPerHour": 304620.99834373774,
-      "gold": 598629,
+      "durationSec": 175008,
+      "expPerHour": 304349.5718201803,
+      "gold": 599209,
       "hp": 975,
       "id": "acc-2",
-      "kills": 780695,
+      "kills": 782042,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -57,7 +57,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792401725894
+      "updatedAt": 1792401846144
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 161484,
-      "expPerHour": 304085.09854992956,
-      "gold": 210020,
+      "durationSec": 161730,
+      "expPerHour": 303829.36269913154,
+      "gold": 210559,
       "hp": 750,
       "id": "acc-3",
-      "kills": 774271,
+      "kills": 775595,
       "level": 22,
       "logs": [
         "Party sincronizada.",
@@ -89,10 +89,10 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Personagem derrotado em combate! Reiniciando caçada...",
+        "Desistência confirmada. Retomando caçada...",
+        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 21)",
+        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
         "Party sincronizada."
       ],
       "mana": 430,
@@ -100,26 +100,26 @@
       "maxMana": 430,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792401725897
+      "updatedAt": 1792401846146
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 179238,
-      "expPerHour": 306793.58990587393,
-      "gold": 597024,
+      "durationSec": 179547,
+      "expPerHour": 306518.3956689811,
+      "gold": 597600,
       "hp": 975,
       "id": "acc-4",
-      "kills": 783073,
+      "kills": 784429,
       "level": 31,
       "logs": [
-        "Party sincronizada.",
         "Party sincronizada.",
         "Personagem derrotado em combate! Reiniciando caçada...",
         "Desistência confirmada. Retomando caçada...",
         "Party sincronizada.",
         "Auto-Follow: Sincronizando caçada com o líder -\u003e Castelo dos Demônios (Orc Jovem Nv 25)",
         "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792401725897
+      "updatedAt": 1792401846173
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.2192230224609375,
+  "ramAllocMB": 3.3015899658203125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "19h8m13s"
+  "uptime": "19h10m14s"
 }
