@@ -3,20 +3,20 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 215691,
-      "expPerHour": 252229.820447066,
-      "gold": 243582,
+      "durationSec": 215901,
+      "expPerHour": 252082.0149243224,
+      "gold": 244267,
       "hp": 725,
       "id": "acc-1",
-      "kills": 1080947,
+      "kills": 1082233,
       "level": 21,
       "logs": [
+        "Personagem derrotado em combate! Reiniciando caçada...",
+        "Desistência confirmada. Retomando caçada...",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 21)",
+        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,22 +32,22 @@
       "maxMana": 415,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792433047565
+      "updatedAt": 1792433166969
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 249318,
-      "expPerHour": 255398.82216929912,
-      "gold": 658937,
+      "durationSec": 249597,
+      "expPerHour": 255257.4127338172,
+      "gold": 659680,
       "hp": 975,
       "id": "acc-2",
-      "kills": 1118826,
+      "kills": 1120183,
       "level": 31,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Desistência confirmada. Retomando caçada...",
+        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 21)",
+        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792433047565
+      "updatedAt": 1792433166970
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 221925,
-      "expPerHour": 254561.88661524083,
-      "gold": 269851,
+      "durationSec": 222132,
+      "expPerHour": 254411.32123362197,
+      "gold": 270559,
       "hp": 750,
       "id": "acc-3",
-      "kills": 1105834,
+      "kills": 1107168,
       "level": 22,
       "logs": [
         "Party sincronizada.",
@@ -88,10 +88,10 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -100,17 +100,17 @@
       "maxMana": 430,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792433047565
+      "updatedAt": 1792433166970
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 256152,
-      "expPerHour": 256785.44408456836,
-      "gold": 657142,
+      "durationSec": 256455,
+      "expPerHour": 256642.39178564525,
+      "gold": 657832,
       "hp": 975,
       "id": "acc-4",
-      "kills": 1121794,
+      "kills": 1123167,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792433047565
+      "updatedAt": 1792433166969
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.7988967895507812,
+  "ramAllocMB": 3.4920730590820312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "27h50m15s"
+  "uptime": "27h52m15s"
 }
