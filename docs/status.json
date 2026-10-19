@@ -3,12 +3,12 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 100998,
-      "expPerHour": 320585.1471156377,
-      "gold": 127071,
+      "durationSec": 101193,
+      "expPerHour": 320578.0456284349,
+      "gold": 129039,
       "hp": 725,
       "id": "acc-1",
-      "kills": 455591,
+      "kills": 456548,
       "level": 21,
       "logs": [
         "Party sincronizada.",
@@ -17,12 +17,12 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Personagem derrotado em combate! Reiniciando caçada...",
+        "Desistência confirmada. Retomando caçada...",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 21)",
+        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
@@ -32,17 +32,17 @@
       "maxMana": 415,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792372229480
+      "updatedAt": 1792372327558
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 103818,
-      "expPerHour": 319824.9127501745,
-      "gold": 539025,
+      "durationSec": 104037,
+      "expPerHour": 319820.41055876523,
+      "gold": 541600,
       "hp": 975,
       "id": "acc-2",
-      "kills": 461072,
+      "kills": 462088,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -66,17 +66,17 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792372229481
+      "updatedAt": 1792372327556
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 104169,
-      "expPerHour": 320852.2335269382,
-      "gold": 151012,
+      "durationSec": 104361,
+      "expPerHour": 320845.4133223558,
+      "gold": 153547,
       "hp": 750,
       "id": "acc-3",
-      "kills": 460920,
+      "kills": 461928,
       "level": 22,
       "logs": [
         "Party sincronizada.",
@@ -100,19 +100,24 @@
       "maxMana": 430,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792372229481
+      "updatedAt": 1792372327558
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 106356,
-      "expPerHour": 323625.9177043591,
-      "gold": 537358,
+      "durationSec": 106590,
+      "expPerHour": 323612.8377025413,
+      "gold": 539683,
       "hp": 975,
       "id": "acc-4",
-      "kills": 463069,
+      "kills": 464087,
       "level": 31,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -122,11 +127,6 @@
         "Party sincronizada.",
         "Auto-Follow: Sincronizando caçada com o líder -\u003e Castelo dos Demônios (Orc Jovem Nv 25)",
         "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -134,11 +134,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792372229480
+      "updatedAt": 1792372327560
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.2350616455078125,
+  "ramAllocMB": 1.3178634643554688,
   "ramSysMB": 17.34986114501953,
-  "uptime": "10h56m37s"
+  "uptime": "10h58m15s"
 }
