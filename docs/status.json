@@ -1,28 +1,28 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (944/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1025/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7683,
-      "expPerHour": 455590.03564427217,
+      "durationSec": 8031,
+      "expPerHour": 452374.54730577,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 287500,
+      "gold": 288152,
       "hp": 750,
       "id": "acc-1",
-      "kills": 17878,
+      "kills": 18932,
       "level": 22,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,25 +38,27 @@
       "maxMana": 430,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792454647422
+      "updatedAt": 1792454767123
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (943/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1025/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7758,
-      "expPerHour": 451350.9208738458,
+      "durationSec": 8115,
+      "expPerHour": 448371.3088526398,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 703561,
+      "gold": 704292,
       "hp": 975,
       "id": "acc-2",
-      "kills": 17753,
+      "kills": 18814,
       "level": 31,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -69,8 +71,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: shadow.notFound",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -78,27 +78,27 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792454647371
+      "updatedAt": 1792454767130
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (941/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1025/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7725,
-      "expPerHour": 455621.0843097845,
+      "durationSec": 8076,
+      "expPerHour": 452414.6126627132,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 314100,
+      "gold": 314822,
       "hp": 775,
       "id": "acc-3",
-      "kills": 17867,
+      "kills": 18918,
       "level": 23,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -118,30 +118,30 @@
       "maxMana": 445,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792454647376
+      "updatedAt": 1792454767121
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (943/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1025/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 7755,
-      "expPerHour": 453438.1360579788,
+      "durationSec": 8160,
+      "expPerHour": 450338.3925751369,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 701899,
+      "gold": 702585,
       "hp": 975,
       "id": "acc-4",
-      "kills": 17826,
+      "kills": 18895,
       "level": 31,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792454647385
+      "updatedAt": 1792454767122
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.1347732543945312,
+  "ramAllocMB": 2.4892654418945312,
   "ramSysMB": 17.09986114501953,
-  "uptime": "34m13s"
+  "uptime": "36m13s"
 }
