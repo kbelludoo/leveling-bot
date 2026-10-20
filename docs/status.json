@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 105318,
+      "durationSec": 105402,
       "expPerHour": 60993.11869342319,
       "extra": {
         "farmAvailableMin": 0,
@@ -17,10 +17,6 @@
       "kills": 134907,
       "level": 24,
       "logs": [
-        "Party sincronizada.",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
-        "Joias: Fusão automática de gemas realizada",
         "Encantamento: Equipamento slot 1 aprimorado",
         "Encantamento: Equipamento slot 2 aprimorado",
         "Encantamento: Equipamento slot 3 aprimorado",
@@ -31,19 +27,23 @@
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
-        "Conexão perdida com o servidor."
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login..."
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #1",
-      "status": "Conectando ao servidor...",
-      "updatedAt": 1792534920826
+      "status": "Autenticando...",
+      "updatedAt": 1792535038094
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 110256,
+      "durationSec": 110340,
       "expPerHour": 73652.3468514452,
       "extra": {
         "farmAvailableMin": 0,
@@ -57,13 +57,6 @@
       "kills": 155851,
       "level": 31,
       "logs": [
-        "Encantamento: Equipamento slot 3 aprimorado",
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
-        "Servidor erro: server.internal_error",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
@@ -71,19 +64,26 @@
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
-        "Info servidor: request.invalid"
+        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
+        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #2",
-      "status": "Erro: server.internal_error",
-      "updatedAt": 1792534908598
+      "status": "Autenticando...",
+      "updatedAt": 1792535040814
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 106599,
+      "durationSec": 106680,
       "expPerHour": 63533.42145113581,
       "extra": {
         "farmAvailableMin": 0,
@@ -97,33 +97,33 @@
       "kills": 146852,
       "level": 24,
       "logs": [
-        "Encantamento: Equipamento slot 2 aprimorado",
-        "Encantamento: Equipamento slot 3 aprimorado",
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
+        "Info servidor: request.invalid",
+        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Conexão perdida com o servidor."
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #3",
-      "status": "Conectando ao servidor...",
-      "updatedAt": 1792534913927
+      "status": "Autenticando...",
+      "updatedAt": 1792535039726
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 115020,
+      "durationSec": 115122,
       "expPerHour": 85424.75316050573,
       "extra": {
         "farmAvailableMin": 0,
@@ -137,12 +137,6 @@
       "kills": 172568,
       "level": 31,
       "logs": [
-        "Encantamento: Equipamento slot 1 aprimorado",
-        "Encantamento: Equipamento slot 2 aprimorado",
-        "Encantamento: Equipamento slot 3 aprimorado",
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
@@ -151,18 +145,24 @@
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login..."
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #4",
       "status": "Autenticando...",
-      "updatedAt": 1792534903784
+      "updatedAt": 1792535037545
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 2.4259872436523438,
+  "goroutines": 15,
+  "ramAllocMB": 2.02215576171875,
   "ramSysMB": 21.34986114501953,
-  "uptime": "22h52m13s"
+  "uptime": "22h54m12s"
 }
