@@ -1,20 +1,20 @@
 {
   "accounts": [
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1003/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1042/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 23589,
-      "expPerHour": 378253.02621782135,
+      "durationSec": 23826,
+      "expPerHour": 377079.4105819752,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 305260,
+      "gold": 305939,
       "hp": 800,
       "id": "acc-1",
-      "kills": 73905,
+      "kills": 74957,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -38,33 +38,33 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792461007749
+      "updatedAt": 1792461126740
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1003/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1042/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 24249,
-      "expPerHour": 379247.46651481435,
+      "durationSec": 24504,
+      "expPerHour": 378058.1593169342,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 721439,
+      "gold": 722142,
       "hp": 975,
       "id": "acc-2",
-      "kills": 74298,
+      "kills": 75367,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -78,23 +78,23 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792461007748
+      "updatedAt": 1792461126735
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1003/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1042/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 23811,
-      "expPerHour": 379643.7237829121,
+      "durationSec": 24051,
+      "expPerHour": 378449.06002566335,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 331961,
+      "gold": 332662,
       "hp": 800,
       "id": "acc-3",
-      "kills": 74166,
+      "kills": 75241,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -118,23 +118,23 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792461007701
+      "updatedAt": 1792461126737
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1003/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1042/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 24729,
-      "expPerHour": 379799.8561795701,
+      "durationSec": 24978,
+      "expPerHour": 378604.9607939731,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 719907,
+      "gold": 720581,
       "hp": 975,
       "id": "acc-4",
-      "kills": 74336,
+      "kills": 75405,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792461007748
+      "updatedAt": 1792461126737
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.8852691650390625,
+  "ramAllocMB": 2.4455184936523438,
   "ramSysMB": 21.09986114501953,
-  "uptime": "2h20m14s"
+  "uptime": "2h22m13s"
 }
