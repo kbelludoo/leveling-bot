@@ -1,20 +1,20 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/5 mobs | Goblin (988/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1042/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 15390,
-      "expPerHour": 409163.28269862983,
+      "durationSec": 15654,
+      "expPerHour": 406598.15042723634,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 295309,
+      "gold": 296035,
       "hp": 775,
       "id": "acc-1",
-      "kills": 41782,
+      "kills": 42670,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -38,23 +38,23 @@
       "maxMana": 445,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792457406562
+      "updatedAt": 1792457526234
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (988/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1040/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 15711,
-      "expPerHour": 411239.3282371389,
+      "durationSec": 15993,
+      "expPerHour": 408624.7052304718,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 711562,
+      "gold": 712301,
       "hp": 975,
       "id": "acc-2",
-      "kills": 42068,
+      "kills": 42966,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -78,23 +78,23 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792457406565
+      "updatedAt": 1792457526235
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (988/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1040/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 15486,
-      "expPerHour": 412111.53780187323,
+      "durationSec": 15759,
+      "expPerHour": 409475.94887034723,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 322067,
+      "gold": 322802,
       "hp": 775,
       "id": "acc-3",
-      "kills": 42076,
+      "kills": 42969,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -118,23 +118,23 @@
       "maxMana": 445,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792457406562
+      "updatedAt": 1792457526235
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (988/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1040/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 15930,
-      "expPerHour": 412892.45759782236,
+      "durationSec": 16212,
+      "expPerHour": 410238.3759874703,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 709928,
+      "gold": 710652,
       "hp": 975,
       "id": "acc-4",
-      "kills": 42236,
+      "kills": 43132,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -150,7 +150,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Torre: Desafiando andares com auto-avanço!",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792457406565
+      "updatedAt": 1792457526235
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.2700042724609375,
+  "ramAllocMB": 2.0183486938476562,
   "ramSysMB": 21.09986114501953,
-  "uptime": "1h20m12s"
+  "uptime": "1h22m12s"
 }
