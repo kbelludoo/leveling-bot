@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 39144,
+      "durationSec": 39270,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -11,15 +11,15 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 316414,
+      "gold": 316239,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131365,
+      "kills": 131371,
       "level": 24,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: repair.nothing",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792470966308
+      "updatedAt": 1792471087112
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 43683,
+      "durationSec": 43809,
       "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
@@ -51,10 +51,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 738487,
+      "gold": 738312,
       "hp": 975,
       "id": "acc-2",
-      "kills": 148485,
+      "kills": 148491,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792470966308
+      "updatedAt": 1792471087111
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 39615,
+      "durationSec": 39741,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -91,10 +91,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 343146,
+      "gold": 342946,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132395,
+      "kills": 132400,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -111,30 +111,30 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: repair.nothing"
+        "Party sincronizada."
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792470966312
+      "updatedAt": 1792471087110
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 46857,
-      "expPerHour": 348677.82483248,
+      "durationSec": 47100,
+      "expPerHour": 348380.5267531884,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 742394,
+      "gold": 745255,
       "hp": 975,
       "id": "acc-4",
-      "kills": 158321,
+      "kills": 158877,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -146,11 +146,11 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Personagem derrotado em combate! Reiniciando caçada...",
-        "Desistência confirmada. Retomando caçada...",
         "Party sincronizada.",
-        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 24)",
-        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792470966328
+      "updatedAt": 1792471087111
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.1683731079101562,
+  "ramAllocMB": 1.5571746826171875,
   "ramSysMB": 21.09986114501953,
-  "uptime": "5h6m12s"
+  "uptime": "5h8m13s"
 }
