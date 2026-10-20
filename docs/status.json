@@ -1,21 +1,21 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1983/2000)",
-      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 12063,
-      "expPerHour": 447983.40448475734,
+      "codexInfo": "3/5 mobs | Goblin (382/2000)",
+      "currentArea": "Blue Gate (Goblin Nv 15)",
+      "durationSec": 12408,
+      "expPerHour": 447456.0504686436,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 291669,
-      "hp": 750,
+      "gold": 292366,
+      "hp": 775,
       "id": "acc-1",
-      "kills": 30626,
-      "level": 22,
+      "kills": 31836,
+      "level": 23,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
@@ -33,28 +33,28 @@
         "Party sincronizada.",
         "Party sincronizada."
       ],
-      "mana": 430,
-      "maxHp": 750,
-      "maxMana": 430,
+      "mana": 445,
+      "maxHp": 775,
+      "maxMana": 445,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792455966599
+      "updatedAt": 1792456086847
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1985/2000)",
-      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 12177,
-      "expPerHour": 446027.4824045059,
+      "codexInfo": "3/5 mobs | Goblin (382/2000)",
+      "currentArea": "Blue Gate (Goblin Nv 15)",
+      "durationSec": 12525,
+      "expPerHour": 445221.37285678415,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 707793,
+      "gold": 708479,
       "hp": 975,
       "id": "acc-2",
-      "kills": 30548,
+      "kills": 31759,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -78,23 +78,23 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792455966602
+      "updatedAt": 1792456086851
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1985/2000)",
-      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 12081,
-      "expPerHour": 447729.4720323953,
+      "codexInfo": "3/5 mobs | Goblin (382/2000)",
+      "currentArea": "Blue Gate (Goblin Nv 15)",
+      "durationSec": 12423,
+      "expPerHour": 446864.8205253518,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 318325,
+      "gold": 319020,
       "hp": 775,
       "id": "acc-3",
-      "kills": 30570,
+      "kills": 31775,
       "level": 23,
       "logs": [
         "Party sincronizada.",
@@ -118,23 +118,23 @@
       "maxMana": 445,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792455966602
+      "updatedAt": 1792456086850
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1985/2000)",
-      "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 12351,
-      "expPerHour": 447291.16863330384,
+      "codexInfo": "3/5 mobs | Goblin (382/2000)",
+      "currentArea": "Blue Gate (Goblin Nv 15)",
+      "durationSec": 12696,
+      "expPerHour": 446441.42280584644,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 706147,
+      "gold": 706832,
       "hp": 975,
       "id": "acc-4",
-      "kills": 30658,
+      "kills": 31861,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792455966599
+      "updatedAt": 1792456086847
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.155426025390625,
+  "ramAllocMB": 1.3966217041015625,
   "ramSysMB": 17.09986114501953,
-  "uptime": "56m12s"
+  "uptime": "58m13s"
 }
