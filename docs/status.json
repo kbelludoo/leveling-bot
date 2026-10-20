@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 104622,
+      "durationSec": 104721,
       "expPerHour": 60993.11869342319,
       "extra": {
         "farmAvailableMin": 0,
@@ -17,19 +17,19 @@
       "kills": 134902,
       "level": 24,
       "logs": [
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
+        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login..."
       ],
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "Autenticando...",
-      "updatedAt": 1792534078287
+      "updatedAt": 1792534201480
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 109569,
+      "durationSec": 109665,
       "expPerHour": 73652.3468514452,
       "extra": {
         "farmAvailableMin": 0,
@@ -57,8 +57,6 @@
       "kills": 155851,
       "level": 31,
       "logs": [
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
@@ -69,7 +67,9 @@
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login..."
       ],
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "Autenticando...",
-      "updatedAt": 1792534078469
+      "updatedAt": 1792534201480
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 105969,
+      "durationSec": 106068,
       "expPerHour": 63533.42145113581,
       "extra": {
         "farmAvailableMin": 0,
@@ -97,9 +97,6 @@
       "kills": 146852,
       "level": 24,
       "logs": [
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
-        "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
@@ -110,6 +107,9 @@
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login..."
       ],
@@ -118,12 +118,12 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "Autenticando...",
-      "updatedAt": 1792534070147
+      "updatedAt": 1792534207752
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 114384,
+      "durationSec": 114483,
       "expPerHour": 85424.75316050573,
       "extra": {
         "farmAvailableMin": 0,
@@ -137,19 +137,19 @@
       "kills": 172568,
       "level": 31,
       "logs": [
-        "Encantamento: Equipamento slot 6 aprimorado",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Servidor erro: server.internal_error",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login..."
       ],
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "Autenticando...",
-      "updatedAt": 1792534070147
+      "updatedAt": 1792534199505
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.8591384887695312,
+  "ramAllocMB": 2.46771240234375,
   "ramSysMB": 21.34986114501953,
-  "uptime": "22h38m13s"
+  "uptime": "22h40m14s"
 }
