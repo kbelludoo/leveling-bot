@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 48033,
+      "durationSec": 48159,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -11,16 +11,12 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 316239,
+      "gold": 316264,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131694,
+      "kills": 131697,
       "level": 24,
       "logs": [
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #1.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -31,19 +27,23 @@
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
-        "Info servidor: repair.nothing"
+        "Info servidor: repair.nothing",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown"
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792479487004
+      "updatedAt": 1792479606505
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 52569,
+      "durationSec": 52695,
       "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
@@ -54,12 +54,9 @@
       "gold": 738262,
       "hp": 975,
       "id": "acc-2",
-      "kills": 148804,
+      "kills": 148806,
       "level": 31,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #2.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -71,19 +68,22 @@
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
         "Info servidor: repair.nothing",
-        "Info servidor: missions.unknown"
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792479487090
+      "updatedAt": 1792479606992
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 48507,
+      "durationSec": 48633,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -94,14 +94,9 @@
       "gold": 342921,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132704,
+      "kills": 132706,
       "level": 24,
       "logs": [
-        "Encantamento: Equipamento slot 2 aprimorado",
-        "Encantamento: Equipamento slot 3 aprimorado",
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -111,6 +106,11 @@
         "Talentos: +17 pontos em 'atk'",
         "Info servidor: content.unknown",
         "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
       "mana": 460,
@@ -118,12 +118,12 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792479487091
+      "updatedAt": 1792479606993
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 57354,
+      "durationSec": 57477,
       "expPerHour": 340078.6579109068,
       "extra": {
         "farmAvailableMin": 0,
@@ -131,15 +131,12 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 745957,
+      "gold": 745982,
       "hp": 975,
       "id": "acc-4",
-      "kills": 165404,
+      "kills": 165406,
       "level": 31,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Talentos: +18 pontos em 'atk'",
         "Info servidor: content.unknown",
         "Party sincronizada.",
@@ -151,6 +148,9 @@
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
       "mana": 565,
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792479487002
+      "updatedAt": 1792479606503
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.9567184448242188,
+  "ramAllocMB": 2.36834716796875,
   "ramSysMB": 21.34986114501953,
-  "uptime": "7h28m13s"
+  "uptime": "7h30m13s"
 }
