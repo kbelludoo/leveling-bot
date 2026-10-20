@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 40149,
+      "durationSec": 40275,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -11,15 +11,15 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 316339,
+      "gold": 316439,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131415,
+      "kills": 131421,
       "level": 24,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: repair.nothing",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792471926291
+      "updatedAt": 1792472046996
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 44685,
+      "durationSec": 44811,
       "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
@@ -51,16 +51,16 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 738412,
+      "gold": 738512,
       "hp": 975,
       "id": "acc-2",
-      "kills": 148534,
+      "kills": 148540,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792471926289
+      "updatedAt": 1792472046994
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 40611,
+      "durationSec": 40740,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -91,20 +91,20 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 343021,
+      "gold": 343121,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132439,
+      "kills": 132445,
       "level": 24,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -118,29 +118,29 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792471926287
+      "updatedAt": 1792472046990
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 48876,
-      "expPerHour": 344783.22655651835,
+      "durationSec": 49140,
+      "expPerHour": 343788.90833996906,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 744870,
+      "gold": 746787,
       "hp": 975,
       "id": "acc-4",
-      "kills": 162768,
+      "kills": 163350,
       "level": 31,
       "logs": [
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792471926300
+      "updatedAt": 1792472046960
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.0284271240234375,
+  "ramAllocMB": 1.41497802734375,
   "ramSysMB": 21.09986114501953,
-  "uptime": "5h22m12s"
+  "uptime": "5h24m13s"
 }
