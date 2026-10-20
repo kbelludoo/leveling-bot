@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 36768,
+      "durationSec": 36891,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -11,10 +11,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 316289,
+      "gold": 316489,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131226,
+      "kills": 131235,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -27,7 +27,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,34 +38,34 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792468686692
+      "updatedAt": 1792468807243
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 41106,
-      "expPerHour": 356544.3568866768,
+      "durationSec": 41415,
+      "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 741000,
+      "gold": 740437,
       "hp": 975,
       "id": "acc-2",
-      "kills": 147179,
+      "kills": 148201,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Personagem derrotado em combate! Reiniciando caçada...",
+        "Desistência confirmada. Retomando caçada...",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Codex Líder: Focando em Castelo dos Demônios (Orc Jovem Nv 25) (Nv Min: 24)",
+        "Caçada iniciada: Castelo dos Demônios (Orc Jovem Nv 25)",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792468686657
+      "updatedAt": 1792468807303
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 37233,
+      "durationSec": 37359,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -91,10 +91,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 342996,
+      "gold": 343196,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132284,
+      "kills": 132294,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -118,23 +118,23 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792468686692
+      "updatedAt": 1792468807241
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 42027,
-      "expPerHour": 355927.3165337189,
+      "durationSec": 42315,
+      "expPerHour": 356944.3856287509,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 739298,
+      "gold": 740238,
       "hp": 975,
       "id": "acc-4",
-      "kills": 147210,
+      "kills": 148213,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792468686697
+      "updatedAt": 1792468807300
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.0157470703125,
+  "ramAllocMB": 2.9616241455078125,
   "ramSysMB": 21.09986114501953,
-  "uptime": "4h28m13s"
+  "uptime": "4h30m13s"
 }
