@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 104331,
+      "durationSec": 104436,
       "expPerHour": 60993.11869342319,
       "extra": {
         "farmAvailableMin": 0,
@@ -17,33 +17,33 @@
       "kills": 134902,
       "level": 24,
       "logs": [
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Joias: Fusão automática de gemas realizada",
-        "Encantamento: Equipamento slot 1 aprimorado",
-        "Encantamento: Equipamento slot 2 aprimorado",
-        "Encantamento: Equipamento slot 3 aprimorado",
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
-        "Boss Diário: Batalha iniciada!",
         "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Expedição de Sombras: Recompensas coletadas e equipe enviada"
+        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
+        "Servidor erro: session.load_failed",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #1",
       "status": "Autenticando...",
-      "updatedAt": 1792533715423
+      "updatedAt": 1792533841747
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 109290,
+      "durationSec": 109389,
       "expPerHour": 73652.3468514452,
       "extra": {
         "farmAvailableMin": 0,
@@ -57,33 +57,33 @@
       "kills": 155851,
       "level": 31,
       "logs": [
-        "Encantamento: Equipamento slot 4 aprimorado",
-        "Encantamento: Equipamento slot 5 aprimorado",
-        "Encantamento: Equipamento slot 6 aprimorado",
-        "Servidor erro: server.internal_error",
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Boss Diário: Batalha iniciada!",
-        "Servidor erro: server.internal_error",
-        "Info servidor: request.invalid",
-        "Info servidor: request.invalid",
+        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
+        "Servidor erro: session.load_failed",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
-        "Expedição de Sombras: Recompensas coletadas e equipe enviada"
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!",
+        "Servidor erro: server.internal_error",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login..."
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #2",
       "status": "Autenticando...",
-      "updatedAt": 1792533715498
+      "updatedAt": 1792533838665
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 105696,
+      "durationSec": 105813,
       "expPerHour": 63533.42145113581,
       "extra": {
         "farmAvailableMin": 0,
@@ -97,11 +97,6 @@
       "kills": 146852,
       "level": 24,
       "logs": [
-        "Servidor erro: server.internal_error",
-        "Info servidor: request.invalid",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Joias: Fusão automática de gemas realizada",
         "Encantamento: Equipamento slot 1 aprimorado",
         "Encantamento: Equipamento slot 2 aprimorado",
         "Encantamento: Equipamento slot 3 aprimorado",
@@ -111,19 +106,24 @@
         "Boss Diário: Batalha iniciada!",
         "Servidor erro: server.internal_error",
         "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login..."
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
+        "Servidor erro: session.load_failed",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #3",
       "status": "Autenticando...",
-      "updatedAt": 1792533725693
+      "updatedAt": 1792533842820
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 114111,
+      "durationSec": 114228,
       "expPerHour": 85424.75316050573,
       "extra": {
         "farmAvailableMin": 0,
@@ -137,11 +137,6 @@
       "kills": 172568,
       "level": 31,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Joias: Fusão automática de gemas realizada",
-        "Encantamento: Equipamento slot 1 aprimorado",
-        "Encantamento: Equipamento slot 2 aprimorado",
-        "Encantamento: Equipamento slot 3 aprimorado",
         "Encantamento: Equipamento slot 4 aprimorado",
         "Encantamento: Equipamento slot 5 aprimorado",
         "Encantamento: Equipamento slot 6 aprimorado",
@@ -151,18 +146,23 @@
         "Info servidor: request.invalid",
         "Info servidor: request.invalid",
         "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login..."
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
+        "Servidor erro: session.load_failed",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Torre: Desafiando andares com auto-avanço!"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #4",
       "status": "Autenticando...",
-      "updatedAt": 1792533725978
+      "updatedAt": 1792533842346
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.2784423828125,
+  "ramAllocMB": 1.1231002807617188,
   "ramSysMB": 21.34986114501953,
-  "uptime": "22h32m13s"
+  "uptime": "22h34m13s"
 }
