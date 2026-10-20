@@ -1,29 +1,29 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/5 mobs | Goblin (1597/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1656/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 18381,
-      "expPerHour": 399178.6161019866,
+      "durationSec": 18675,
+      "expPerHour": 398361.52902337204,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 298800,
+      "gold": 298993,
       "hp": 775,
       "id": "acc-1",
-      "kills": 52149,
+      "kills": 53170,
       "level": 23,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,34 +38,34 @@
       "maxMana": 445,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792458607621
+      "updatedAt": 1792458726536
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1596/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1656/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 18810,
-      "expPerHour": 399996.09461061336,
+      "durationSec": 19098,
+      "expPerHour": 399162.5421679597,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 715028,
+      "gold": 715220,
       "hp": 975,
       "id": "acc-2",
-      "kills": 52390,
+      "kills": 53426,
       "level": 31,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -78,35 +78,35 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792458607616
+      "updatedAt": 1792458726539
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1597/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1656/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 18570,
-      "expPerHour": 401412.40615520603,
+      "durationSec": 18846,
+      "expPerHour": 399368.3342469214,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 325522,
+      "gold": 325675,
       "hp": 800,
       "id": "acc-3",
-      "kills": 52475,
+      "kills": 53406,
       "level": 24,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -118,23 +118,23 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792458607616
+      "updatedAt": 1792458726534
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1596/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1656/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 19095,
-      "expPerHour": 400767.6316889612,
+      "durationSec": 19389,
+      "expPerHour": 399920.7358929047,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 713408,
+      "gold": 713653,
       "hp": 975,
       "id": "acc-4",
-      "kills": 52468,
+      "kills": 53487,
       "level": 31,
       "logs": [
         "Party sincronizada.",
@@ -150,7 +150,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
+        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 565,
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792458607591
+      "updatedAt": 1792458726536
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.3241043090820312,
+  "ramAllocMB": 2.8000640869140625,
   "ramSysMB": 21.09986114501953,
-  "uptime": "1h40m13s"
+  "uptime": "1h42m12s"
 }
