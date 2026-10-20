@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 37890,
+      "durationSec": 38016,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -11,19 +11,19 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 316214,
+      "gold": 316289,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131295,
+      "kills": 131302,
       "level": 24,
       "logs": [
         "Party sincronizada.",
-        "Talentos: +17 pontos em 'atk'",
-        "Info servidor: content.unknown",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792469766522
+      "updatedAt": 1792469886500
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 42429,
+      "durationSec": 42555,
       "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
@@ -51,25 +51,25 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 738287,
+      "gold": 738362,
       "hp": 975,
       "id": "acc-2",
-      "kills": 148415,
+      "kills": 148422,
       "level": 31,
       "logs": [
-        "Talentos: +19 pontos em 'atk'",
-        "Info servidor: content.unknown",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Info servidor: repair.nothing",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792469766520
+      "updatedAt": 1792469886499
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 38361,
+      "durationSec": 38487,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -91,24 +91,24 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 342921,
+      "gold": 342946,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132342,
+      "kills": 132346,
       "level": 24,
       "logs": [
+        "Info servidor: repair.nothing",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Talentos: +17 pontos em 'atk'",
-        "Info servidor: content.unknown",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
@@ -118,32 +118,32 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792469766522
+      "updatedAt": 1792469886580
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 44337,
-      "expPerHour": 352082.23620932543,
+      "durationSec": 44580,
+      "expPerHour": 351884.9986637201,
       "extra": {
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 739261,
+      "gold": 739824,
       "hp": 975,
       "id": "acc-4",
-      "kills": 152721,
+      "kills": 153288,
       "level": 31,
       "logs": [
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #4.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Talentos: +18 pontos em 'atk'",
-        "Info servidor: content.unknown",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Party sincronizada.",
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792469766526
+      "updatedAt": 1792469886565
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.3012924194335938,
+  "ramAllocMB": 2.5623855590820312,
   "ramSysMB": 21.09986114501953,
-  "uptime": "4h46m12s"
+  "uptime": "4h48m12s"
 }
