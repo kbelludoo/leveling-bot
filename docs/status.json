@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 53916,
+      "durationSec": 54039,
       "expPerHour": 338870.72328757786,
       "extra": {
         "farmAvailableMin": 0,
@@ -14,22 +14,22 @@
       "gold": 316189,
       "hp": 800,
       "id": "acc-1",
-      "kills": 131854,
+      "kills": 131857,
       "level": 24,
       "logs": [
+        "Encantamento: Equipamento slot 5 aprimorado",
+        "Encantamento: Equipamento slot 6 aprimorado",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #1.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Talentos: +17 pontos em 'atk'",
         "Info servidor: content.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Info servidor: repair.nothing",
-        "Torre: Desafiando andares com auto-avanço!",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792485125958
+      "updatedAt": 1792485246335
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 58452,
+      "durationSec": 58575,
       "expPerHour": 357557.04130080505,
       "extra": {
         "farmAvailableMin": 0,
@@ -54,22 +54,22 @@
       "gold": 738262,
       "hp": 975,
       "id": "acc-2",
-      "kills": 148962,
+      "kills": 148965,
       "level": 31,
       "logs": [
+        "Encantamento: Equipamento slot 5 aprimorado",
+        "Encantamento: Equipamento slot 6 aprimorado",
+        "Conexão perdida com o servidor.",
+        "Conexão WebSocket estabelecida. Enviando login...",
+        "Login bem-sucedido! Bem-vindo, Party #2.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Talentos: +19 pontos em 'atk'",
         "Info servidor: content.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Torre: Desafiando andares com auto-avanço!",
-        "Info servidor: repair.nothing",
         "Info servidor: shadow.notFound",
         "Info servidor: missions.unknown"
       ],
@@ -78,12 +78,12 @@
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792485125956
+      "updatedAt": 1792485246335
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 54372,
+      "durationSec": 54498,
       "expPerHour": 341095.8741239114,
       "extra": {
         "farmAvailableMin": 0,
@@ -94,10 +94,13 @@
       "gold": 342921,
       "hp": 800,
       "id": "acc-3",
-      "kills": 132865,
+      "kills": 132868,
       "level": 24,
       "logs": [
-        "Info servidor: missions.unknown",
+        "Encantamento: Equipamento slot 3 aprimorado",
+        "Encantamento: Equipamento slot 4 aprimorado",
+        "Encantamento: Equipamento slot 5 aprimorado",
+        "Encantamento: Equipamento slot 6 aprimorado",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #3.",
@@ -106,11 +109,8 @@
         "Party sincronizada.",
         "Talentos: +17 pontos em 'atk'",
         "Info servidor: content.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Torre: Desafiando andares com auto-avanço!",
-        "Info servidor: repair.nothing",
         "Info servidor: missions.unknown"
       ],
       "mana": 460,
@@ -118,12 +118,12 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792485125956
+      "updatedAt": 1792485246294
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 63231,
+      "durationSec": 63354,
       "expPerHour": 340078.6579109068,
       "extra": {
         "farmAvailableMin": 0,
@@ -131,15 +131,12 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 745907,
+      "gold": 745932,
       "hp": 975,
       "id": "acc-4",
-      "kills": 165558,
+      "kills": 165562,
       "level": 31,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
         "Conexão perdida com o servidor.",
         "Conexão WebSocket estabelecida. Enviando login...",
         "Login bem-sucedido! Bem-vindo, Party #4.",
@@ -148,21 +145,24 @@
         "Party sincronizada.",
         "Talentos: +18 pontos em 'atk'",
         "Info servidor: content.unknown",
-        "Torre: Desafiando andares com auto-avanço!",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Info servidor: repair.nothing"
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792485125962
+      "updatedAt": 1792485246163
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.7041091918945312,
+  "ramAllocMB": 1.5485763549804688,
   "ramSysMB": 21.34986114501953,
-  "uptime": "9h2m12s"
+  "uptime": "9h4m12s"
 }
