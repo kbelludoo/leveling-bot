@@ -1,9 +1,9 @@
 {
   "accounts": [
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1590/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1592/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 33057,
+      "durationSec": 33183,
       "expPerHour": 0,
       "extra": {
         "currentExp": 30316,
@@ -14,10 +14,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 321733,
+      "gold": 321883,
       "hp": 800,
       "id": "acc-1",
-      "kills": 1603,
+      "kills": 1611,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792619046846
+      "updatedAt": 1792619167000
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1590/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1592/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 121992,
-      "expPerHour": 483692.1421873545,
+      "durationSec": 122418,
+      "expPerHour": 484415.07264112897,
       "extra": {
-        "currentExp": 898025,
-        "expPercent": 63,
+        "currentExp": 919749,
+        "expPercent": 64.5,
         "expToNext": 1424950,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 907961,
+      "gold": 908699,
       "hp": 1050,
       "id": "acc-2",
-      "kills": 249812,
+      "kills": 250734,
       "level": 34,
       "logs": [
         "Party sincronizada.",
@@ -84,37 +84,37 @@
       "maxMana": 610,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792619046906
+      "updatedAt": 1792619167030
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1590/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1592/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 121428,
-      "expPerHour": 475618.73198371206,
+      "durationSec": 121878,
+      "expPerHour": 476191.20643876935,
       "extra": {
-        "currentExp": 636964,
-        "expPercent": 68.8,
+        "currentExp": 657098,
+        "expPercent": 71,
         "expToNext": 926015,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 506757,
+      "gold": 507473,
       "hp": 950,
       "id": "acc-3",
-      "kills": 250402,
+      "kills": 251336,
       "level": 30,
       "logs": [
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 550,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792619046906
+      "updatedAt": 1792619167031
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1590/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1592/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 123510,
-      "expPerHour": 484051.7927705236,
+      "durationSec": 123942,
+      "expPerHour": 484618.28021215374,
       "extra": {
-        "currentExp": 890300,
-        "expPercent": 62.5,
+        "currentExp": 910648,
+        "expPercent": 63.9,
         "expToNext": 1424950,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 932695,
+      "gold": 933434,
       "hp": 1050,
       "id": "acc-4",
-      "kills": 250976,
+      "kills": 251895,
       "level": 34,
       "logs": [
         "Party sincronizada.",
@@ -154,10 +154,10 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 610,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792619046905
+      "updatedAt": 1792619167030
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.55877685546875,
+  "ramAllocMB": 1.9490509033203125,
   "ramSysMB": 21.34986114501953,
-  "uptime": "8h50m21s"
+  "uptime": "8h52m21s"
 }
