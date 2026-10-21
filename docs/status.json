@@ -1,9 +1,9 @@
 {
   "accounts": [
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1328/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1330/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 20388,
+      "durationSec": 20508,
       "expPerHour": 0,
       "extra": {
         "currentExp": 30316,
@@ -14,10 +14,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 321958,
+      "gold": 321658,
       "hp": 800,
       "id": "acc-1",
-      "kills": 945,
+      "kills": 949,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -29,7 +29,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792606807302
+      "updatedAt": 1792606927317
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1328/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1330/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 74997,
-      "expPerHour": 402719.00077331945,
+      "durationSec": 75441,
+      "expPerHour": 403582.54679123714,
       "extra": {
-        "currentExp": 83193,
-        "expPercent": 6.5,
+        "currentExp": 101344,
+        "expPercent": 7.9,
         "expToNext": 1285016,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 847491,
+      "gold": 847965,
       "hp": 1025,
       "id": "acc-2",
-      "kills": 155518,
+      "kills": 156351,
       "level": 33,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 595,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792606807360
+      "updatedAt": 1792606927378
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1328/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1330/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 74700,
-      "expPerHour": 396243.50924911,
+      "durationSec": 75153,
+      "expPerHour": 397327.28566800995,
       "extra": {
-        "currentExp": 128216,
-        "expPercent": 17.6,
+        "currentExp": 147331,
+        "expPercent": 20.3,
         "expToNext": 726529,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 447611,
+      "gold": 448162,
       "hp": 900,
       "id": "acc-3",
-      "kills": 155803,
+      "kills": 156658,
       "level": 28,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 520,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792606807391
+      "updatedAt": 1792606927377
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1328/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1330/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 75912,
-      "expPerHour": 401428.01700944937,
+      "durationSec": 76353,
+      "expPerHour": 402537.20604145905,
       "extra": {
-        "currentExp": 72992,
-        "expPercent": 5.7,
+        "currentExp": 92445,
+        "expPercent": 7.2,
         "expToNext": 1285016,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 872033,
+      "gold": 872625,
       "hp": 1025,
       "id": "acc-4",
-      "kills": 156077,
+      "kills": 156919,
       "level": 33,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 595,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792606807384
+      "updatedAt": 1792606927407
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.43450927734375,
+  "ramAllocMB": 1.7677383422851562,
   "ramSysMB": 21.34986114501953,
-  "uptime": "5h26m21s"
+  "uptime": "5h28m21s"
 }
