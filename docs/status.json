@@ -1,9 +1,9 @@
 {
   "accounts": [
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1245/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1248/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 16260,
+      "durationSec": 16386,
       "expPerHour": 0,
       "extra": {
         "currentExp": 30316,
@@ -14,13 +14,13 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 321858,
+      "gold": 321633,
       "hp": 800,
       "id": "acc-1",
-      "kills": 738,
+      "kills": 746,
       "level": 24,
       "logs": [
-        "Info servidor: repair.nothing",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792602847047
+      "updatedAt": 1792602967404
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1245/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1248/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 59823,
-      "expPerHour": 351857.6506423076,
+      "durationSec": 60258,
+      "expPerHour": 353438.1029103082,
       "extra": {
-        "currentExp": 575277,
-        "expPercent": 49.8,
+        "currentExp": 593922,
+        "expPercent": 51.4,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 828524,
+      "gold": 829166,
       "hp": 1000,
       "id": "acc-2",
-      "kills": 124683,
+      "kills": 125578,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 580,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792602847042
+      "updatedAt": 1792602967416
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1245/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1248/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 59634,
-      "expPerHour": 345200.1769949835,
+      "durationSec": 60084,
+      "expPerHour": 346851.35632200976,
       "extra": {
-        "currentExp": 109582,
-        "expPercent": 17.2,
+        "currentExp": 128227,
+        "expPercent": 20.1,
         "expToNext": 638354,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 428895,
+      "gold": 429868,
       "hp": 875,
       "id": "acc-3",
-      "kills": 124969,
+      "kills": 125872,
       "level": 27,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 505,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792602847049
+      "updatedAt": 1792602967413
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1245/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1248/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 60495,
-      "expPerHour": 348666.2900242176,
+      "durationSec": 60957,
+      "expPerHour": 350525.7603303744,
       "extra": {
-        "currentExp": 558497,
-        "expPercent": 48.3,
+        "currentExp": 578260,
+        "expPercent": 50,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 852809,
+      "gold": 853485,
       "hp": 1000,
       "id": "acc-4",
-      "kills": 124986,
+      "kills": 125908,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 580,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792602847047
+      "updatedAt": 1792602967417
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.3196029663085938,
+  "ramAllocMB": 1.7286224365234375,
   "ramSysMB": 21.34986114501953,
-  "uptime": "4h20m21s"
+  "uptime": "4h22m21s"
 }
