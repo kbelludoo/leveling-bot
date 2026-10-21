@@ -3,7 +3,7 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 140133,
+      "durationSec": 140259,
       "expPerHour": 57018.778588535075,
       "extra": {
         "farmAvailableMin": 0,
@@ -14,13 +14,9 @@
       "gold": 321608,
       "hp": 800,
       "id": "acc-1",
-      "kills": 166292,
+      "kills": 166294,
       "level": 24,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Talentos: +17 pontos em 'atk'",
         "Info servidor: missions.unknown",
         "Info servidor: content.unknown",
         "Party sincronizada.",
@@ -31,6 +27,10 @@
         "Torre: Desafiando andares com auto-avanço!",
         "Info servidor: missions.unknown",
         "Info servidor: repair.nothing",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
       "mana": 460,
@@ -38,12 +38,12 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792566366870
+      "updatedAt": 1792566487163
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 147918,
+      "durationSec": 148044,
       "expPerHour": 74739.81527324406,
       "extra": {
         "farmAvailableMin": 0,
@@ -51,17 +51,12 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 748570,
+      "gold": 748595,
       "hp": 975,
       "id": "acc-2",
-      "kills": 199403,
+      "kills": 199406,
       "level": 31,
       "logs": [
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -71,19 +66,24 @@
         "Info servidor: repair.nothing",
         "Torre: Desafiando andares com auto-avanço!",
         "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound"
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing"
       ],
       "mana": 565,
       "maxHp": 975,
       "maxMana": 565,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792566366965
+      "updatedAt": 1792566487000
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 142014,
+      "durationSec": 142140,
       "expPerHour": 61464.20110694944,
       "extra": {
         "farmAvailableMin": 0,
@@ -94,14 +94,9 @@
       "gold": 351463,
       "hp": 800,
       "id": "acc-3",
-      "kills": 184817,
+      "kills": 184819,
       "level": 24,
       "logs": [
-        "Info servidor: content.unknown",
-        "Party sincronizada.",
-        "Info servidor: missions.unknown",
-        "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -111,6 +106,11 @@
         "Info servidor: shadow.notFound",
         "Torre: Desafiando andares com auto-avanço!",
         "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
       "mana": 460,
@@ -118,12 +118,12 @@
       "maxMana": 460,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792566366872
+      "updatedAt": 1792566487161
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "blue-gate [T21]",
-      "durationSec": 159813,
+      "durationSec": 159939,
       "expPerHour": 111610.96568597014,
       "extra": {
         "farmAvailableMin": 0,
@@ -134,14 +134,9 @@
       "gold": 774310,
       "hp": 975,
       "id": "acc-4",
-      "kills": 247124,
+      "kills": 247126,
       "level": 31,
       "logs": [
-        "Expedição de Sombras: Recompensas coletadas e equipe enviada",
-        "Conexão perdida com o servidor.",
-        "Conexão WebSocket estabelecida. Enviando login...",
-        "Login bem-sucedido! Bem-vindo, Party #4.",
-        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Talentos: +18 pontos em 'atk'",
@@ -151,6 +146,11 @@
         "Info servidor: shadow.notFound",
         "Torre: Desafiando andares com auto-avanço!",
         "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: missions.unknown",
+        "Info servidor: shadow.notFound",
+        "Info servidor: repair.nothing",
+        "Info servidor: missions.unknown",
         "Info servidor: shadow.notFound"
       ],
       "mana": 565,
@@ -158,11 +158,11 @@
       "maxMana": 565,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792566366869
+      "updatedAt": 1792566487166
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.5392990112304688,
+  "ramAllocMB": 1.0501556396484375,
   "ramSysMB": 21.34986114501953,
-  "uptime": "31h36m13s"
+  "uptime": "31h38m13s"
 }
