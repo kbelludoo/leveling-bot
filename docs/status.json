@@ -1,9 +1,9 @@
 {
   "accounts": [
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1566/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1569/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 31938,
+      "durationSec": 32064,
       "expPerHour": 0,
       "extra": {
         "currentExp": 30316,
@@ -17,7 +17,7 @@
       "gold": 321783,
       "hp": 800,
       "id": "acc-1",
-      "kills": 1530,
+      "kills": 1540,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -32,7 +32,7 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
+        "Info servidor: repair.nothing",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792617967016
+      "updatedAt": 1792618087562
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1566/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1569/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 117792,
-      "expPerHour": 479016.64269474155,
+      "durationSec": 118164,
+      "expPerHour": 478951.4453111378,
       "extra": {
-        "currentExp": 711779,
-        "expPercent": 50,
+        "currentExp": 727476,
+        "expPercent": 51.1,
         "expToNext": 1424950,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 902638,
+      "gold": 903278,
       "hp": 1050,
       "id": "acc-2",
-      "kills": 241563,
+      "kills": 242323,
       "level": 34,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 610,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792617966991
+      "updatedAt": 1792618087557
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1566/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1569/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 117300,
-      "expPerHour": 471019.3452545497,
+      "durationSec": 117669,
+      "expPerHour": 470838.5799470266,
       "extra": {
-        "currentExp": 453590,
-        "expPercent": 49,
+        "currentExp": 468025,
+        "expPercent": 50.5,
         "expToNext": 926015,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 501525,
+      "gold": 502110,
       "hp": 950,
       "id": "acc-3",
-      "kills": 242244,
+      "kills": 243008,
       "level": 30,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 550,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792617966991
+      "updatedAt": 1792618087560
     },
     {
-      "codexInfo": "1/5 mobs | Rato da Ruína (1566/2000)",
+      "codexInfo": "1/5 mobs | Rato da Ruína (1569/2000)",
       "currentArea": "Blue Gate (Rato da Ruína Nv 5)",
-      "durationSec": 119343,
-      "expPerHour": 479482.2217582922,
+      "durationSec": 119739,
+      "expPerHour": 479415.23596117756,
       "extra": {
-        "currentExp": 705058,
-        "expPercent": 49.5,
+        "currentExp": 720755,
+        "expPercent": 50.6,
         "expToNext": 1424950,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 927433,
+      "gold": 928054,
       "hp": 1050,
       "id": "acc-4",
-      "kills": 242797,
+      "kills": 243554,
       "level": 34,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 610,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792617966991
+      "updatedAt": 1792618087558
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.9827651977539062,
+  "ramAllocMB": 1.7200241088867188,
   "ramSysMB": 21.34986114501953,
-  "uptime": "8h32m21s"
+  "uptime": "8h34m21s"
 }
