@@ -3,21 +3,21 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 102549,
-      "expPerHour": 190886.01981144992,
+      "durationSec": 102798,
+      "expPerHour": 191208.58193713537,
       "extra": {
-        "currentExp": 6775,
-        "expPercent": 1.4,
+        "currentExp": 5382,
+        "expPercent": 1.1,
         "expToNext": 483833,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 459697,
+      "gold": 459309,
       "hp": 825,
       "id": "acc-1",
-      "kills": 493940,
+      "kills": 495168,
       "level": 25,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 475,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792678928459
+      "updatedAt": 1792679047813
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 119223,
-      "expPerHour": 195585.65191369274,
+      "durationSec": 119511,
+      "expPerHour": 195897.20558830112,
       "extra": {
-        "currentExp": 14262,
-        "expPercent": 0.8,
+        "currentExp": 5382,
+        "expPercent": 0.3,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1098490,
+      "gold": 1098097,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 508017,
+      "kills": 509257,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -83,27 +83,27 @@
       "maxHp": 1100,
       "maxMana": 640,
       "name": "Party #2",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792678928452
+      "status": "hunting",
+      "updatedAt": 1792679047756
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 104400,
-      "expPerHour": 193162.72759135117,
+      "durationSec": 104643,
+      "expPerHour": 193479.90364164842,
       "extra": {
-        "currentExp": 5382,
-        "expPercent": 0.5,
+        "currentExp": 2484,
+        "expPercent": 0.2,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 693416,
+      "gold": 693041,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 498970,
+      "kills": 500199,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -126,27 +126,27 @@
       "maxHp": 1000,
       "maxMana": 580,
       "name": "Party #3",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792678928457
+      "status": "hunting",
+      "updatedAt": 1792679047809
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 123270,
-      "expPerHour": 194090.04747006667,
+      "durationSec": 123573,
+      "expPerHour": 194405.03181306797,
       "extra": {
-        "currentExp": 6624,
-        "expPercent": 0.4,
+        "currentExp": 5382,
+        "expPercent": 0.3,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1122652,
+      "gold": 1122265,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 508484,
+      "kills": 509733,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -169,12 +169,12 @@
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792678928430
+      "status": "hunting",
+      "updatedAt": 1792679047783
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.0671234130859375,
+  "ramAllocMB": 3.0673675537109375,
   "ramSysMB": 25.34986114501953,
-  "uptime": "13h52m39s"
+  "uptime": "13h54m39s"
 }
