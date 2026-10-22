@@ -1,23 +1,23 @@
 {
   "accounts": [
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1696/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1788/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 8295,
-      "expPerHour": 308826.93261930504,
+      "durationSec": 8691,
+      "expPerHour": 305020.57536633447,
       "extra": {
-        "currentExp": 254748,
-        "expPercent": 61.5,
+        "currentExp": 262638,
+        "expPercent": 63.4,
         "expToNext": 414286,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 331505,
+      "gold": 331885,
       "hp": 800,
       "id": "acc-1",
-      "kills": 19062,
+      "kills": 20106,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -40,27 +40,27 @@
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #1",
-      "status": "hunting",
-      "updatedAt": 1792631166607
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792631287066
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1696/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1788/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 8562,
-      "expPerHour": 341097.6316939903,
+      "durationSec": 8958,
+      "expPerHour": 334983.2889949441,
       "extra": {
-        "currentExp": 1449398,
-        "expPercent": 91.9,
+        "currentExp": 1456886,
+        "expPercent": 92.4,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 968049,
+      "gold": 968399,
       "hp": 1075,
       "id": "acc-2",
-      "kills": 19656,
+      "kills": 20678,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -83,27 +83,27 @@
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #2",
-      "status": "hunting",
-      "updatedAt": 1792631166608
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792631287067
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1696/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1788/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 8487,
-      "expPerHour": 339711.6095542032,
+      "durationSec": 8883,
+      "expPerHour": 333670.24597124214,
       "extra": {
-        "currentExp": 589348,
-        "expPercent": 51,
+        "currentExp": 596836,
+        "expPercent": 51.6,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 564847,
+      "gold": 565216,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 19617,
+      "kills": 20639,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -126,27 +126,27 @@
       "maxHp": 1000,
       "maxMana": 580,
       "name": "Party #3",
-      "status": "hunting",
-      "updatedAt": 1792631166610
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792631287063
     },
     {
-      "codexInfo": "2/5 mobs | Morcego Sombrio (1696/2000)",
+      "codexInfo": "2/5 mobs | Morcego Sombrio (1788/2000)",
       "currentArea": "Blue Gate (Morcego Sombrio Nv 10)",
-      "durationSec": 8535,
-      "expPerHour": 325271.03792268457,
+      "durationSec": 8931,
+      "expPerHour": 320608.0084647382,
       "extra": {
-        "currentExp": 1428512,
-        "expPercent": 90.6,
+        "currentExp": 1436402,
+        "expPercent": 91.1,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 992480,
+      "gold": 992864,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 19270,
+      "kills": 20328,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -169,12 +169,12 @@
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
-      "status": "hunting",
-      "updatedAt": 1792631166610
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792631287089
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.1896209716796875,
+  "ramAllocMB": 1.7822494506835938,
   "ramSysMB": 25.09986114501953,
-  "uptime": "36m37s"
+  "uptime": "38m38s"
 }
