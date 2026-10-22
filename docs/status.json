@@ -1,23 +1,23 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/5 mobs | Goblin (708/2000)",
+      "codexInfo": "3/5 mobs | Goblin (789/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 9825,
-      "expPerHour": 293811.2339915392,
+      "durationSec": 10191,
+      "expPerHour": 290967.1216397581,
       "extra": {
-        "currentExp": 284817,
-        "expPercent": 68.7,
+        "currentExp": 292566,
+        "expPercent": 70.6,
         "expToNext": 414286,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 333196,
+      "gold": 334259,
       "hp": 800,
       "id": "acc-1",
-      "kills": 23409,
+      "kills": 24733,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792631646942
+      "updatedAt": 1792631771979
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (708/2000)",
+      "codexInfo": "3/5 mobs | Goblin (790/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 10131,
-      "expPerHour": 319465.8979266348,
+      "durationSec": 10503,
+      "expPerHour": 315501.5132573755,
       "extra": {
-        "currentExp": 1478864,
-        "expPercent": 93.8,
+        "currentExp": 1486613,
+        "expPercent": 94.3,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 969689,
+      "gold": 970758,
       "hp": 1075,
       "id": "acc-2",
-      "kills": 23967,
+      "kills": 25291,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 625,
       "name": "Party #2",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792631646942
+      "updatedAt": 1792631771979
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (708/2000)",
+      "codexInfo": "3/5 mobs | Goblin (790/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 10077,
-      "expPerHour": 318329.859186258,
+      "durationSec": 10437,
+      "expPerHour": 314415.0644704634,
       "extra": {
-        "currentExp": 618814,
-        "expPercent": 53.5,
+        "currentExp": 626563,
+        "expPercent": 54.2,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 566530,
+      "gold": 567594,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 23939,
+      "kills": 25266,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -127,29 +127,29 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792631646942
+      "updatedAt": 1792631771979
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (708/2000)",
+      "codexInfo": "3/5 mobs | Goblin (790/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 10131,
-      "expPerHour": 307709.65892307606,
+      "durationSec": 10530,
+      "expPerHour": 304258.7967468173,
       "extra": {
-        "currentExp": 1458886,
-        "expPercent": 92.5,
+        "currentExp": 1466635,
+        "expPercent": 93,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 994168,
+      "gold": 995209,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 23661,
+      "kills": 25001,
       "level": 35,
       "logs": [
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 625,
       "name": "Party #4",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792631646941
+      "updatedAt": 1792631771979
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.2066268920898438,
+  "ramAllocMB": 1.9291610717773438,
   "ramSysMB": 25.34986114501953,
-  "uptime": "44m38s"
+  "uptime": "46m43s"
 }
