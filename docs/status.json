@@ -1,23 +1,23 @@
 {
   "accounts": [
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1881/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1926/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 22680,
-      "expPerHour": 220110.66373154588,
+      "durationSec": 22929,
+      "expPerHour": 219509.0311488562,
       "extra": {
-        "currentExp": 80368,
-        "expPercent": 16.6,
+        "currentExp": 86169,
+        "expPercent": 17.8,
         "expToNext": 483833,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 348460,
+      "gold": 348986,
       "hp": 825,
       "id": "acc-1",
-      "kills": 72118,
+      "kills": 73162,
       "level": 25,
       "logs": [
         "Party sincronizada.",
@@ -40,27 +40,27 @@
       "maxHp": 825,
       "maxMana": 475,
       "name": "Party #1",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792637167837
+      "status": "hunting",
+      "updatedAt": 1792637287011
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1881/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1926/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 23364,
-      "expPerHour": 229219.79000636475,
+      "durationSec": 23604,
+      "expPerHour": 228344.5417730869,
       "extra": {
-        "currentExp": 8906,
-        "expPercent": 0.5,
+        "currentExp": 14373,
+        "expPercent": 0.8,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 985083,
+      "gold": 985589,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 73080,
+      "kills": 74102,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 640,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792637167842
+      "updatedAt": 1792637287011
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1881/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1926/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 23079,
-      "expPerHour": 229027.54842957202,
+      "durationSec": 23310,
+      "expPerHour": 228060.5063086264,
       "extra": {
-        "currentExp": 522421,
-        "expPercent": 45.2,
+        "currentExp": 527670,
+        "expPercent": 45.7,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 582067,
+      "gold": 582559,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 72859,
+      "kills": 73833,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792637167836
+      "updatedAt": 1792637287012
     },
     {
-      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1881/2000)",
+      "codexInfo": "4/5 mobs | Esqueleto Guerreiro (1926/2000)",
       "currentArea": "Blue Gate (Esqueleto Guerreiro Nv 20)",
-      "durationSec": 23757,
-      "expPerHour": 225185.14127960862,
+      "durationSec": 24012,
+      "expPerHour": 224511.70421760777,
       "extra": {
-        "currentExp": 1317213,
-        "expPercent": 83.5,
+        "currentExp": 1275708,
+        "expPercent": 80.9,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1009667,
+      "gold": 1010183,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 72912,
+      "kills": 73954,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -169,12 +169,12 @@
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792637167839
+      "status": "hunting",
+      "updatedAt": 1792637287012
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.0648574829101562,
+  "ramAllocMB": 7.780120849609375,
   "ramSysMB": 25.34986114501953,
-  "uptime": "2h16m39s"
+  "uptime": "2h18m38s"
 }
