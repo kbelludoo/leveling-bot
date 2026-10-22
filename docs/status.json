@@ -3,23 +3,27 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 74520,
-      "expPerHour": 175973.94107487766,
+      "durationSec": 74763,
+      "expPerHour": 176015.69073999114,
       "extra": {
-        "currentExp": 0,
-        "expPercent": 0,
+        "currentExp": 2691,
+        "expPercent": 0.6,
         "expToNext": 483833,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 421064,
+      "gold": 420638,
       "hp": 825,
       "id": "acc-1",
-      "kills": 345378,
+      "kills": 346596,
       "level": 25,
       "logs": [
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -30,37 +34,33 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Personagem derrotado em combate! Reiniciando caçada...",
-        "Desistência confirmada. Retomando caçada..."
+        "Party sincronizada."
       ],
       "mana": 475,
       "maxHp": 825,
       "maxMana": 475,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792664166392
+      "updatedAt": 1792664286939
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 85356,
-      "expPerHour": 179938.24014694514,
+      "durationSec": 85629,
+      "expPerHour": 179966.1904889997,
       "extra": {
-        "currentExp": 621,
-        "expPercent": 0,
+        "currentExp": 4761,
+        "expPercent": 0.3,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1058872,
+      "gold": 1058341,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 354814,
+      "kills": 356065,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 640,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792664166440
+      "updatedAt": 1792664286937
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 75693,
-      "expPerHour": 177588.2430700104,
+      "durationSec": 75936,
+      "expPerHour": 177624.36932648814,
       "extra": {
-        "currentExp": 828,
-        "expPercent": 0.1,
+        "currentExp": 2898,
+        "expPercent": 0.3,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 654433,
+      "gold": 653955,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 347790,
+      "kills": 349034,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -117,8 +117,8 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Info servidor: missions.unknown",
-        "Info servidor: shadow.notFound",
+        "Party sincronizada.",
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada."
       ],
@@ -127,15 +127,15 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792664166442
+      "updatedAt": 1792664286940
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 88413,
-      "expPerHour": 179411.63714263498,
+      "durationSec": 88713,
+      "expPerHour": 179441.415286904,
       "extra": {
-        "currentExp": 828,
+        "currentExp": 1449,
         "expPercent": 0.1,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
@@ -143,10 +143,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1083853,
+      "gold": 1083361,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 354893,
+      "kills": 356147,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 625,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792664166442
+      "updatedAt": 1792664286939
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.3964080810546875,
+  "ramAllocMB": 1.5681991577148438,
   "ramSysMB": 25.34986114501953,
-  "uptime": "9h46m37s"
+  "uptime": "9h48m38s"
 }
