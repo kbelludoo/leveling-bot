@@ -1,23 +1,23 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/5 mobs | Goblin (1679/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1752/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14523,
-      "expPerHour": 256115.96722238488,
+      "durationSec": 14859,
+      "expPerHour": 255886.43833410038,
       "extra": {
-        "currentExp": 384913,
-        "expPercent": 92.9,
+        "currentExp": 393031,
+        "expPercent": 94.9,
         "expToNext": 414286,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 339004,
+      "gold": 339296,
       "hp": 800,
       "id": "acc-1",
-      "kills": 38902,
+      "kills": 40135,
       "level": 24,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 460,
       "name": "Party #1",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792633447768
+      "updatedAt": 1792633566666
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1679/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1752/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14937,
-      "expPerHour": 273478.06093815726,
+      "durationSec": 15291,
+      "expPerHour": 272801.42971361545,
       "extra": {
-        "currentExp": 4144,
-        "expPercent": 0.2,
+        "currentExp": 12262,
+        "expPercent": 0.7,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 975619,
+      "gold": 975902,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 39743,
+      "kills": 40986,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 640,
       "name": "Party #2",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792633447765
+      "updatedAt": 1792633566662
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1679/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1752/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14781,
-      "expPerHour": 272427.9103350558,
+      "durationSec": 15117,
+      "expPerHour": 271778.44128114963,
       "extra": {
-        "currentExp": 686309,
-        "expPercent": 59.4,
+        "currentExp": 694427,
+        "expPercent": 60.1,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 572477,
+      "gold": 572756,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 39691,
+      "kills": 40928,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792633447763
+      "updatedAt": 1792633566661
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1679/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1752/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 15036,
-      "expPerHour": 264958.57779845985,
+      "durationSec": 15423,
+      "expPerHour": 264501.2063300138,
       "extra": {
-        "currentExp": 1465039,
-        "expPercent": 92.9,
+        "currentExp": 1473157,
+        "expPercent": 93.4,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1000045,
+      "gold": 1000319,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 39309,
+      "kills": 40561,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 625,
       "name": "Party #4",
       "status": "Erro: item.notFound",
-      "updatedAt": 1792633447763
+      "updatedAt": 1792633566662
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.9066085815429688,
+  "ramAllocMB": 1.4465560913085938,
   "ramSysMB": 25.34986114501953,
-  "uptime": "1h14m39s"
+  "uptime": "1h16m37s"
 }
