@@ -3,21 +3,21 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 23460,
-      "expPerHour": 218161.29250221117,
+      "durationSec": 23664,
+      "expPerHour": 217123.22721367367,
       "extra": {
-        "currentExp": 83119,
-        "expPercent": 17.2,
+        "currentExp": 73235,
+        "expPercent": 15.1,
         "expToNext": 483833,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 349459,
+      "gold": 350299,
       "hp": 825,
       "id": "acc-1",
-      "kills": 75285,
+      "kills": 76278,
       "level": 25,
       "logs": [
         "Party sincronizada.",
@@ -40,27 +40,27 @@
       "maxHp": 825,
       "maxMana": 475,
       "name": "Party #1",
-      "status": "hunting",
-      "updatedAt": 1792637527107
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792637647560
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 24135,
-      "expPerHour": 226488.53034024,
+      "durationSec": 24360,
+      "expPerHour": 225337.35983351734,
       "extra": {
-        "currentExp": 1242,
-        "expPercent": 0.1,
+        "currentExp": 5873,
+        "expPercent": 0.3,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 986013,
+      "gold": 986883,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 76239,
+      "kills": 77255,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -83,27 +83,27 @@
       "maxHp": 1100,
       "maxMana": 640,
       "name": "Party #2",
-      "status": "hunting",
-      "updatedAt": 1792637527103
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792637647560
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 23820,
-      "expPerHour": 226331.61253481937,
+      "durationSec": 24018,
+      "expPerHour": 225065.1306511723,
       "extra": {
-        "currentExp": 469467,
-        "expPercent": 40.6,
+        "currentExp": 439148,
+        "expPercent": 38,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 583000,
+      "gold": 583852,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 75947,
+      "kills": 76893,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -127,26 +127,26 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792637527105
+      "updatedAt": 1792637647558
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 24555,
-      "expPerHour": 223023.26408292315,
+      "durationSec": 24807,
+      "expPerHour": 221919.2558071839,
       "extra": {
-        "currentExp": 1287173,
-        "expPercent": 81.6,
+        "currentExp": 1244498,
+        "expPercent": 78.9,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1010684,
+      "gold": 1011549,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 76050,
+      "kills": 77080,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -169,12 +169,12 @@
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
-      "status": "hunting",
-      "updatedAt": 1792637527104
+      "status": "Erro: item.notFound",
+      "updatedAt": 1792637647558
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 3.2237091064453125,
+  "ramAllocMB": 2.9765853881835938,
   "ramSysMB": 25.34986114501953,
-  "uptime": "2h22m38s"
+  "uptime": "2h24m38s"
 }
