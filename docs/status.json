@@ -1,25 +1,26 @@
 {
   "accounts": [
     {
-      "codexInfo": "3/5 mobs | Goblin (1556/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1626/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 13914,
-      "expPerHour": 259805.73099190285,
+      "durationSec": 14241,
+      "expPerHour": 258961.43442725754,
       "extra": {
-        "currentExp": 372232,
-        "expPercent": 89.8,
+        "currentExp": 379132,
+        "expPercent": 91.5,
         "expToNext": 414286,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 338307,
+      "gold": 338708,
       "hp": 800,
       "id": "acc-1",
-      "kills": 36875,
+      "kills": 37966,
       "level": 24,
       "logs": [
+        "Info servidor: shadow.notFound",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -32,35 +33,34 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada."
+        "Joias: Fusão automática de gemas realizada",
+        "Conexão perdida com o servidor."
       ],
       "mana": 460,
       "maxHp": 800,
       "maxMana": 460,
       "name": "Party #1",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792633208782
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792633325568
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1554/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1626/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14319,
-      "expPerHour": 277975.6186786796,
+      "durationSec": 14649,
+      "expPerHour": 276665.6277938908,
       "extra": {
-        "currentExp": 1568603,
-        "expPercent": 99.5,
+        "currentExp": 1575245,
+        "expPercent": 99.9,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 974933,
+      "gold": 975101,
       "hp": 1075,
       "id": "acc-2",
-      "kills": 37750,
+      "kills": 38806,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -76,34 +76,34 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada."
+        "Joias: Fusão automática de gemas realizada",
+        "Conexão perdida com o servidor."
       ],
       "mana": 625,
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #2",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792633208780
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792633325562
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1554/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1626/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14184,
-      "expPerHour": 277259.05778212287,
+      "durationSec": 14508,
+      "expPerHour": 275966.64024599746,
       "extra": {
-        "currentExp": 673886,
-        "expPercent": 58.3,
+        "currentExp": 680528,
+        "expPercent": 58.9,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 571809,
+      "gold": 571940,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 37703,
+      "kills": 38755,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -119,34 +119,34 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada."
+        "Joias: Fusão automática de gemas realizada",
+        "Conexão perdida com o servidor."
       ],
       "mana": 580,
       "maxHp": 1000,
       "maxMana": 580,
       "name": "Party #3",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792633208782
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792633325551
     },
     {
-      "codexInfo": "3/5 mobs | Goblin (1556/2000)",
+      "codexInfo": "3/5 mobs | Goblin (1626/2000)",
       "currentArea": "Blue Gate (Goblin Nv 15)",
-      "durationSec": 14394,
-      "expPerHour": 269148.0917639772,
+      "durationSec": 14751,
+      "expPerHour": 268068.0201222949,
       "extra": {
-        "currentExp": 1499664,
-        "expPercent": 95.1,
+        "currentExp": 1459258,
+        "expPercent": 92.5,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 999350,
+      "gold": 1000233,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 37257,
+      "kills": 38371,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -162,19 +162,19 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada."
+        "Joias: Fusão automática de gemas realizada",
+        "Conexão perdida com o servidor."
       ],
       "mana": 625,
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
-      "status": "Erro: item.notFound",
-      "updatedAt": 1792633208781
+      "status": "Conexão perdida (websocket: close 1001 (going away)). Reconectando...",
+      "updatedAt": 1792633325602
     }
   ],
-  "goroutines": 15,
-  "ramAllocMB": 3.1271438598632812,
+  "goroutines": 11,
+  "ramAllocMB": 2.7581787109375,
   "ramSysMB": 25.34986114501953,
-  "uptime": "1h10m39s"
+  "uptime": "1h12m38s"
 }
