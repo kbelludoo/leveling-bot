@@ -3,21 +3,21 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 384885,
-      "expPerHour": 220936.25763982965,
+      "durationSec": 385098,
+      "expPerHour": 220984.30633587923,
       "extra": {
-        "currentExp": 23998,
-        "expPercent": 5,
+        "currentExp": 19421,
+        "expPercent": 4,
         "expToNext": 483833,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 795893,
+      "gold": 796177,
       "hp": 825,
       "id": "acc-1",
-      "kills": 1970582,
+      "kills": 1971652,
       "level": 25,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 475,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792829407683
+      "updatedAt": 1792829526603
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 458580,
-      "expPerHour": 225864.2401273315,
+      "durationSec": 458811,
+      "expPerHour": 225924.87525224706,
       "extra": {
-        "currentExp": 15055,
-        "expPercent": 0.9,
+        "currentExp": 5833,
+        "expPercent": 0.3,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1442348,
+      "gold": 1442645,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 2032631,
+      "kills": 2033681,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -84,26 +84,26 @@
       "maxMana": 640,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792829407686
+      "updatedAt": 1792829526603
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 391224,
-      "expPerHour": 222768.86891089077,
+      "durationSec": 391440,
+      "expPerHour": 222815.83823252498,
       "extra": {
-        "currentExp": 2898,
-        "expPercent": 0.3,
+        "currentExp": 4970,
+        "expPercent": 0.4,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1031486,
+      "gold": 1031754,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 1996246,
+      "kills": 1997290,
       "level": 32,
       "logs": [
         "Party sincronizada.",
@@ -127,15 +127,15 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792829407685
+      "updatedAt": 1792829526603
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 475692,
-      "expPerHour": 225511.93118592465,
+      "durationSec": 475944,
+      "expPerHour": 225572.7757239508,
       "extra": {
-        "currentExp": 8017,
+        "currentExp": 8317,
         "expPercent": 0.5,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
@@ -143,10 +143,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1466895,
+      "gold": 1466982,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 2031310,
+      "kills": 2032339,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -157,24 +157,24 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada.",
-        "Party sincronizada."
+        "Joias: Fusão automática de gemas realizada",
+        "Encantamento: Equipamento slot 1 aprimorado",
+        "Encantamento: Equipamento slot 2 aprimorado",
+        "Encantamento: Equipamento slot 3 aprimorado",
+        "Encantamento: Equipamento slot 4 aprimorado",
+        "Encantamento: Equipamento slot 5 aprimorado",
+        "Encantamento: Equipamento slot 6 aprimorado"
       ],
       "mana": 625,
       "maxHp": 1075,
       "maxMana": 625,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792829407685
+      "updatedAt": 1792829525400
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 1.58294677734375,
+  "ramAllocMB": 1.892578125,
   "ramSysMB": 25.34986114501953,
-  "uptime": "55h40m38s"
+  "uptime": "55h42m37s"
 }
