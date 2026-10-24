@@ -3,10 +3,10 @@
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 443241,
-      "expPerHour": 222416.4972523049,
+      "durationSec": 443484,
+      "expPerHour": 222486.8303033363,
       "extra": {
-        "currentExp": 4142,
+        "currentExp": 4140,
         "expPercent": 0.9,
         "expToNext": 483833,
         "farmAvailableMin": 0,
@@ -14,10 +14,10 @@
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 860861,
+      "gold": 860551,
       "hp": 825,
       "id": "acc-1",
-      "kills": 2264443,
+      "kills": 2265600,
       "level": 25,
       "logs": [
         "Party sincronizada.",
@@ -41,26 +41,26 @@
       "maxMana": 475,
       "name": "Party #1",
       "status": "hunting",
-      "updatedAt": 1792861327573
+      "updatedAt": 1792861446498
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 526095,
-      "expPerHour": 227728.28325330463,
+      "durationSec": 526362,
+      "expPerHour": 227795.853770407,
       "extra": {
-        "currentExp": 4142,
-        "expPercent": 0.2,
+        "currentExp": 16148,
+        "expPercent": 0.9,
         "expToNext": 1737836,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1509781,
+      "gold": 1509529,
       "hp": 1100,
       "id": "acc-2",
-      "kills": 2334629,
+      "kills": 2335819,
       "level": 36,
       "logs": [
         "Party sincronizada.",
@@ -84,28 +84,29 @@
       "maxMana": 640,
       "name": "Party #2",
       "status": "hunting",
-      "updatedAt": 1792861327572
+      "updatedAt": 1792861446499
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 449931,
-      "expPerHour": 223973.9625420248,
+      "durationSec": 450171,
+      "expPerHour": 224043.48631355845,
       "extra": {
-        "currentExp": 4142,
-        "expPercent": 0.4,
+        "currentExp": 6210,
+        "expPercent": 0.5,
         "expToNext": 1155582,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1096504,
+      "gold": 1096294,
       "hp": 1000,
       "id": "acc-3",
-      "kills": 2292276,
+      "kills": 2293454,
       "level": 32,
       "logs": [
+        "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
@@ -119,7 +120,6 @@
         "Party sincronizada.",
         "Party sincronizada.",
         "Party sincronizada.",
-        "Party sincronizada.",
         "Party sincronizada."
       ],
       "mana": 580,
@@ -127,26 +127,26 @@
       "maxMana": 580,
       "name": "Party #3",
       "status": "hunting",
-      "updatedAt": 1792861327570
+      "updatedAt": 1792861446498
     },
     {
       "codexInfo": "Completo (5/5 mobs) | Foco XP",
       "currentArea": "Castelo dos Demônios (Orc Jovem Nv 25)",
-      "durationSec": 545919,
-      "expPerHour": 227588.5464388282,
+      "durationSec": 546192,
+      "expPerHour": 227656.19078817568,
       "extra": {
-        "currentExp": 4142,
-        "expPercent": 0.3,
+        "currentExp": 16148,
+        "expPercent": 1,
         "expToNext": 1576882,
         "farmAvailableMin": 0,
         "fatiguePercent": 0,
         "isResting": false,
         "onlineKpm": 0
       },
-      "gold": 1534223,
+      "gold": 1533947,
       "hp": 1075,
       "id": "acc-4",
-      "kills": 2335092,
+      "kills": 2336284,
       "level": 35,
       "logs": [
         "Party sincronizada.",
@@ -170,11 +170,11 @@
       "maxMana": 625,
       "name": "Party #4",
       "status": "hunting",
-      "updatedAt": 1792861327570
+      "updatedAt": 1792861446498
     }
   ],
   "goroutines": 15,
-  "ramAllocMB": 2.7040557861328125,
+  "ramAllocMB": 1.902587890625,
   "ramSysMB": 25.34986114501953,
-  "uptime": "64h32m38s"
+  "uptime": "64h34m37s"
 }
